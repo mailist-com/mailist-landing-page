@@ -89,6 +89,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactSlider = document.getElementById('contactSlider');
     const contactCount = document.getElementById('contactCount');
 
+    console.log('Contact Slider:', contactSlider);
+    console.log('Contact Count:', contactCount);
+
     // Pricing tiers based on contact count
     const pricingTiers = [
         { contacts: 1000, label: '1,000', pro: { monthly: 0, yearly: 0 }, advanced: { monthly: 0, yearly: 0 } },
@@ -130,16 +133,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateSliderProgress() {
         const progress = (currentTierIndex / (pricingTiers.length - 1)) * 100;
-        contactSlider.style.setProperty('--slider-progress', `${progress}%`);
+
+        // Update track background for webkit browsers
+        const trackStyle = `linear-gradient(to right, var(--primary) 0%, var(--primary) ${progress}%, var(--gray-200) ${progress}%, var(--gray-200) 100%)`;
+        contactSlider.style.background = trackStyle;
+
+        // For Firefox
+        if (contactSlider.style.setProperty) {
+            contactSlider.style.setProperty('--slider-progress', `${progress}%`);
+        }
     }
 
     function updatePricing() {
         const tier = pricingTiers[currentTierIndex];
         const pricingCards = document.querySelectorAll('.pricing-card');
 
+        console.log('Updating pricing for tier:', tier, 'isYearly:', isYearly);
+
         pricingCards.forEach((card, index) => {
             const priceAmount = card.querySelector('.price-amount');
-            if (!priceAmount) return;
+            if (!priceAmount) {
+                console.log('No price amount found for card', index);
+                return;
+            }
 
             let newPrice = 0;
 
@@ -154,11 +170,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 newPrice = isYearly ? tier.advanced.yearly : tier.advanced.monthly;
             }
 
-            // Animate price change
-            const currentPrice = parseInt(priceAmount.textContent) || 0;
-            if (currentPrice !== newPrice) {
-                animateValue(priceAmount, currentPrice, newPrice, 300);
-            }
+            console.log(`Card ${index}: newPrice = ${newPrice}`);
+
+            // Update price immediately (remove animation for debugging)
+            priceAmount.textContent = newPrice;
         });
     }
 
