@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mailist - Połączenie prostoty z mocą. Platforma email marketingu z zaawansowaną automatyzacją.">
+    <title>Mailist - Email Marketing & Automatyzacja</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
+                        <path d="M8 10L16 16L24 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 10V22C8 22.5304 8.21071 23.0391 8.58579 23.4142C8.96086 23.7893 9.46957 24 10 24H22C22.5304 24 23.0391 23.7893 23.4142 23.4142C23.7893 23.0391 24 22.5304 24 22V10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                                <stop offset="0%" stop-color="#6366F1"/>
+                                <stop offset="100%" stop-color="#8B5CF6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span>Mailist</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#funkcje">Funkcje</a>
+                    <a href="#automatyzacja">Automatyzacja</a>
+                    <a href="#cennik">Cennik</a>
+                    <a href="#integracje">Integracje</a>
+                    <a href="#zasoby">Zasoby</a>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn btn-ghost">Zaloguj się</button>
+                    <button class="btn btn-primary">Wypróbuj za darmo</button>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-icon">✨</span>
+                        <span>Zaufało nam już 50,000+ firm</span>
+                    </div>
+                    <h1>Rozwijaj swoją firmę z <span class="gradient-text">inteligentnym email marketingiem</span></h1>
+                    <p class="hero-description">
+                        Połączenie prostoty MailerLite z mocą ActiveCampaign.
+                        Twórz kampanie w kilka minut, automatyzuj sprzedaż i buduj trwałe relacje z klientami.
+                    </p>
+                    <div class="hero-form">
+                        <input type="email" placeholder="Twój adres email" class="email-input">
+                        <button class="btn btn-primary btn-large">Zacznij za darmo</button>
+                    </div>
+                    <div class="hero-benefits">
+                        <div class="benefit-tag">✓ Darmowe konto na start</div>
+                        <div class="benefit-tag">✓ Bez karty kredytowej</div>
+                        <div class="benefit-tag">✓ Anuluj w każdej chwili</div>
+                    </div>
+                    <div class="trust-badges">
+                        <div class="trust-item">
+                            <strong>4.8/5</strong>
+                            <span>★★★★★</span>
+                            <small>z 2,547 opinii</small>
+                        </div>
+                        <div class="trust-divider"></div>
+                        <div class="trust-item">
+                            <strong>99.9%</strong>
+                            <small>uptime SLA</small>
+                        </div>
+                        <div class="trust-divider"></div>
+                        <div class="trust-item">
+                            <strong>RODO</strong>
+                            <small>compliant</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="dashboard-preview">
+                        <div class="preview-window">
+                            <div class="window-header">
+                                <div class="window-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <div class="window-title">mailist.com/campaigns</div>
+                            </div>
+                            <div class="window-content">
+                                <div class="sidebar">
+                                    <div class="sidebar-item active">
+                                        <div class="item-icon"></div>
+                                        <div class="item-text"></div>
+                                    </div>
+                                    <div class="sidebar-item">
+                                        <div class="item-icon"></div>
+                                        <div class="item-text"></div>
+                                    </div>
+                                    <div class="sidebar-item">
+                                        <div class="item-icon"></div>
+                                        <div class="item-text"></div>
+                                    </div>
+                                </div>
+                                <div class="main-content">
+                                    <div class="content-header"></div>
+                                    <div class="stats-row">
+                                        <div class="stat-card">
+                                            <div class="stat-value"></div>
+                                            <div class="stat-label"></div>
+                                        </div>
+                                        <div class="stat-card">
+                                            <div class="stat-value"></div>
+                                            <div class="stat-label"></div>
+                                        </div>
+                                        <div class="stat-card">
+                                            <div class="stat-value"></div>
+                                            <div class="stat-label"></div>
+                                        </div>
+                                    </div>
+                                    <div class="chart-area"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-element element-1">
+                            <div class="element-icon">📧</div>
+                            <div class="element-text">
+                                <div class="text-line"></div>
+                                <div class="text-line short"></div>
+                            </div>
+                        </div>
+                        <div class="floating-element element-2">
+                            <div class="element-chart">
+                                <div class="chart-bar" style="height: 40%"></div>
+                                <div class="chart-bar" style="height: 70%"></div>
+                                <div class="chart-bar" style="height: 55%"></div>
+                                <div class="chart-bar" style="height: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="floating-element element-3">
+                            <div class="check-icon">✓</div>
+                            <div class="element-text">
+                                <div class="text-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Cloud -->
+    <section class="logo-cloud">
+        <div class="container">
+            <p class="logo-cloud-title">Zaufały nam wiodące firmy w Polsce i na świecie</p>
+            <div class="logo-grid">
+                <div class="logo-item">Logo 1</div>
+                <div class="logo-item">Logo 2</div>
+                <div class="logo-item">Logo 3</div>
+                <div class="logo-item">Logo 4</div>
+                <div class="logo-item">Logo 5</div>
+                <div class="logo-item">Logo 6</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="funkcje" class="features-main">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-label">Funkcje</span>
+                <h2>Wszystko czego potrzebujesz w jednym narzędziu</h2>
+                <p class="section-description">Od prostych kampanii po zaawansowaną automatyzację - mamy wszystko</p>
+            </div>
+
+            <!-- Feature Showcase 1 -->
+            <div class="feature-showcase">
+                <div class="feature-content">
+                    <span class="feature-label">Intuicyjny edytor</span>
+                    <h3>Twórz piękne emaile bez znajomości kodu</h3>
+                    <p>Nasz edytor drag & drop sprawia, że projektowanie profesjonalnych kampanii jest dziecinnie proste. Wybierz szablon, dostosuj do swojej marki i wyślij - to tylko kilka minut.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Ponad 200 gotowych szablonów</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Responsywne na wszystkich urządzeniach</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Personalizacja dla każdego odbiorcy</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="feature-link">Sprawdź edytor →</a>
+                </div>
+                <div class="feature-visual">
+                    <div class="editor-preview">
+                        <div class="editor-toolbar">
+                            <div class="toolbar-buttons">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="editor-canvas">
+                            <div class="email-block header"></div>
+                            <div class="email-block image"></div>
+                            <div class="email-block text"></div>
+                            <div class="email-block button"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Showcase 2 -->
+            <div class="feature-showcase reverse">
+                <div class="feature-content">
+                    <span class="feature-label">Automatyzacja</span>
+                    <h3>Inteligentna automatyzacja, która działa za Ciebie</h3>
+                    <p>Twórz zaawansowane scenariusze automatyzacji bez programowania. Od prostych welcome emaili po kompleksowe lejki sprzedażowe.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Wizualny kreator workflow</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Warunki i segmentacja zaawansowana</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Gotowe szablony automatyzacji</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="feature-link">Poznaj automatyzację →</a>
+                </div>
+                <div class="feature-visual">
+                    <div class="automation-preview">
+                        <div class="workflow-node node-1">
+                            <div class="node-icon">▶</div>
+                            <div class="node-label">Start</div>
+                        </div>
+                        <div class="workflow-connector"></div>
+                        <div class="workflow-node node-2">
+                            <div class="node-icon">📧</div>
+                            <div class="node-label">Email 1</div>
+                        </div>
+                        <div class="workflow-split">
+                            <div class="split-line left"></div>
+                            <div class="split-line right"></div>
+                        </div>
+                        <div class="workflow-branches">
+                            <div class="workflow-node node-3">
+                                <div class="node-icon">✓</div>
+                                <div class="node-label">Otworzył</div>
+                            </div>
+                            <div class="workflow-node node-4">
+                                <div class="node-icon">✗</div>
+                                <div class="node-label">Nie otworzył</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Showcase 3 -->
+            <div class="feature-showcase">
+                <div class="feature-content">
+                    <span class="feature-label">Analityka</span>
+                    <h3>Dokładne dane w czasie rzeczywistym</h3>
+                    <p>Śledź każdy aspekt swoich kampanii. Od podstawowych metryk po zaawansowane raporty ROI - wszystko w jednym miejscu.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Raporty w czasie rzeczywistym</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Śledzenie konwersji i ROI</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Eksport danych i integracje</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="feature-link">Zobacz raporty →</a>
+                </div>
+                <div class="feature-visual">
+                    <div class="analytics-preview">
+                        <div class="analytics-header">
+                            <div class="header-title"></div>
+                            <div class="header-actions"></div>
+                        </div>
+                        <div class="analytics-stats">
+                            <div class="stat-box">
+                                <div class="stat-number">87.5%</div>
+                                <div class="stat-label">Open Rate</div>
+                                <div class="stat-trend up">+12%</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">42.3%</div>
+                                <div class="stat-label">Click Rate</div>
+                                <div class="stat-trend up">+8%</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">15.2K</div>
+                                <div class="stat-label">Conversions</div>
+                                <div class="stat-trend up">+24%</div>
+                            </div>
+                        </div>
+                        <div class="analytics-chart">
+                            <div class="chart-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features-grid-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon purple">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                            <path d="M2 17L12 22L22 17"/>
+                            <path d="M2 12L12 17L22 12"/>
+                        </svg>
+                    </div>
+                    <h4>Segmentacja</h4>
+                    <p>Precyzyjnie targetuj odbiorców na podstawie zachowań, danych demograficznych i interakcji.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M9 3V21M15 3V21M3 9H21M3 15H21"/>
+                        </svg>
+                    </div>
+                    <h4>A/B Testing</h4>
+                    <p>Testuj różne wersje kampanii i automatycznie wysyłaj najbardziej skuteczną.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon green">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8A2 2 0 0019 6H5A2 2 0 003 8V16A2 2 0 005 18H19A2 2 0 0021 16Z"/>
+                            <path d="M3 10H21"/>
+                        </svg>
+                    </div>
+                    <h4>Landing Pages</h4>
+                    <p>Buduj wysokokonwertujące landing page bez designera czy programisty.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon orange">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6V12L16 14"/>
+                        </svg>
+                    </div>
+                    <h4>Wysyłka czasowa</h4>
+                    <p>Wysyłaj emaile w optymalnym czasie dla każdego odbiorcy zwiększając otwarcia.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon pink">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21V19A4 4 0 0016 15H8A4 4 0 004 19V21"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h4>CRM wbudowany</h4>
+                    <p>Zarządzaj kontaktami, śledź interakcje i buduj kompletne profile klientów.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon indigo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/>
+                        </svg>
+                    </div>
+                    <h4>API & Webhooks</h4>
+                    <p>Pełna integracja z twoimi narzędziami przez API i webhooks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Results -->
+    <section class="results-section">
+        <div class="container">
+            <div class="results-header">
+                <h2>Wyniki, które mówią same za siebie</h2>
+                <p>Zobacz jak firmy rozwijają się dzięki Mailist</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-stat">245%</div>
+                    <div class="result-label">Wzrost konwersji</div>
+                    <p>"Mailist pomógł nam potrzykrotnie zwiększyć sprzedaż z email marketingu w 6 miesięcy."</p>
+                    <div class="result-author">
+                        <div class="author-avatar">JK</div>
+                        <div class="author-info">
+                            <strong>Jan Kowalski</strong>
+                            <span>CEO, TechStore</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <div class="result-stat">15h/tydzień</div>
+                    <div class="result-label">Zaoszczędzonego czasu</div>
+                    <p>"Automatyzacja pozwoliła nam skupić się na strategii zamiast na powtarzalnych zadaniach."</p>
+                    <div class="result-author">
+                        <div class="author-avatar">AN</div>
+                        <div class="author-info">
+                            <strong>Anna Nowak</strong>
+                            <span>Marketing Manager, E-learn</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <div class="result-stat">87%</div>
+                    <div class="result-label">Średni open rate</div>
+                    <p>"Nigdy nie osiągnęliśmy tak wysokich wskaźników otwarć. Segmentacja robi ogromną różnicę."</p>
+                    <div class="result-author">
+                        <div class="author-avatar">PW</div>
+                        <div class="author-info">
+                            <strong>Piotr Wiśniewski</strong>
+                            <span>Founder, FitClub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section id="integracje" class="integrations">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-label">Integracje</span>
+                <h2>Połącz ze swoimi ulubionymi narzędziami</h2>
+                <p>Ponad 300 gotowych integracji lub połącz przez API</p>
+            </div>
+            <div class="integration-categories">
+                <div class="integration-category">
+                    <h4>E-commerce</h4>
+                    <div class="integration-logos">
+                        <div class="integration-logo">Shopify</div>
+                        <div class="integration-logo">WooCommerce</div>
+                        <div class="integration-logo">Magento</div>
+                    </div>
+                </div>
+                <div class="integration-category">
+                    <h4>CRM & Sales</h4>
+                    <div class="integration-logos">
+                        <div class="integration-logo">Salesforce</div>
+                        <div class="integration-logo">HubSpot</div>
+                        <div class="integration-logo">Pipedrive</div>
+                    </div>
+                </div>
+                <div class="integration-category">
+                    <h4>Analytics</h4>
+                    <div class="integration-logos">
+                        <div class="integration-logo">Google Analytics</div>
+                        <div class="integration-logo">Mixpanel</div>
+                        <div class="integration-logo">Segment</div>
+                    </div>
+                </div>
+                <div class="integration-category">
+                    <h4>Więcej</h4>
+                    <div class="integration-logos">
+                        <div class="integration-logo">Zapier</div>
+                        <div class="integration-logo">Stripe</div>
+                        <div class="integration-logo">Slack</div>
+                    </div>
+                </div>
+            </div>
+            <div class="integration-cta">
+                <button class="btn btn-outline">Zobacz wszystkie integracje</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="cennik" class="pricing">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-label">Cennik</span>
+                <h2>Plany dopasowane do każdej firmy</h2>
+                <p>Zacznij za darmo, płać tylko za to czego używasz</p>
+            </div>
+            <div class="pricing-toggle">
+                <span class="toggle-label active">Miesięcznie</span>
+                <button class="toggle-switch" role="switch" aria-checked="false">
+                    <span class="toggle-slider"></span>
+                </button>
+                <span class="toggle-label">Rocznie</span>
+                <span class="toggle-badge">Oszczędź 20%</span>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Free</h3>
+                        <p class="pricing-description">Dla początkujących</p>
+                        <div class="pricing-price">
+                            <span class="price-currency">zł</span>
+                            <span class="price-amount">0</span>
+                            <span class="price-period">/miesiąc</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Do 1,000 subskrybentów
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            12,000 emaili/miesiąc
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Edytor email drag & drop
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Formularze i landing pages
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Wsparcie email 24/7
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline btn-full">Zacznij za darmo</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Najpopularniejszy</div>
+                    <div class="pricing-header">
+                        <h3>Growing Business</h3>
+                        <p class="pricing-description">Dla rosnących firm</p>
+                        <div class="pricing-price">
+                            <span class="price-currency">zł</span>
+                            <span class="price-amount">149</span>
+                            <span class="price-period">/miesiąc</span>
+                        </div>
+                        <p class="pricing-note">od 2,500 subskrybentów</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#6366F1" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <strong>Wszystko z Free +</strong>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#6366F1" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Nielimitowane emaile
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#6366F1" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Zaawansowana automatyzacja
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#6366F1" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Zaawansowana segmentacja
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#6366F1" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            A/B testing
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#6366F1" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Integracje premium
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#6366F1" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Wsparcie priorytetowe
+                        </li>
+                    </ul>
+                    <button class="btn btn-primary btn-full">Rozpocznij 14-dniowy trial</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Advanced</h3>
+                        <p class="pricing-description">Dla wymagających</p>
+                        <div class="pricing-price">
+                            <span class="price-currency">zł</span>
+                            <span class="price-amount">299</span>
+                            <span class="price-period">/miesiąc</span>
+                        </div>
+                        <p class="pricing-note">od 10,000 subskrybentów</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <strong>Wszystko z Growing Business +</strong>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Multi-user accounts
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Dedykowany IP (opcja)
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Zaawansowane raporty
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Dedykowany account manager
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="10" fill="#10B981" opacity="0.1"/>
+                                <path d="M6 10L9 13L14 7" stroke="#10B981" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Szkolenia i onboarding
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline btn-full">Skontaktuj się z nami</button>
+                </div>
+            </div>
+            <div class="pricing-footer">
+                <p>Potrzebujesz więcej? <a href="#">Sprawdź plan Enterprise</a> dla firm z ponad 100,000 subskrybentów</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-label">FAQ</span>
+                <h2>Najczęściej zadawane pytania</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Jak długo trwa darmowy okres próbny?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M19 9L12 16L5 9" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Plan Free jest dostępny bezterminowo. Płatne plany oferują 14-dniowy okres próbny bez konieczności podawania karty kredytowej.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Czy mogę zmienić plan w każdej chwili?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M19 9L12 16L5 9" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tak, możesz w każdej chwili upgrade'ować lub downgrade'ować swój plan. Zmiany są natychmiastowe.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Czy moje dane są bezpieczne?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M19 9L12 16L5 9" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutnie. Wszystkie dane są szyfrowane, a nasza platforma jest w pełni zgodna z RODO. Regularnie przechodzimy audyty bezpieczeństwa.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Czy oferujecie migrację z innych platform?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M19 9L12 16L5 9" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tak! Nasz zespół pomoże Ci przenieść wszystkie dane z poprzedniej platformy całkowicie za darmo.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Jaka jest dostarczalność emaili?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M19 9L12 16L5 9" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Utrzymujemy 99.9% dostarczalności dzięki stałemu monitorowaniu reputacji naszych serwerów i najlepszym praktykom w branży.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Czy oferujecie wsparcie techniczne?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M19 9L12 16L5 9" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tak, wszystkie plany zawierają wsparcie email. Płatne plany mają dostęp do wsparcia przez chat na żywo i telefon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2>Gotowy, aby rozwinąć swój biznes?</h2>
+                    <p>Dołącz do 50,000+ firm, które już rozwijają się z Mailist. Zacznij za darmo, bez karty kredytowej.</p>
+                    <div class="cta-form">
+                        <input type="email" placeholder="Wprowadź swój email" class="email-input">
+                        <button class="btn btn-primary btn-large">Zacznij za darmo</button>
+                    </div>
+                    <div class="cta-features">
+                        <span>✓ Setup w 5 minut</span>
+                        <span>✓ Bez karty kredytowej</span>
+                        <span>✓ Anuluj w każdej chwili</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-column brand">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="8" fill="url(#footer-logo-gradient)"/>
+                            <path d="M8 10L16 16L24 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 10V22C8 22.5304 8.21071 23.0391 8.58579 23.4142C8.96086 23.7893 9.46957 24 10 24H22C22.5304 24 23.0391 23.7893 23.4142 23.4142C23.7893 23.0391 24 22.5304 24 22V10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                                    <stop offset="0%" stop-color="#6366F1"/>
+                                    <stop offset="100%" stop-color="#8B5CF6"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>Mailist</span>
+                    </div>
+                    <p>Email marketing, który naprawdę działa. Rozwijaj swoją firmę z inteligentną automatyzacją.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10 0C7.284 0 6.944.012 5.877.06 4.813.109 4.086.278 3.45.525a4.897 4.897 0 00-1.771 1.154A4.908 4.908 0 00.525 3.45C.278 4.086.109 4.813.06 5.877.012 6.944 0 7.284 0 10s.012 3.056.06 4.123c.049 1.064.218 1.791.465 2.427a4.908 4.908 0 001.154 1.771 4.897 4.897 0 001.771 1.154c.636.247 1.363.416 2.427.465C6.944 19.988 7.284 20 10 20s3.056-.012 4.123-.06c1.064-.049 1.791-.218 2.427-.465a4.897 4.897 0 001.771-1.154 4.908 4.908 0 001.154-1.771c.247-.636.416-1.363.465-2.427.048-1.067.06-1.407.06-4.123s-.012-3.056-.06-4.123c-.049-1.064-.218-1.791-.465-2.427a4.908 4.908 0 00-1.154-1.771A4.897 4.897 0 0016.55.525C15.914.278 15.187.109 14.123.06 13.056.012 12.716 0 10 0zm0 1.802c2.67 0 2.987.01 4.041.059.976.045 1.505.207 1.858.344.466.182.8.399 1.15.748.35.35.566.684.748 1.15.137.353.3.882.344 1.857.048 1.055.058 1.37.058 4.04 0 2.671-.01 2.986-.058 4.041-.045.975-.207 1.504-.344 1.857a3.097 3.097 0 01-.748 1.15 3.098 3.098 0 01-1.15.748c-.353.137-.882.3-1.857.344-1.054.048-1.37.058-4.041.058-2.67 0-2.987-.01-4.04-.058-.976-.045-1.505-.207-1.858-.344a3.098 3.098 0 01-1.15-.748 3.097 3.097 0 01-.748-1.15c-.137-.353-.3-.882-.344-1.857-.048-1.055-.058-1.37-.058-4.041 0-2.67.01-2.985.058-4.04.045-.976.207-1.505.344-1.858.182-.466.399-.8.748-1.15.35-.35.684-.566 1.15-.748.353-.137.882-.3 1.857-.344 1.055-.048 1.37-.058 4.041-.058zm0 3.063a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm6.538-8.671a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Produkt</h4>
+                    <ul>
+                        <li><a href="#funkcje">Funkcje</a></li>
+                        <li><a href="#cennik">Cennik</a></li>
+                        <li><a href="#integracje">Integracje</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Szablony email</a></li>
+                        <li><a href="#">Landing pages</a></li>
+                        <li><a href="#">Automatyzacja</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Firma</h4>
+                    <ul>
+                        <li><a href="#">O nas</a></li>
+                        <li><a href="#">Kariera</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Dla agencji</a></li>
+                        <li><a href="#">Partnerzy</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Zasoby</h4>
+                    <ul>
+                        <li><a href="#">Centrum pomocy</a></li>
+                        <li><a href="#">Dokumentacja API</a></li>
+                        <li><a href="#">Case studies</a></li>
+                        <li><a href="#">Webinary</a></li>
+                        <li><a href="#">E-booki</a></li>
+                        <li><a href="#">Status systemu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Zgodność</h4>
+                    <ul>
+                        <li><a href="#">RODO</a></li>
+                        <li><a href="#">Polityka prywatności</a></li>
+                        <li><a href="#">Warunki użytkowania</a></li>
+                        <li><a href="#">Polityka cookies</a></li>
+                        <li><a href="#">Bezpieczeństwo</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mailist. Wszystkie prawa zastrzeżone.</p>
+                <div class="footer-language">
+                    <button class="language-selector">
+                        🌍 Polski
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+                            <path d="M4 6L8 10L12 6" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
