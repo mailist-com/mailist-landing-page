@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Pricing tiers based on contact count
     const pricingTiers = [
-        { contacts: 1000, label: '1,000', pro: { monthly: 0, yearly: 0 }, advanced: { monthly: 0, yearly: 0 } },
+        { contacts: 1000, label: '1,000', pro: { monthly: 49, yearly: 39 }, advanced: { monthly: 89, yearly: 71 } },
         { contacts: 2500, label: '2,500', pro: { monthly: 49, yearly: 39 }, advanced: { monthly: 89, yearly: 71 } },
         { contacts: 5000, label: '5,000', pro: { monthly: 79, yearly: 63 }, advanced: { monthly: 139, yearly: 111 } },
         { contacts: 10000, label: '10,000', pro: { monthly: 149, yearly: 119 }, advanced: { monthly: 249, yearly: 199 } },
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const progress = (currentTierIndex / (pricingTiers.length - 1)) * 100;
 
         // Update track background for webkit browsers
-        const trackStyle = `linear-gradient(to right, var(--primary) 0%, var(--primary) ${progress}%, var(--gray-200) ${progress}%, var(--gray-200) 100%)`;
+        const trackStyle = `linear-gradient(to right, #4F46E5 0%, #4F46E5 ${progress}%, #E2E8F0 ${progress}%, #E2E8F0 100%)`;
         contactSlider.style.background = trackStyle;
 
         // For Firefox
