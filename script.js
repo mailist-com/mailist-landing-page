@@ -84,6 +84,85 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ========================================
+    // Contact Slider & Dynamic Pricing
+    // ========================================
+    const contactSlider = document.getElementById('contactSlider');
+    const contactCount = document.getElementById('contactCount');
+
+    // Pricing tiers based on contact count
+    const pricingTiers = [
+        { contacts: 1000, label: '1,000', pro: { monthly: 0, yearly: 0 }, advanced: { monthly: 0, yearly: 0 } },
+        { contacts: 2500, label: '2,500', pro: { monthly: 49, yearly: 39 }, advanced: { monthly: 89, yearly: 71 } },
+        { contacts: 5000, label: '5,000', pro: { monthly: 79, yearly: 63 }, advanced: { monthly: 139, yearly: 111 } },
+        { contacts: 10000, label: '10,000', pro: { monthly: 149, yearly: 119 }, advanced: { monthly: 249, yearly: 199 } },
+        { contacts: 15000, label: '15,000', pro: { monthly: 199, yearly: 159 }, advanced: { monthly: 329, yearly: 263 } },
+        { contacts: 20000, label: '20,000', pro: { monthly: 249, yearly: 199 }, advanced: { monthly: 399, yearly: 319 } },
+        { contacts: 30000, label: '30,000', pro: { monthly: 329, yearly: 263 }, advanced: { monthly: 519, yearly: 415 } },
+        { contacts: 40000, label: '40,000', pro: { monthly: 399, yearly: 319 }, advanced: { monthly: 629, yearly: 503 } },
+        { contacts: 50000, label: '50,000', pro: { monthly: 469, yearly: 375 }, advanced: { monthly: 739, yearly: 591 } },
+        { contacts: 75000, label: '75,000', pro: { monthly: 649, yearly: 519 }, advanced: { monthly: 999, yearly: 799 } },
+        { contacts: 100000, label: '100,000', pro: { monthly: 799, yearly: 639 }, advanced: { monthly: 1249, yearly: 999 } },
+        { contacts: 150000, label: '150,000+', pro: { monthly: 999, yearly: 799 }, advanced: { monthly: 1599, yearly: 1279 } }
+    ];
+
+    let currentTierIndex = 1; // Start at 2,500
+    let isYearly = false;
+
+    if (contactSlider && contactCount) {
+        // Initialize
+        updateContactCount();
+        updateSliderProgress();
+        updatePricing();
+
+        // Slider change event
+        contactSlider.addEventListener('input', function() {
+            currentTierIndex = parseInt(this.value);
+            updateContactCount();
+            updateSliderProgress();
+            updatePricing();
+        });
+    }
+
+    function updateContactCount() {
+        const tier = pricingTiers[currentTierIndex];
+        contactCount.textContent = tier.label;
+    }
+
+    function updateSliderProgress() {
+        const progress = (currentTierIndex / (pricingTiers.length - 1)) * 100;
+        contactSlider.style.setProperty('--slider-progress', `${progress}%`);
+    }
+
+    function updatePricing() {
+        const tier = pricingTiers[currentTierIndex];
+        const pricingCards = document.querySelectorAll('.pricing-card');
+
+        pricingCards.forEach((card, index) => {
+            const priceAmount = card.querySelector('.price-amount');
+            if (!priceAmount) return;
+
+            let newPrice = 0;
+
+            if (index === 0) {
+                // Free plan - always 0
+                newPrice = 0;
+            } else if (index === 1) {
+                // Growing Business plan
+                newPrice = isYearly ? tier.pro.yearly : tier.pro.monthly;
+            } else if (index === 2) {
+                // Advanced plan
+                newPrice = isYearly ? tier.advanced.yearly : tier.advanced.monthly;
+            }
+
+            // Animate price change
+            const currentPrice = parseInt(priceAmount.textContent) || 0;
+            if (currentPrice !== newPrice) {
+                animateValue(priceAmount, currentPrice, newPrice, 300);
+            }
+        });
+    }
+
+    // ========================================
     // Pricing Toggle (Monthly/Yearly)
     // ========================================
     const pricingToggle = document.querySelector('.toggle-switch');
@@ -91,35 +170,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (pricingToggle) {
         pricingToggle.addEventListener('click', function() {
-            const isYearly = this.getAttribute('aria-checked') === 'true';
-            this.setAttribute('aria-checked', !isYearly);
+            isYearly = this.getAttribute('aria-checked') !== 'true';
+            this.setAttribute('aria-checked', isYearly);
 
             // Update active label
             toggleLabels.forEach(label => label.classList.toggle('active'));
 
             // Update prices
-            updatePricing(!isYearly);
-        });
-    }
-
-    function updatePricing(isYearly) {
-        const prices = {
-            free: { monthly: 0, yearly: 0 },
-            pro: { monthly: 149, yearly: 119 },
-            advanced: { monthly: 299, yearly: 239 }
-        };
-
-        // Update price displays
-        const pricingCards = document.querySelectorAll('.pricing-card');
-        pricingCards.forEach((card, index) => {
-            const priceAmount = card.querySelector('.price-amount');
-            if (priceAmount && index > 0) {
-                const plan = index === 1 ? 'pro' : 'advanced';
-                const newPrice = isYearly ? prices[plan].yearly : prices[plan].monthly;
-
-                // Animate price change
-                animateValue(priceAmount, parseInt(priceAmount.textContent), newPrice, 300);
-            }
+            updatePricing();
         });
     }
 

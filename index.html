@@ -31,10 +31,60 @@
                 </div>
                 <div class="nav-links">
                     <a href="#funkcje">Funkcje</a>
-                    <a href="#automatyzacja">Automatyzacja</a>
                     <a href="#cennik">Cennik</a>
                     <a href="#integracje">Integracje</a>
-                    <a href="#zasoby">Zasoby</a>
+                    <div class="nav-dropdown">
+                        <a href="#" class="dropdown-trigger">Zasoby ▾</a>
+                        <div class="dropdown-menu">
+                            <a href="/blog" class="dropdown-item">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 6h12M4 10h12M4 14h8"/>
+                                </svg>
+                                <div>
+                                    <strong>Blog</strong>
+                                    <span>Porady i najlepsze praktyki</span>
+                                </div>
+                            </a>
+                            <a href="/docs" class="dropdown-item">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 2h8l4 4v11a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1h2"/>
+                                    <path d="M6 2v4h8"/>
+                                </svg>
+                                <div>
+                                    <strong>Dokumentacja</strong>
+                                    <span>Pełna dokumentacja API</span>
+                                </div>
+                            </a>
+                            <a href="/changelog" class="dropdown-item">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M10 2v16m-8-8h16"/>
+                                </svg>
+                                <div>
+                                    <strong>Changelog</strong>
+                                    <span>Nowości i aktualizacje</span>
+                                </div>
+                            </a>
+                            <a href="/api" class="dropdown-item">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M8 2l-4 8 4 8m4-16l4 8-4 8"/>
+                                </svg>
+                                <div>
+                                    <strong>API</strong>
+                                    <span>Dokumentacja techniczna</span>
+                                </div>
+                            </a>
+                            <a href="/status" class="dropdown-item">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="10" cy="10" r="8"/>
+                                    <path d="M10 6v4l3 2"/>
+                                </svg>
+                                <div>
+                                    <strong>Status</strong>
+                                    <span>Status systemu</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="nav-buttons">
                     <button class="btn btn-ghost">Zaloguj się</button>
@@ -530,6 +580,43 @@
                 <h2>Plany dopasowane do każdej firmy</h2>
                 <p>Zacznij za darmo, płać tylko za to czego używasz</p>
             </div>
+            <!-- Contact Slider -->
+            <div class="contact-slider-container">
+                <div class="slider-header">
+                    <h3>Wybierz liczbę kontaktów</h3>
+                    <div class="slider-value">
+                        <span id="contactCount">2,500</span>
+                        <span class="slider-label">kontaktów</span>
+                    </div>
+                </div>
+                <div class="slider-wrapper">
+                    <input
+                        type="range"
+                        id="contactSlider"
+                        class="contact-slider"
+                        min="0"
+                        max="11"
+                        value="1"
+                        step="1"
+                    />
+                    <div class="slider-labels">
+                        <span>1K</span>
+                        <span>2.5K</span>
+                        <span>5K</span>
+                        <span>10K</span>
+                        <span>15K</span>
+                        <span>20K</span>
+                        <span>30K</span>
+                        <span>40K</span>
+                        <span>50K</span>
+                        <span>75K</span>
+                        <span>100K</span>
+                        <span>150K+</span>
+                    </div>
+                </div>
+                <p class="slider-note">Płać tylko za to czego używasz. Zmień plan w każdej chwili.</p>
+            </div>
+
             <div class="pricing-toggle">
                 <span class="toggle-label active">Miesięcznie</span>
                 <button class="toggle-switch" role="switch" aria-checked="false">
