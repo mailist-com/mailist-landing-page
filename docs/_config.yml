@@ -7,7 +7,7 @@ baseurl: "/docs"
 url: "https://mailist.com"
 
 # Theme
-remote_theme: just-the-docs/just-the-docs
+theme: just-the-docs
 
 # Color scheme
 color_scheme: mailist
