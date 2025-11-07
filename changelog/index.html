@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Historia zmian i aktualizacji platformy Mailist">
+    <title>Changelog - Mailist</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            500: '#0f172a',
+                            600: '#0a1628',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-feature-settings: "kern" 1, "liga" 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center space-x-3">
+                    <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="#1e40af"/>
+                        <path d="M12 14L20 20L28 14M12 26V14L20 20L28 14V26C28 26.5304 27.7893 27.0391 27.4142 27.4142C27.0391 27.7893 26.5304 28 26 28H14C13.4696 28 12.9609 27.7893 12.5858 27.4142C12.2107 27.0391 12 26.5304 12 26Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="text-xl font-semibold text-navy-500">Mailist</span>
+                </a>
+                <a href="/" class="text-sm text-gray-600 hover:text-navy-500">← Powrót do strony głównej</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="mb-12">
+            <h1 class="text-4xl font-bold text-navy-500 mb-4">Changelog</h1>
+            <p class="text-xl text-gray-600">Historia zmian i aktualizacji platformy Mailist</p>
+        </div>
+
+        <!-- Changelog Entries -->
+        <div class="space-y-12">
+
+            <!-- Version 2.1.0 -->
+            <div class="relative pl-8 border-l-2 border-blue-200">
+                <div class="absolute -left-3 top-0 w-5 h-5 bg-blue-500 rounded-full border-4 border-gray-50"></div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h2 class="text-2xl font-bold text-navy-500">v2.1.0</h2>
+                            <p class="text-sm text-gray-500">15 stycznia 2025</p>
+                        </div>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full">Najnowsza</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-green-700 mb-2">✨ Nowe funkcje</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span><strong>AI-Powered Send Time Optimization</strong> - algorytm uczenia maszynowego automatycznie wybiera optymalną godzinę wysyłki dla każdego odbiorcy</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span><strong>Predictive Segmentation</strong> - automatyczne tworzenie segmentów na podstawie przewidywanych zachowań użytkowników</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span><strong>Enhanced A/B Testing</strong> - testuj do 10 wariantów jednocześnie z automatycznym wyborem zwycięzcy</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-blue-700 mb-2">🔧 Ulepszenia</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span>Dashboard ładuje się teraz 3x szybciej dzięki optymalizacji zapytań</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span>Nowy, bardziej intuicyjny workflow builder z drag & drop</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span>Ulepszona nawigacja w sekcji Analytics z filtrowaniem real-time</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-red-700 mb-2">🐛 Poprawki</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span>Naprawiono błąd powodujący duplikację kontaktów przy imporcie CSV</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span>Poprawiono wyświetlanie polskich znaków w raportach PDF</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Version 2.0.5 -->
+            <div class="relative pl-8 border-l-2 border-gray-200">
+                <div class="absolute -left-3 top-0 w-5 h-5 bg-gray-300 rounded-full border-4 border-gray-50"></div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h2 class="text-2xl font-bold text-navy-500">v2.0.5</h2>
+                            <p class="text-sm text-gray-500">28 grudnia 2024</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-blue-700 mb-2">🔧 Ulepszenia</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span>Dodano obsługę dark mode w całej aplikacji</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span>Nowy system notyfikacji push w przeglądarce</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-red-700 mb-2">🐛 Poprawki</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span>Naprawiono problem z eksportem dużych list kontaktów (>50k)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span>Poprawiono wyświetlanie statystyk w Safari</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Version 2.0.0 -->
+            <div class="relative pl-8 border-l-2 border-gray-200">
+                <div class="absolute -left-3 top-0 w-5 h-5 bg-gray-300 rounded-full border-4 border-gray-50"></div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h2 class="text-2xl font-bold text-navy-500">v2.0.0</h2>
+                            <p class="text-sm text-gray-500">15 listopada 2024</p>
+                        </div>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm font-semibold rounded-full">Major Release</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-green-700 mb-2">✨ Nowe funkcje</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span><strong>Całkowicie przeprojektowany interfejs</strong> - nowoczesny, responsywny design</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span><strong>REST API v2</strong> - nowa, bardziej wydajna wersja API z lepszą dokumentacją</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span><strong>Advanced Reporting</strong> - nowy system raportowania z custom dashboards</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span><strong>Webhooks</strong> - real-time powiadomienia o eventach w systemie</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-semibold text-orange-700 mb-2">⚠️ Breaking Changes</h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span>API v1 będzie wspierane do 30 czerwca 2025</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="mr-2">•</span>
+                                    <span>Zmienione endpointy dla kontaktów - zobacz <a href="/docs/api" class="text-blue-600 hover:underline">dokumentację</a></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Subscribe to Updates -->
+        <div class="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-8 text-center">
+            <h3 class="text-2xl font-bold text-navy-500 mb-4">Bądź na bieżąco</h3>
+            <p class="text-gray-600 mb-6">Subskrybuj i otrzymuj powiadomienia o nowych funkcjach i aktualizacjach</p>
+            <div class="max-w-md mx-auto flex gap-3">
+                <input type="email" placeholder="Twój email" class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button class="bg-navy-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-navy-600 transition-colors">
+                    Subskrybuj
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 mt-20">
+        <div class="max-w-4xl mx-auto px-6 py-8">
+            <div class="flex justify-between items-center text-sm text-gray-500">
+                <p>© 2025 Mailist. Wszystkie prawa zastrzeżone.</p>
+                <div class="flex space-x-6">
+                    <a href="/docs" class="hover:text-navy-500">Dokumentacja</a>
+                    <a href="/api" class="hover:text-navy-500">API</a>
+                    <a href="/status" class="hover:text-navy-500">Status</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

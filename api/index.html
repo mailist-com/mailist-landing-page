@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="REST API Documentation dla platformy Mailist">
+    <title>API Documentation - Mailist</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        navy: {
+                            500: '#0f172a',
+                            600: '#0a1628',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-feature-settings: "kern" 1, "liga" 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        pre {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center space-x-3">
+                    <svg class="w-8 h-8" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="8" fill="#1e40af"/>
+                        <path d="M12 14L20 20L28 14M12 26V14L20 20L28 14V26C28 26.5304 27.7893 27.0391 27.4142 27.4142C27.0391 27.7893 26.5304 28 26 28H14C13.4696 28 12.9609 27.7893 12.5858 27.4142C12.2107 27.0391 12 26.5304 12 26Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="text-xl font-semibold text-navy-500">Mailist API</span>
+                </a>
+                <div class="flex items-center space-x-6">
+                    <a href="/docs" class="text-sm text-gray-600 hover:text-navy-500">Dokumentacja</a>
+                    <a href="/" class="text-sm text-gray-600 hover:text-navy-500">← Strona główna</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex max-w-7xl mx-auto">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white border-r border-gray-200 min-h-screen sticky top-16 overflow-y-auto">
+            <nav class="p-6 space-y-6">
+                <div>
+                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Wprowadzenie</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#authentication" class="text-sm text-gray-700 hover:text-navy-500">Authentication</a></li>
+                        <li><a href="#rate-limits" class="text-sm text-gray-700 hover:text-navy-500">Rate Limits</a></li>
+                        <li><a href="#errors" class="text-sm text-gray-700 hover:text-navy-500">Errors</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Endpoints</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#contacts" class="text-sm text-gray-700 hover:text-navy-500">Contacts</a></li>
+                        <li><a href="#campaigns" class="text-sm text-gray-700 hover:text-navy-500">Campaigns</a></li>
+                        <li><a href="#lists" class="text-sm text-gray-700 hover:text-navy-500">Lists</a></li>
+                        <li><a href="#segments" class="text-sm text-gray-700 hover:text-navy-500">Segments</a></li>
+                        <li><a href="#templates" class="text-sm text-gray-700 hover:text-navy-500">Templates</a></li>
+                        <li><a href="#webhooks" class="text-sm text-gray-700 hover:text-navy-500">Webhooks</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 px-12 py-12">
+            <!-- Intro -->
+            <div class="mb-16">
+                <h1 class="text-4xl font-bold text-navy-500 mb-4">REST API v2</h1>
+                <p class="text-xl text-gray-600 mb-6">
+                    Pełna dokumentacja REST API platformy Mailist. Zarządzaj kampaniami, kontaktami i automatyzacją programistycznie.
+                </p>
+                <div class="flex items-center space-x-4">
+                    <span class="px-3 py-1 bg-green-100 text-green-700 text-sm font-semibold rounded-full">
+                        Stable v2.1.0
+                    </span>
+                    <span class="text-sm text-gray-600">Base URL: <code class="bg-gray-100 px-2 py-1 rounded">https://api.mailist.com/v2</code></span>
+                </div>
+            </div>
+
+            <!-- Authentication -->
+            <section id="authentication" class="mb-16">
+                <h2 class="text-3xl font-bold text-navy-500 mb-4">Authentication</h2>
+                <p class="text-gray-600 mb-6">
+                    Wszystkie requesty do API wymagają autentykacji za pomocą API key w headerze.
+                </p>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold mb-3">API Key w headerze</h3>
+                    <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm"><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+                </div>
+
+                <div class="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <p class="text-sm text-blue-900">
+                        <strong>💡 Tip:</strong> Wygeneruj API key w ustawieniach swojego konta w sekcji "API & Integrations".
+                    </p>
+                </div>
+            </section>
+
+            <!-- Rate Limits -->
+            <section id="rate-limits" class="mb-16">
+                <h2 class="text-3xl font-bold text-navy-500 mb-4">Rate Limits</h2>
+                <p class="text-gray-600 mb-6">
+                    API ma następujące limity requestów:
+                </p>
+
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Plan</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Requests/min</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Requests/hour</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 text-sm">Professional</td>
+                                <td class="px-6 py-4 text-sm">100</td>
+                                <td class="px-6 py-4 text-sm">1,000</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-sm">Business</td>
+                                <td class="px-6 py-4 text-sm">300</td>
+                                <td class="px-6 py-4 text-sm">5,000</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-sm">Enterprise</td>
+                                <td class="px-6 py-4 text-sm">Unlimited</td>
+                                <td class="px-6 py-4 text-sm">Unlimited</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Errors -->
+            <section id="errors" class="mb-16">
+                <h2 class="text-3xl font-bold text-navy-500 mb-4">Error Handling</h2>
+                <p class="text-gray-600 mb-6">
+                    API używa standardowych kodów HTTP. Wszystkie błędy zwracają JSON z opisem.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-semibold">400 Bad Request</h3>
+                            <span class="text-sm text-gray-500">Błędny request</span>
+                        </div>
+                        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm"><code>{
+  "error": {
+    "code": "invalid_request",
+    "message": "Missing required field: email",
+    "details": {
+      "field": "email",
+      "type": "required"
+    }
+  }
+}</code></pre>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-semibold">401 Unauthorized</h3>
+                            <span class="text-sm text-gray-500">Brak lub nieprawidłowy API key</span>
+                        </div>
+                        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm"><code>{
+  "error": {
+    "code": "unauthorized",
+    "message": "Invalid API key"
+  }
+}</code></pre>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-lg font-semibold">429 Too Many Requests</h3>
+                            <span class="text-sm text-gray-500">Przekroczony rate limit</span>
+                        </div>
+                        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm"><code>{
+  "error": {
+    "code": "rate_limit_exceeded",
+    "message": "Rate limit exceeded. Try again in 60 seconds",
+    "retry_after": 60
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contacts Endpoint -->
+            <section id="contacts" class="mb-16">
+                <h2 class="text-3xl font-bold text-navy-500 mb-4">Contacts</h2>
+                <p class="text-gray-600 mb-6">
+                    Zarządzaj kontaktami w swojej bazie danych.
+                </p>
+
+                <div class="space-y-8">
+                    <!-- Create Contact -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="px-3 py-1 bg-green-100 text-green-700 text-sm font-semibold rounded">POST</span>
+                            <code class="text-sm">/contacts</code>
+                        </div>
+
+                        <p class="text-gray-600 mb-4">Utwórz nowy kontakt</p>
+
+                        <div class="mb-4">
+                            <h4 class="text-sm font-semibold mb-2">Request Body</h4>
+                            <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm"><code>{
+  "email": "jan.kowalski@example.com",
+  "first_name": "Jan",
+  "last_name": "Kowalski",
+  "company": "Example Corp",
+  "custom_fields": {
+    "industry": "Technology",
+    "employees": 50
+  },
+  "tags": ["lead", "newsletter"],
+  "lists": ["list_abc123"]
+}</code></pre>
+                        </div>
+
+                        <div>
+                            <h4 class="text-sm font-semibold mb-2">Response 201 Created</h4>
+                            <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm"><code>{
+  "id": "contact_xyz789",
+  "email": "jan.kowalski@example.com",
+  "first_name": "Jan",
+  "last_name": "Kowalski",
+  "company": "Example Corp",
+  "status": "active",
+  "created_at": "2025-01-15T10:30:00Z",
+  "updated_at": "2025-01-15T10:30:00Z"
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Get Contact -->
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-semibold rounded">GET</span>
+                            <code class="text-sm">/contacts/{id}</code>
+                        </div>
+
+                        <p class="text-gray-600 mb-4">Pobierz dane kontaktu</p>
+
+                        <div>
+                            <h4 class="text-sm font-semibold mb-2">Response 200 OK</h4>
+                            <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm"><code>{
+  "id": "contact_xyz789",
+  "email": "jan.kowalski@example.com",
+  "first_name": "Jan",
+  "last_name": "Kowalski",
+  "company": "Example Corp",
+  "status": "active",
+  "tags": ["lead", "newsletter"],
+  "lists": ["list_abc123"],
+  "engagement": {
+    "opens": 45,
+    "clicks": 12,
+    "last_activity": "2025-01-14T15:22:00Z"
+  },
+  "created_at": "2025-01-10T10:30:00Z",
+  "updated_at": "2025-01-15T10:30:00Z"
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SDK Examples -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold text-navy-500 mb-4">SDKs & Libraries</h2>
+                <p class="text-gray-600 mb-6">
+                    Oficjalne SDKi dostępne dla popularnych języków programowania:
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold mb-2">Node.js / JavaScript</h3>
+                        <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs font-mono mb-3"><code>npm install @mailist/sdk</code></pre>
+                        <a href="#" class="text-sm text-blue-600 hover:underline">Zobacz dokumentację →</a>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold mb-2">Python</h3>
+                        <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs font-mono mb-3"><code>pip install mailist</code></pre>
+                        <a href="#" class="text-sm text-blue-600 hover:underline">Zobacz dokumentację →</a>
+                    </div>
+
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <h3 class="text-lg font-semibold mb-2">PHP</h3>
+                        <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs font-mono mb-3"><code>composer require mailist/sdk</code></pre>
+                        <a href="#" class="text-sm text-blue-600 hover:underline">Zobacz dokumentację →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Support -->
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-8">
+                <h3 class="text-2xl font-bold text-navy-500 mb-4">Potrzebujesz pomocy?</h3>
+                <p class="text-gray-600 mb-6">
+                    Nasz zespół developerów jest dostępny 24/7 aby pomóc Ci w integracji.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="/docs" class="bg-navy-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-navy-600 transition-colors">
+                        Pełna dokumentacja
+                    </a>
+                    <a href="#" class="border-2 border-navy-500 text-navy-500 px-6 py-3 rounded-lg font-semibold hover:bg-navy-50 transition-colors">
+                        Kontakt z API Support
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
