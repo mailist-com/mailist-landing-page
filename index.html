@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mailist - nowoczesna platforma email marketingu. Potężna automatyzacja, intuicyjny interfejs i przystępne ceny. Rozwijaj swój biznes z najlepszym narzędziem do email marketingu.">
+    <meta name="keywords" content="email marketing, automatyzacja marketingu, newsletter, kampanie email, marketing automation">
+    <title>Mailist - Nowoczesny Email Marketing dla Rosnących Firm</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-in-right': 'slideInRight 0.6s ease-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(20px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="font-sans antialiased bg-white text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-envelope text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Mailist</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#funkcje" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Funkcje</a>
+                    <a href="#cennik" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Cennik</a>
+                    <a href="#integracje" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Integracje</a>
+                    <a href="#opinie" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Opinie</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Zasoby</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Zaloguj się</a>
+                    <a href="#start" class="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200">
+                        Rozpocznij za darmo
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-cloak class="md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-4 space-y-3">
+                <a href="#funkcje" class="block py-2 text-gray-700 hover:text-primary-600">Funkcje</a>
+                <a href="#cennik" class="block py-2 text-gray-700 hover:text-primary-600">Cennik</a>
+                <a href="#integracje" class="block py-2 text-gray-700 hover:text-primary-600">Integracje</a>
+                <a href="#opinie" class="block py-2 text-gray-700 hover:text-primary-600">Opinie</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary-600">Zasoby</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary-600">Zaloguj się</a>
+                <a href="#start" class="block py-2 bg-gradient-to-r from-primary-600 to-accent-600 text-white text-center rounded-lg font-semibold">
+                    Rozpocznij za darmo
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column - Content -->
+                <div class="space-y-8 animate-fade-in-up">
+                    <div class="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold">
+                        <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
+                        <span>Zaufało nam już ponad 10,000 firm</span>
+                    </div>
+
+                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+                        Email marketing, który
+                        <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">napędza rozwój</span>
+                    </h1>
+
+                    <p class="text-xl text-gray-600 leading-relaxed">
+                        Potężna automatyzacja marketingowa w intuicyjnym interfejsie.
+                        Twórz kampanie, które konwertują i buduj trwałe relacje z klientami.
+                    </p>
+
+                    <!-- Key Stats -->
+                    <div class="grid grid-cols-3 gap-6 pt-4">
+                        <div>
+                            <div class="text-3xl font-bold text-primary-600">98%</div>
+                            <div class="text-sm text-gray-600">Dostarczalność</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-primary-600">4.5x</div>
+                            <div class="text-sm text-gray-600">Wyższy ROI</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-primary-600">24/7</div>
+                            <div class="text-sm text-gray-600">Wsparcie PL</div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#start" class="inline-flex items-center justify-center bg-gradient-to-r from-primary-600 to-accent-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200">
+                            Rozpocznij 14-dniowy trial
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#demo" class="inline-flex items-center justify-center border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg hover:border-primary-600 hover:text-primary-600 transition-all duration-200">
+                            <i class="fas fa-play-circle mr-2"></i>
+                            Zobacz demo
+                        </a>
+                    </div>
+
+                    <p class="text-sm text-gray-500">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        Bez karty kredytowej • Pełny dostęp • Anuluj w każdej chwili
+                    </p>
+                </div>
+
+                <!-- Right Column - Visual -->
+                <div class="relative animate-fade-in">
+                    <!-- Dashboard mockup -->
+                    <div class="relative bg-white rounded-2xl shadow-2xl p-6 border border-gray-200">
+                        <!-- Browser bar -->
+                        <div class="flex items-center space-x-2 mb-4">
+                            <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+                            <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                            <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+                        </div>
+
+                        <!-- Stats Cards -->
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div class="bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl p-4 text-white">
+                                <div class="text-sm opacity-90 mb-1">Wysłane emaile</div>
+                                <div class="text-3xl font-bold">125,847</div>
+                                <div class="text-xs opacity-80 mt-2">
+                                    <i class="fas fa-arrow-up mr-1"></i> +24% vs. ub. miesiąc
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl p-4 text-white">
+                                <div class="text-sm opacity-90 mb-1">Open Rate</div>
+                                <div class="text-3xl font-bold">42.5%</div>
+                                <div class="text-xs opacity-80 mt-2">
+                                    <i class="fas fa-arrow-up mr-1"></i> +8.3% vs. branża
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campaign List -->
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-check text-green-600"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-sm">Kampania powitalna</div>
+                                        <div class="text-xs text-gray-500">Wysłano: 2,847 • Open: 48%</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-right text-gray-400"></i>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-paper-plane text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-sm">Newsletter tygodniowy</div>
+                                        <div class="text-xs text-gray-500">Wysłano: 5,124 • Open: 39%</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-right text-gray-400"></i>
+                            </div>
+
+                            <div class="flex items-center justify-between p-3 bg-primary-50 rounded-lg border border-primary-200">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center animate-pulse">
+                                        <i class="fas fa-robot text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-sm">Automatyzacja: Reaktywacja</div>
+                                        <div class="text-xs text-primary-600">W trakcie • 847 użytkowników</div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-chevron-right text-primary-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating elements -->
+                    <div class="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg text-sm font-semibold animate-bounce">
+                        <i class="fas fa-chart-line mr-1"></i> +32% konwersji
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 bg-white px-4 py-2 rounded-lg shadow-lg text-sm font-semibold border border-gray-200">
+                        <i class="fas fa-bolt text-yellow-500 mr-1"></i> Automatyzacja działa
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Cloud -->
+    <section class="py-12 bg-white border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm text-gray-500 mb-8 font-semibold uppercase tracking-wide">
+                Zaufali nam liderzy rynku
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60 grayscale">
+                <div class="flex justify-center">
+                    <div class="text-2xl font-bold text-gray-400">TechCorp</div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="text-2xl font-bold text-gray-400">InnovateLab</div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="text-2xl font-bold text-gray-400">GrowthHub</div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="text-2xl font-bold text-gray-400">DataPro</div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="text-2xl font-bold text-gray-400">CloudNine</div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="text-2xl font-bold text-gray-400">DigitalEdge</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="funkcje" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-star"></i>
+                    <span>Wszystko czego potrzebujesz</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4">
+                    Funkcje, które
+                    <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">wyróżniają nas</span>
+                    na rynku
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Połączenie mocy ActiveCampaign, prostoty MailerLite i nowoczesności,
+                    której brakuje GetResponse
+                </p>
+            </div>
+
+            <!-- Main Features Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Feature 1 -->
+                <div class="group p-8 bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-magic text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Drag & Drop Builder</h3>
+                    <p class="text-gray-600 mb-4">
+                        Twórz piękne emaile bez znajomości kodu. Setki profesjonalnych szablonów,
+                        które możesz dostosować w minuty.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Responsywne szablony</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Personalizacja treści</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>A/B testing wbudowany</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="group p-8 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-14 h-14 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-robot text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Zaawansowana Automatyzacja</h3>
+                    <p class="text-gray-600 mb-4">
+                        Potężniejsza niż MailerLite, prostsza niż ActiveCampaign.
+                        Twórz scenariusze, które działają 24/7.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Wizualny workflow builder</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Scoring i segmentacja</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Triggery behawioralne</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="group p-8 bg-gradient-to-br from-green-50 to-white rounded-2xl border border-green-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Analityka w czasie rzeczywistym</h3>
+                    <p class="text-gray-600 mb-4">
+                        Śledź każdy klik, otwarcie i konwersję. Zaawansowane raporty,
+                        które pomogą optymalizować kampanie.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Heatmapy kliknięć</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>ROI tracking</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Eksport raportów</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="group p-8 bg-gradient-to-br from-yellow-50 to-white rounded-2xl border border-yellow-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-14 h-14 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Segmentacja Premium</h3>
+                    <p class="text-gray-600 mb-4">
+                        Twórz ultra-precyzyjne segmenty na podstawie zachowań,
+                        danych demograficznych i interakcji.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Nieskończone segmenty</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Dynamiczne listy</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Predykcyjna segmentacja AI</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="group p-8 bg-gradient-to-br from-red-50 to-white rounded-2xl border border-red-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-14 h-14 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-paper-plane text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Maksymalna dostarczalność</h3>
+                    <p class="text-gray-600 mb-4">
+                        98% dostarczalność dzięki dedykowanym IP,
+                        DKIM, SPF i zaawansowanej infrastrukturze.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Dedykowane IP (wyższe plany)</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Spam testing</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Lista supresyjna</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="group p-8 bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-plug text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">500+ Integracji</h3>
+                    <p class="text-gray-600 mb-4">
+                        Połącz Mailist z narzędziami, których używasz codziennie.
+                        Zapier, API i natywne integracje.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Shopify, WooCommerce</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>WordPress, Webflow</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>REST API & Webhooks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Comparison Table CTA -->
+            <div class="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl p-8 md:p-12 text-white text-center">
+                <h3 class="text-3xl font-bold mb-4">
+                    Dlaczego firmy przechodzą z konkurencji na Mailist?
+                </h3>
+                <p class="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
+                    Średnio nasze kampanie osiągają o 34% wyższy open rate i 52% wyższy CTR
+                    niż średnia w branży.
+                </p>
+                <a href="#cennik" class="inline-flex items-center bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200">
+                    Zobacz porównanie funkcji i cen
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automation Showcase -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left - Content -->
+                <div>
+                    <div class="inline-flex items-center space-x-2 bg-accent-100 text-accent-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        <i class="fas fa-bolt"></i>
+                        <span>Automatyzacja na sterydach</span>
+                    </div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                        Pracuj mądrzej, nie ciężej
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Nasze narzędzie automatyzacji łączy moc platformy enterprise
+                        z prostotą, której oczekujesz od nowoczesnego oprogramowania.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-bezier-curve text-primary-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Wizualny Workflow Builder</h4>
+                                <p class="text-gray-600">
+                                    Przeciągaj i upuszczaj elementy, aby stworzyć złożone scenariusze.
+                                    Bez programowania, bez stresu.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-brain text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">AI-Powered Recommendations</h4>
+                                <p class="text-gray-600">
+                                    Sztuczna inteligencja analizuje Twoje kampanie i sugeruje
+                                    najlepsze czasy wysyłki i treści.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-clock text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2">Zaoszczędź 15h tygodniowo</h4>
+                                <p class="text-gray-600">
+                                    Średnio nasi klienci oszczędzają 15 godzin tygodniowo
+                                    dzięki automatyzacji powtarzalnych zadań.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right - Visual -->
+                <div class="relative">
+                    <div class="bg-white rounded-2xl shadow-2xl p-6">
+                        <div class="space-y-4">
+                            <!-- Workflow visualization -->
+                            <div class="flex items-center justify-between p-4 bg-green-50 border-2 border-green-200 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-play text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold">Trigger: Nowy subscriber</div>
+                                        <div class="text-xs text-gray-500">Działa automatycznie</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-center">
+                                <div class="w-1 h-8 bg-gray-300"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold">Wyślij: Email powitalny</div>
+                                        <div class="text-xs text-gray-500">Natychmiast</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-center">
+                                <div class="w-1 h-8 bg-gray-300"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 bg-purple-50 border border-purple-200 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-hourglass-half text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold">Czekaj: 2 dni</div>
+                                        <div class="text-xs text-gray-500">Opóźnienie czasowe</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-center">
+                                <div class="w-1 h-8 bg-gray-300"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-random text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold">Warunek: Otworzył email?</div>
+                                        <div class="text-xs text-gray-500">Rozgałęzienie</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-3 bg-green-50 border border-green-200 rounded-lg text-center">
+                                    <div class="text-xs text-gray-600 mb-1">TAK</div>
+                                    <div class="text-sm font-semibold">Wyślij offer</div>
+                                </div>
+                                <div class="p-3 bg-red-50 border border-red-200 rounded-lg text-center">
+                                    <div class="text-xs text-gray-600 mb-1">NIE</div>
+                                    <div class="text-sm font-semibold">Wyślij reminder</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating stat -->
+                    <div class="absolute -top-4 -right-4 bg-gradient-to-r from-primary-600 to-accent-600 text-white px-6 py-3 rounded-lg shadow-xl">
+                        <div class="text-xs opacity-90">Konwersja</div>
+                        <div class="text-2xl font-bold">+127%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="cennik" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-tag"></i>
+                    <span>Przejrzyste ceny</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4">
+                    Ceny, które
+                    <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">mają sens</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Płać tylko za to, czego używasz. Bez ukrytych kosztów, bez niespodzianek.
+                </p>
+
+                <!-- Toggle (placeholder for annual/monthly) -->
+                <div class="inline-flex items-center bg-gray-100 rounded-lg p-1">
+                    <button class="px-6 py-2 bg-white rounded-md shadow-sm font-semibold text-gray-900">
+                        Miesięcznie
+                    </button>
+                    <button class="px-6 py-2 text-gray-600 font-semibold">
+                        Rocznie <span class="text-green-600 text-sm ml-1">(oszczędź 20%)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Starter Plan -->
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Starter</h3>
+                        <p class="text-gray-600">Dla małych firm i startupów</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex items-baseline">
+                            <span class="text-5xl font-bold">49</span>
+                            <span class="text-2xl font-bold text-gray-600">zł</span>
+                            <span class="text-gray-500 ml-2">/miesiąc</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">Do 1,000 subskrybentów</p>
+                    </div>
+
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>10,000 emaili/miesiąc</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Drag & drop builder</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Podstawowa automatyzacja</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Formularze subskrypcyjne</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Raporty podstawowe</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Wsparcie email</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-times mt-1 mr-3"></i>
+                            <span>A/B testing</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-times mt-1 mr-3"></i>
+                            <span>Zaawansowana segmentacja</span>
+                        </li>
+                    </ul>
+
+                    <a href="#start" class="block w-full text-center bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                        Rozpocznij za darmo
+                    </a>
+                </div>
+
+                <!-- Professional Plan (Popular) -->
+                <div class="bg-gradient-to-br from-primary-600 to-accent-600 rounded-2xl p-8 text-white relative transform scale-105 shadow-2xl">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">
+                        Najpopularniejszy
+                    </div>
+
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Professional</h3>
+                        <p class="opacity-90">Dla rosnących firm</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex items-baseline">
+                            <span class="text-5xl font-bold">149</span>
+                            <span class="text-2xl font-bold">zł</span>
+                            <span class="opacity-90 ml-2">/miesiąc</span>
+                        </div>
+                        <p class="text-sm opacity-80 mt-2">Do 10,000 subskrybentów</p>
+                    </div>
+
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check mt-1 mr-3"></i>
+                            <span>100,000 emaili/miesiąc</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mt-1 mr-3"></i>
+                            <span>Wszystko z planu Starter</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mt-1 mr-3"></i>
+                            <span>Zaawansowana automatyzacja</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mt-1 mr-3"></i>
+                            <span>A/B testing nielimitowany</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mt-1 mr-3"></i>
+                            <span>Zaawansowana segmentacja</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mt-1 mr-3"></i>
+                            <span>Scoring i tagging</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mt-1 mr-3"></i>
+                            <span>Priorytetowe wsparcie</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check mt-1 mr-3"></i>
+                            <span>Integracje premium</span>
+                        </li>
+                    </ul>
+
+                    <a href="#start" class="block w-full text-center bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">
+                        Wypróbuj 14 dni za darmo
+                    </a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                        <p class="text-gray-600">Dla korporacji</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex items-baseline">
+                            <span class="text-5xl font-bold">Indywidualnie</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">Powyżej 10,000 subskrybentów</p>
+                    </div>
+
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Nielimitowane wysyłki</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Wszystko z Professional</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Dedykowane IP</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Dedykowany opiekun</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>SLA 99.9%</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Zaawansowane API</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Onboarding & szkolenia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span>Custom integracje</span>
+                        </li>
+                    </ul>
+
+                    <a href="#kontakt" class="block w-full text-center border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
+                        Skontaktuj się
+                    </a>
+                </div>
+            </div>
+
+            <!-- Comparison Note -->
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center">
+                <p class="text-gray-700">
+                    <i class="fas fa-info-circle text-primary-600 mr-2"></i>
+                    <strong>Porównaj z konkurencją:</strong> ActiveCampaign od 135 zł (do 500 kontaktów) •
+                    GetResponse od 76 zł (do 1000 kontaktów) • MailerLite od 45 zł (do 1000 kontaktów)
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integracje" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-plug"></i>
+                    <span>Łatwe integracje</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4">
+                    Połącz się z ulubionymi
+                    <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">narzędziami</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ponad 500 gotowych integracji plus potężne API dla custom rozwiązań
+                </p>
+            </div>
+
+            <!-- Integration Categories -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-shopping-cart text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">E-commerce</h3>
+                    <p class="text-gray-600 text-sm mb-4">Shopify, WooCommerce, PrestaShop, Magento</p>
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 bg-green-500 rounded-full border-2 border-white"></div>
+                        <div class="w-8 h-8 bg-purple-500 rounded-full border-2 border-white"></div>
+                        <div class="w-8 h-8 bg-orange-500 rounded-full border-2 border-white"></div>
+                        <div class="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-xs">+12</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-code text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">CMS & Website</h3>
+                    <p class="text-gray-600 text-sm mb-4">WordPress, Webflow, Wix, Squarespace</p>
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 bg-blue-600 rounded-full border-2 border-white"></div>
+                        <div class="w-8 h-8 bg-teal-500 rounded-full border-2 border-white"></div>
+                        <div class="w-8 h-8 bg-black rounded-full border-2 border-white"></div>
+                        <div class="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-xs">+24</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-bar text-green-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Analytics</h3>
+                    <p class="text-gray-600 text-sm mb-4">Google Analytics, Mixpanel, Segment</p>
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 bg-yellow-500 rounded-full border-2 border-white"></div>
+                        <div class="w-8 h-8 bg-red-500 rounded-full border-2 border-white"></div>
+                        <div class="w-8 h-8 bg-green-600 rounded-full border-2 border-white"></div>
+                        <div class="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-xs">+8</div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-cog text-orange-600 text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Automation</h3>
+                    <p class="text-gray-600 text-sm mb-4">Zapier, Make, n8n, Integromat</p>
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 bg-orange-400 rounded-full border-2 border-white"></div>
+                        <div class="w-8 h-8 bg-purple-600 rounded-full border-2 border-white"></div>
+                        <div class="w-8 h-8 bg-blue-500 rounded-full border-2 border-white"></div>
+                        <div class="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-xs">+6</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- API Highlight -->
+            <div class="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 md:p-12 text-white">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4">Potężne API dla deweloperów</h3>
+                        <p class="text-gray-300 mb-6">
+                            RESTful API z pełną dokumentacją, webhooks, i SDK dla najpopularniejszych
+                            języków programowania.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">PHP</span>
+                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">Ruby</span>
+                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">Go</span>
+                        </div>
+                    </div>
+                    <div class="bg-gray-950 rounded-lg p-6 font-mono text-sm">
+                        <div class="text-green-400 mb-2">// Przykład użycia API</div>
+                        <div class="text-gray-400">const mailist = <span class="text-blue-400">require</span>(<span class="text-yellow-300">'mailist-sdk'</span>);</div>
+                        <div class="text-gray-400 mt-2">mailist.campaigns.<span class="text-purple-400">create</span>({</div>
+                        <div class="text-gray-400 ml-4">name: <span class="text-yellow-300">'Newsletter'</span>,</div>
+                        <div class="text-gray-400 ml-4">subject: <span class="text-yellow-300">'Najnowsze aktualności'</span></div>
+                        <div class="text-gray-400">});</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="opinie" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-heart"></i>
+                    <span>Kochają nas klienci</span>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4">
+                    Dołącz do
+                    <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">10,000+ zadowolonych firm</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Zobacz, co mówią o nas nasi klienci
+                </p>
+            </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Testimonial 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "Przeszliśmy z ActiveCampaign i natychmiast zauważyliśmy różnicę.
+                        Mailist jest prostszy, szybszy i kosztuje połowę ceny.
+                        Nasz open rate wzrósł o 34%!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white font-bold">
+                            AK
+                        </div>
+                        <div class="ml-3">
+                            <div class="font-bold">Anna Kowalska</div>
+                            <div class="text-sm text-gray-600">Marketing Manager, TechStart</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 border border-purple-100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "Automatyzacja w Mailist to magia. To co w GetResponse zajmowało mi
+                        godziny, teraz robię w 15 minut. ROI wzrósł 3-krotnie w ciągu 2 miesięcy."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white font-bold">
+                            MN
+                        </div>
+                        <div class="ml-3">
+                            <div class="font-bold">Michał Nowak</div>
+                            <div class="text-sm text-gray-600">CEO, GrowthLab</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-green-100">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        "Najlepsza kombinacja funkcjonalności i ceny na rynku.
+                        MailerLite był za prosty, ActiveCampaign za drogi.
+                        Mailist to idealny golden mean."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white font-bold">
+                            KW
+                        </div>
+                        <div class="ml-3">
+                            <div class="font-bold">Katarzyna Wiśniewska</div>
+                            <div class="text-sm text-gray-600">Founder, eShop Pro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">4.9/5</div>
+                    <div class="text-gray-600">Ocena klientów</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">10,000+</div>
+                    <div class="text-gray-600">Aktywnych firm</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">98%</div>
+                    <div class="text-gray-600">Zadowolonych klientów</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary-600 mb-2">24/7</div>
+                    <div class="text-gray-600">Wsparcie PL</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4">
+                    Często zadawane pytania
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Wszystko, co musisz wiedzieć o Mailist
+                </p>
+            </div>
+
+            <div class="space-y-4" x-data="{ openFaq: 1 }">
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-bold text-lg">Czy trial jest naprawdę darmowy?</span>
+                        <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 1 }"></i>
+                    </button>
+                    <div x-show="openFaq === 1" x-cloak class="px-6 pb-5">
+                        <p class="text-gray-600">
+                            Tak! 14-dniowy trial jest w pełni darmowy i nie wymaga karty kredytowej.
+                            Masz dostęp do wszystkich funkcji planu Professional. Po zakończeniu trialu
+                            możesz wybrać plan lub kontynuować z darmowym planem (do 500 subskrybentów).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-bold text-lg">Jak Mailist wypada na tle konkurencji?</span>
+                        <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 2 }"></i>
+                    </button>
+                    <div x-show="openFaq === 2" x-cloak class="px-6 pb-5">
+                        <p class="text-gray-600 mb-3">
+                            Mailist łączy najlepsze cechy konkurencji:
+                        </p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Automatyzacja na poziomie ActiveCampaign (ale prostsza)</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Cena konkurencyjna z MailerLite (ale więcej funkcji)</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Nowoczesny interfejs (czego brakuje GetResponse)</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Wsparcie w języku polskim 24/7</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-bold text-lg">Czy mogę zmienić plan w każdej chwili?</span>
+                        <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 3 }"></i>
+                    </button>
+                    <div x-show="openFaq === 3" x-cloak class="px-6 pb-5">
+                        <p class="text-gray-600">
+                            Tak! Możesz upgradować lub downgradować swój plan w dowolnym momencie.
+                            Przy upgradzie zapłacisz tylko różnicę proporcjonalnie do czasu.
+                            Przy downgradzie zwrócimy niewykorzystaną część jako credit na kolejne miesiące.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-bold text-lg">Jak wygląda proces migracji z innej platformy?</span>
+                        <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 4 }"></i>
+                    </button>
+                    <div x-show="openFaq === 4" x-cloak class="px-6 pb-5">
+                        <p class="text-gray-600">
+                            Migracja jest prosta i bezpłatna! Nasz zespół pomoże Ci przenieść:
+                            listy subskrybentów, szablony emaili, automatyzacje i tagi.
+                            Dla planów Professional i wyższych oferujemy dedykowaną pomoc migration specialist.
+                            Średni czas migracji to 24-48h.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button @click="openFaq = openFaq === 5 ? null : 5" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="font-bold text-lg">Jaka jest gwarancja dostarczalności?</span>
+                        <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 5 }"></i>
+                    </button>
+                    <div x-show="openFaq === 5" x-cloak class="px-6 pb-5">
+                        <p class="text-gray-600">
+                            Gwarantujemy 98% dostarczalności. Używamy najlepszej infrastruktury
+                            (Amazon SES, SendGrid), monitorujemy IP reputation w czasie rzeczywistym,
+                            i automatycznie zarządzamy DKIM, SPF, DMARC. Plany Enterprise otrzymują
+                            dedykowane IP dla maksymalnej kontroli.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="start" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-600 to-accent-600 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl lg:text-6xl font-bold mb-6">
+                Gotowy na wzrost?
+            </h2>
+            <p class="text-xl lg:text-2xl mb-8 opacity-90">
+                Dołącz do tysięcy firm, które rozwijają swój biznes z Mailist
+            </p>
+
+            <!-- Email signup form -->
+            <div class="max-w-md mx-auto mb-8">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <input type="email" placeholder="Twój email" class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-4 focus:ring-white/50">
+                    <button class="bg-white text-primary-600 px-8 py-4 rounded-lg font-bold hover:shadow-xl hover:scale-105 transition-all duration-200">
+                        Rozpocznij za darmo
+                    </button>
+                </div>
+                <p class="text-sm mt-4 opacity-80">
+                    <i class="fas fa-check mr-2"></i>
+                    14 dni za darmo • Bez karty kredytowej • Anuluj w każdej chwili
+                </p>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="flex flex-wrap justify-center gap-6 items-center opacity-80">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-shield-alt text-2xl"></i>
+                    <span>RODO compliant</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-lock text-2xl"></i>
+                    <span>SSL secured</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-check-circle text-2xl"></i>
+                    <span>ISO 27001</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-5 gap-8 mb-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-envelope text-white text-xl"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Mailist</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Nowoczesna platforma email marketingu dla rosnących firm.
+                        Potężna automatyzacja w intuicyjnym interfejsie.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Links -->
+                <div>
+                    <h3 class="text-white font-bold mb-4">Produkt</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#funkcje" class="hover:text-primary-400 transition-colors">Funkcje</a></li>
+                        <li><a href="#cennik" class="hover:text-primary-400 transition-colors">Cennik</a></li>
+                        <li><a href="#integracje" class="hover:text-primary-400 transition-colors">Integracje</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">API</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links -->
+                <div>
+                    <h3 class="text-white font-bold mb-4">Zasoby</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">Dokumentacja</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">Szkolenia</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">Case studies</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">Webinary</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div>
+                    <h3 class="text-white font-bold mb-4">Firma</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">O nas</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">Kariera</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">Kontakt</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">Partner program</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition-colors">Affiliate</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2025 Mailist. Wszystkie prawa zastrzeżone.
+                </p>
+                <div class="flex space-x-6 text-sm">
+                    <a href="#" class="text-gray-500 hover:text-primary-400 transition-colors">Polityka prywatności</a>
+                    <a href="#" class="text-gray-500 hover:text-primary-400 transition-colors">Warunki użytkowania</a>
+                    <a href="#" class="text-gray-500 hover:text-primary-400 transition-colors">RODO</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-primary-600 to-accent-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 flex items-center justify-center">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+</body>
+</html>
