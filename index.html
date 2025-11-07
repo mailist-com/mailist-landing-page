@@ -3,66 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mailist - nowoczesna platforma email marketingu. Potężna automatyzacja, intuicyjny interfejs i przystępne ceny. Rozwijaj swój biznes z najlepszym narzędziem do email marketingu.">
-    <meta name="keywords" content="email marketing, automatyzacja marketingu, newsletter, kampanie email, marketing automation">
-    <title>Mailist - Nowoczesny Email Marketing dla Rosnących Firm</title>
+    <meta name="description" content="Mailist - profesjonalna platforma email marketingu dla wymagających firm. Zaawansowana automatyzacja, precyzyjna segmentacja i gwarantowana dostarczalność 98%.">
+    <meta name="keywords" content="email marketing, marketing automation, B2B email platform, enterprise email marketing">
+    <title>Mailist - Enterprise Email Marketing Platform</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Alpine.js for interactivity -->
+    <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts - Professional -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
                     },
                     colors: {
                         primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#334e68',
+                            800: '#243b53',
+                            900: '#102a43',
+                        },
+                        navy: {
+                            50: '#f0f4f8',
+                            500: '#0f172a',
+                            600: '#0a1628',
+                            700: '#050d1a',
+                            800: '#020617',
+                            900: '#010409',
                         },
                         accent: {
-                            500: '#8b5cf6',
-                            600: '#7c3aed',
-                        }
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.6s ease-out',
-                        'fade-in': 'fadeIn 0.6s ease-out',
-                        'slide-in-right': 'slideInRight 0.6s ease-out',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideInRight: {
-                            '0%': { opacity: '0', transform: 'translateX(20px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                            500: '#3b82f6',
+                            600: '#2563eb',
                         }
                     }
                 }
@@ -72,1189 +58,1098 @@
 
     <style>
         [x-cloak] { display: none !important; }
+
+        body {
+            font-feature-settings: "kern" 1, "liga" 1;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
     </style>
 </head>
-<body class="font-sans antialiased bg-white text-gray-900">
+<body class="font-sans bg-white text-gray-900">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50" x-data="{ mobileMenuOpen: false }">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="#" class="flex items-center space-x-2">
-                        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-envelope text-white text-xl"></i>
-                        </div>
-                        <span class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">Mailist</span>
+                    <a href="#" class="flex items-center space-x-3">
+                        <svg class="w-9 h-9" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#1e40af"/>
+                            <path d="M12 14L20 20L28 14M12 26V14L20 20L28 14V26C28 26.5304 27.7893 27.0391 27.4142 27.4142C27.0391 27.7893 26.5304 28 26 28H14C13.4696 28 12.9609 27.7893 12.5858 27.4142C12.2107 27.0391 12 26.5304 12 26Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="text-2xl font-semibold text-navy-500">Mailist</span>
                     </a>
                 </div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#funkcje" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Funkcje</a>
-                    <a href="#cennik" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Cennik</a>
-                    <a href="#integracje" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Integracje</a>
-                    <a href="#opinie" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Opinie</a>
-                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Zasoby</a>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#platforma" class="text-gray-700 hover:text-navy-500 transition-colors text-[15px] font-medium">Platforma</a>
+                    <a href="#rozwiazania" class="text-gray-700 hover:text-navy-500 transition-colors text-[15px] font-medium">Rozwiązania</a>
+                    <a href="#cennik" class="text-gray-700 hover:text-navy-500 transition-colors text-[15px] font-medium">Cennik</a>
+                    <a href="#zasoby" class="text-gray-700 hover:text-navy-500 transition-colors text-[15px] font-medium">Zasoby</a>
+                    <a href="#klienci" class="text-gray-700 hover:text-navy-500 transition-colors text-[15px] font-medium">Klienci</a>
                 </div>
 
-                <!-- CTA Buttons -->
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="#" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Zaloguj się</a>
-                    <a href="#start" class="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200">
-                        Rozpocznij za darmo
+                <!-- CTA -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-navy-500 transition-colors text-[15px] font-medium">Zaloguj się</a>
+                    <a href="#demo" class="bg-navy-500 text-white px-6 py-2.5 text-[15px] font-medium hover:bg-navy-600 transition-colors">
+                        Umów demo
                     </a>
                 </div>
 
                 <!-- Mobile menu button -->
-                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div x-show="mobileMenuOpen" x-cloak class="md:hidden bg-white border-t">
-            <div class="px-4 pt-2 pb-4 space-y-3">
-                <a href="#funkcje" class="block py-2 text-gray-700 hover:text-primary-600">Funkcje</a>
-                <a href="#cennik" class="block py-2 text-gray-700 hover:text-primary-600">Cennik</a>
-                <a href="#integracje" class="block py-2 text-gray-700 hover:text-primary-600">Integracje</a>
-                <a href="#opinie" class="block py-2 text-gray-700 hover:text-primary-600">Opinie</a>
-                <a href="#" class="block py-2 text-gray-700 hover:text-primary-600">Zasoby</a>
-                <a href="#" class="block py-2 text-gray-700 hover:text-primary-600">Zaloguj się</a>
-                <a href="#start" class="block py-2 bg-gradient-to-r from-primary-600 to-accent-600 text-white text-center rounded-lg font-semibold">
-                    Rozpocznij za darmo
+        <div x-show="mobileMenuOpen" x-cloak class="lg:hidden bg-white border-t border-gray-200">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#platforma" class="block text-gray-700 hover:text-navy-500 py-2">Platforma</a>
+                <a href="#rozwiazania" class="block text-gray-700 hover:text-navy-500 py-2">Rozwiązania</a>
+                <a href="#cennik" class="block text-gray-700 hover:text-navy-500 py-2">Cennik</a>
+                <a href="#zasoby" class="block text-gray-700 hover:text-navy-500 py-2">Zasoby</a>
+                <a href="#klienci" class="block text-gray-700 hover:text-navy-500 py-2">Klienci</a>
+                <a href="#" class="block text-gray-700 hover:text-navy-500 py-2">Zaloguj się</a>
+                <a href="#demo" class="block bg-navy-500 text-white px-6 py-3 text-center font-medium hover:bg-navy-600 transition-colors">
+                    Umów demo
                 </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <section class="pt-32 pb-20 px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Column - Content -->
-                <div class="space-y-8 animate-fade-in-up">
-                    <div class="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold">
-                        <span class="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>
-                        <span>Zaufało nam już ponad 10,000 firm</span>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Column -->
+                <div class="space-y-8">
+                    <div class="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-2 text-sm font-medium border border-blue-100">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <span>Zaufanie ponad 10,000 firm B2B</span>
                     </div>
 
-                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
-                        Email marketing, który
-                        <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">napędza rozwój</span>
+                    <h1 class="text-5xl lg:text-6xl font-bold text-navy-500 leading-tight tracking-tight">
+                        Platforma email marketingu dla wymagających firm
                     </h1>
 
                     <p class="text-xl text-gray-600 leading-relaxed">
-                        Potężna automatyzacja marketingowa w intuicyjnym interfejsie.
-                        Twórz kampanie, które konwertują i buduj trwałe relacje z klientami.
+                        Zaawansowana automatyzacja, precyzyjna segmentacja i gwarantowana dostarczalność.
+                        Kompleksowe rozwiązanie dla profesjonalnych zespołów marketingowych.
                     </p>
 
-                    <!-- Key Stats -->
-                    <div class="grid grid-cols-3 gap-6 pt-4">
+                    <!-- Key Metrics -->
+                    <div class="grid grid-cols-3 gap-6 pt-4 pb-8 border-b border-gray-200">
                         <div>
-                            <div class="text-3xl font-bold text-primary-600">98%</div>
-                            <div class="text-sm text-gray-600">Dostarczalność</div>
+                            <div class="text-3xl font-bold text-navy-500 stat-number">98%</div>
+                            <div class="text-sm text-gray-600 mt-1">Dostarczalność</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold text-primary-600">4.5x</div>
-                            <div class="text-sm text-gray-600">Wyższy ROI</div>
+                            <div class="text-3xl font-bold text-navy-500 stat-number">15h</div>
+                            <div class="text-sm text-gray-600 mt-1">Oszczędność/tydz.</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold text-primary-600">24/7</div>
-                            <div class="text-sm text-gray-600">Wsparcie PL</div>
+                            <div class="text-3xl font-bold text-navy-500 stat-number">350%</div>
+                            <div class="text-sm text-gray-600 mt-1">Średni wzrost ROI</div>
                         </div>
                     </div>
 
                     <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <a href="#start" class="inline-flex items-center justify-center bg-gradient-to-r from-primary-600 to-accent-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200">
-                            Rozpocznij 14-dniowy trial
-                            <i class="fas fa-arrow-right ml-2"></i>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#demo" class="inline-flex items-center justify-center bg-navy-500 text-white px-8 py-4 font-semibold hover:bg-navy-600 transition-colors">
+                            Umów prezentację platformy
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
                         </a>
-                        <a href="#demo" class="inline-flex items-center justify-center border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg hover:border-primary-600 hover:text-primary-600 transition-all duration-200">
-                            <i class="fas fa-play-circle mr-2"></i>
-                            Zobacz demo
+                        <a href="#cennik" class="inline-flex items-center justify-center border-2 border-gray-300 text-gray-700 px-8 py-4 font-semibold hover:border-navy-500 hover:text-navy-500 transition-colors">
+                            Zobacz cennik
                         </a>
                     </div>
 
                     <p class="text-sm text-gray-500">
-                        <i class="fas fa-check text-green-500 mr-2"></i>
-                        Bez karty kredytowej • Pełny dostęp • Anuluj w każdej chwili
+                        Certyfikaty: ISO 27001 • SOC 2 Type II • GDPR Compliant
                     </p>
                 </div>
 
-                <!-- Right Column - Visual -->
-                <div class="relative animate-fade-in">
-                    <!-- Dashboard mockup -->
-                    <div class="relative bg-white rounded-2xl shadow-2xl p-6 border border-gray-200">
-                        <!-- Browser bar -->
-                        <div class="flex items-center space-x-2 mb-4">
-                            <div class="w-3 h-3 bg-red-400 rounded-full"></div>
-                            <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                            <div class="w-3 h-3 bg-green-400 rounded-full"></div>
-                        </div>
-
-                        <!-- Stats Cards -->
-                        <div class="grid grid-cols-2 gap-4 mb-4">
-                            <div class="bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl p-4 text-white">
-                                <div class="text-sm opacity-90 mb-1">Wysłane emaile</div>
-                                <div class="text-3xl font-bold">125,847</div>
-                                <div class="text-xs opacity-80 mt-2">
-                                    <i class="fas fa-arrow-up mr-1"></i> +24% vs. ub. miesiąc
-                                </div>
+                <!-- Right Column - Dashboard Preview -->
+                <div class="relative">
+                    <div class="relative bg-white border border-gray-200 shadow-2xl">
+                        <!-- Browser chrome -->
+                        <div class="bg-gray-50 px-4 py-3 border-b border-gray-200 flex items-center space-x-2">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                                <div class="w-3 h-3 rounded-full bg-gray-300"></div>
+                                <div class="w-3 h-3 rounded-full bg-gray-300"></div>
                             </div>
-                            <div class="bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl p-4 text-white">
-                                <div class="text-sm opacity-90 mb-1">Open Rate</div>
-                                <div class="text-3xl font-bold">42.5%</div>
-                                <div class="text-xs opacity-80 mt-2">
-                                    <i class="fas fa-arrow-up mr-1"></i> +8.3% vs. branża
-                                </div>
+                            <div class="flex-1 ml-4">
+                                <div class="bg-white border border-gray-200 px-3 py-1 text-xs text-gray-500">app.mailist.com/dashboard</div>
                             </div>
                         </div>
 
-                        <!-- Campaign List -->
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-check text-green-600"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold text-sm">Kampania powitalna</div>
-                                        <div class="text-xs text-gray-500">Wysłano: 2,847 • Open: 48%</div>
-                                    </div>
+                        <!-- Dashboard content -->
+                        <div class="p-6 space-y-4">
+                            <!-- Stats -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="border border-gray-200 p-4 bg-gray-50">
+                                    <div class="text-xs text-gray-600 mb-2 font-medium">Wysłane kampanie</div>
+                                    <div class="text-2xl font-bold text-navy-500 stat-number">847,291</div>
+                                    <div class="text-xs text-green-600 mt-2 font-medium">↑ 24% vs poprzedni miesiąc</div>
                                 </div>
-                                <i class="fas fa-chevron-right text-gray-400"></i>
+                                <div class="border border-gray-200 p-4 bg-gray-50">
+                                    <div class="text-xs text-gray-600 mb-2 font-medium">Średni Open Rate</div>
+                                    <div class="text-2xl font-bold text-navy-500 stat-number">42.8%</div>
+                                    <div class="text-xs text-green-600 mt-2 font-medium">↑ 8.3% vs średnia branżowa</div>
+                                </div>
                             </div>
 
-                            <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-paper-plane text-blue-600"></i>
+                            <!-- Campaign list -->
+                            <div class="space-y-2">
+                                <div class="border border-gray-200 p-3 flex items-center justify-between bg-white hover:bg-gray-50">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-green-100 border border-green-200 flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-medium text-gray-900">Q4 Product Launch</div>
+                                            <div class="text-xs text-gray-500">Wysłano: 12,847 • Delivered: 98.2%</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="font-semibold text-sm">Newsletter tygodniowy</div>
-                                        <div class="text-xs text-gray-500">Wysłano: 5,124 • Open: 39%</div>
-                                    </div>
+                                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
                                 </div>
-                                <i class="fas fa-chevron-right text-gray-400"></i>
-                            </div>
 
-                            <div class="flex items-center justify-between p-3 bg-primary-50 rounded-lg border border-primary-200">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center animate-pulse">
-                                        <i class="fas fa-robot text-white"></i>
+                                <div class="border border-gray-200 p-3 flex items-center justify-between bg-white hover:bg-gray-50">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-blue-100 border border-blue-200 flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-medium text-gray-900">Weekly Newsletter #47</div>
+                                            <div class="text-xs text-gray-500">Wysłano: 8,492 • Open Rate: 44.1%</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div class="font-semibold text-sm">Automatyzacja: Reaktywacja</div>
-                                        <div class="text-xs text-primary-600">W trakcie • 847 użytkowników</div>
-                                    </div>
+                                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
                                 </div>
-                                <i class="fas fa-chevron-right text-primary-400"></i>
+
+                                <div class="border border-blue-200 p-3 flex items-center justify-between bg-blue-50">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-blue-500 border border-blue-600 flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-medium text-gray-900">Automation: Lead Nurturing</div>
+                                            <div class="text-xs text-blue-700 font-medium">Aktywna • 1,247 kontaktów w sekwencji</div>
+                                        </div>
+                                    </div>
+                                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Floating elements -->
-                    <div class="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg text-sm font-semibold animate-bounce">
-                        <i class="fas fa-chart-line mr-1"></i> +32% konwersji
-                    </div>
-                    <div class="absolute -bottom-4 -left-4 bg-white px-4 py-2 rounded-lg shadow-lg text-sm font-semibold border border-gray-200">
-                        <i class="fas fa-bolt text-yellow-500 mr-1"></i> Automatyzacja działa
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-navy-500 text-white px-6 py-4 shadow-xl border border-navy-600">
+                        <div class="text-xs font-medium text-blue-200">Conversion Rate</div>
+                        <div class="text-3xl font-bold stat-number">8.4%</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Logo Cloud -->
-    <section class="py-12 bg-white border-y border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-sm text-gray-500 mb-8 font-semibold uppercase tracking-wide">
-                Zaufali nam liderzy rynku
+    <!-- Trusted by Section -->
+    <section class="py-16 px-6 lg:px-8 bg-gray-50 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <p class="text-center text-xs text-gray-500 mb-10 font-medium uppercase tracking-wider">
+                Zaufały nam wiodące firmy w Polsce i Europie
             </p>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60 grayscale">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 items-center">
                 <div class="flex justify-center">
-                    <div class="text-2xl font-bold text-gray-400">TechCorp</div>
+                    <div class="text-xl font-bold text-gray-400">TechCorp</div>
                 </div>
                 <div class="flex justify-center">
-                    <div class="text-2xl font-bold text-gray-400">InnovateLab</div>
+                    <div class="text-xl font-bold text-gray-400">DataSystems</div>
                 </div>
                 <div class="flex justify-center">
-                    <div class="text-2xl font-bold text-gray-400">GrowthHub</div>
+                    <div class="text-xl font-bold text-gray-400">InnoGroup</div>
                 </div>
                 <div class="flex justify-center">
-                    <div class="text-2xl font-bold text-gray-400">DataPro</div>
+                    <div class="text-xl font-bold text-gray-400">CloudFirst</div>
                 </div>
                 <div class="flex justify-center">
-                    <div class="text-2xl font-bold text-gray-400">CloudNine</div>
+                    <div class="text-xl font-bold text-gray-400">Enterprise+</div>
                 </div>
                 <div class="flex justify-center">
-                    <div class="text-2xl font-bold text-gray-400">DigitalEdge</div>
+                    <div class="text-xl font-bold text-gray-400">B2B Solutions</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="funkcje" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <!-- Platform Features -->
+    <section id="platforma" class="py-24 px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto">
             <!-- Section Header -->
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    <i class="fas fa-star"></i>
-                    <span>Wszystko czego potrzebujesz</span>
+            <div class="max-w-3xl mb-20">
+                <div class="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-2 text-sm font-medium border border-blue-100 mb-6">
+                    <span>Kompleksowa platforma</span>
                 </div>
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4">
-                    Funkcje, które
-                    <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">wyróżniają nas</span>
-                    na rynku
+                <h2 class="text-4xl lg:text-5xl font-bold text-navy-500 mb-6 leading-tight">
+                    Wszystkie narzędzia potrzebne do skutecznego email marketingu
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Połączenie mocy ActiveCampaign, prostoty MailerLite i nowoczesności,
-                    której brakuje GetResponse
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Profesjonalne rozwiązanie łączące moc enterprise-grade automatyzacji
+                    z intuicyjnym interfejsem i transparentnym modelem cenowym.
                 </p>
             </div>
 
-            <!-- Main Features Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="group p-8 bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-magic text-white text-2xl"></i>
+                <div class="border border-gray-200 p-8 bg-white hover:border-navy-500 transition-colors group">
+                    <div class="w-12 h-12 bg-navy-500 flex items-center justify-center mb-6 group-hover:bg-navy-600 transition-colors">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Drag & Drop Builder</h3>
-                    <p class="text-gray-600 mb-4">
-                        Twórz piękne emaile bez znajomości kodu. Setki profesjonalnych szablonów,
-                        które możesz dostosować w minuty.
+                    <h3 class="text-xl font-bold text-navy-500 mb-3">Zaawansowany Campaign Builder</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Profesjonalny edytor z możliwością pełnej personalizacji. Twórz responsywne
+                        kampanie z zaawansowanym testowaniem A/B/n.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-600">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Responsywne szablony</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Personalizacja treści</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>A/B testing wbudowany</li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Drag & drop interface z kodem HTML</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Multivariate testing (A/B/C/D/n)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Dynamic content blocks</span>
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="group p-8 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <div class="w-14 h-14 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-robot text-white text-2xl"></i>
+                <div class="border border-gray-200 p-8 bg-white hover:border-navy-500 transition-colors group">
+                    <div class="w-12 h-12 bg-navy-500 flex items-center justify-center mb-6 group-hover:bg-navy-600 transition-colors">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Zaawansowana Automatyzacja</h3>
-                    <p class="text-gray-600 mb-4">
-                        Potężniejsza niż MailerLite, prostsza niż ActiveCampaign.
-                        Twórz scenariusze, które działają 24/7.
+                    <h3 class="text-xl font-bold text-navy-500 mb-3">Marketing Automation</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Twórz złożone scenariusze automatyzacji z zaawansowaną logiką biznesową
+                        i integracją z CRM.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-600">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Wizualny workflow builder</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Scoring i segmentacja</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Triggery behawioralne</li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Visual workflow builder</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Behavioral triggers & conditions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Lead scoring & qualification</span>
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="group p-8 bg-gradient-to-br from-green-50 to-white rounded-2xl border border-green-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                <div class="border border-gray-200 p-8 bg-white hover:border-navy-500 transition-colors group">
+                    <div class="w-12 h-12 bg-navy-500 flex items-center justify-center mb-6 group-hover:bg-navy-600 transition-colors">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Analityka w czasie rzeczywistym</h3>
-                    <p class="text-gray-600 mb-4">
-                        Śledź każdy klik, otwarcie i konwersję. Zaawansowane raporty,
-                        które pomogą optymalizować kampanie.
+                    <h3 class="text-xl font-bold text-navy-500 mb-3">Advanced Analytics & Reporting</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Szczegółowa analityka w czasie rzeczywistym z możliwością eksportu
+                        i integracji z narzędziami BI.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-600">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Heatmapy kliknięć</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>ROI tracking</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Eksport raportów</li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Real-time engagement metrics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Revenue attribution & ROI tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Custom reports & dashboards</span>
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="group p-8 bg-gradient-to-br from-yellow-50 to-white rounded-2xl border border-yellow-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <div class="w-14 h-14 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-users text-white text-2xl"></i>
+                <div class="border border-gray-200 p-8 bg-white hover:border-navy-500 transition-colors group">
+                    <div class="w-12 h-12 bg-navy-500 flex items-center justify-center mb-6 group-hover:bg-navy-600 transition-colors">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Segmentacja Premium</h3>
-                    <p class="text-gray-600 mb-4">
-                        Twórz ultra-precyzyjne segmenty na podstawie zachowań,
-                        danych demograficznych i interakcji.
+                    <h3 class="text-xl font-bold text-navy-500 mb-3">Precyzyjna Segmentacja</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Twórz ultra-precyzyjne segmenty audiencji na podstawie danych demograficznych,
+                        behawioralnych i transakcyjnych.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-600">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Nieskończone segmenty</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Dynamiczne listy</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Predykcyjna segmentacja AI</li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Unlimited segments & tags</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Dynamic list building</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Predictive segmentation AI</span>
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Feature 5 -->
-                <div class="group p-8 bg-gradient-to-br from-red-50 to-white rounded-2xl border border-red-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <div class="w-14 h-14 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-paper-plane text-white text-2xl"></i>
+                <div class="border border-gray-200 p-8 bg-white hover:border-navy-500 transition-colors group">
+                    <div class="w-12 h-12 bg-navy-500 flex items-center justify-center mb-6 group-hover:bg-navy-600 transition-colors">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Maksymalna dostarczalność</h3>
-                    <p class="text-gray-600 mb-4">
-                        98% dostarczalność dzięki dedykowanym IP,
-                        DKIM, SPF i zaawansowanej infrastrukturze.
+                    <h3 class="text-xl font-bold text-navy-500 mb-3">Enterprise Deliverability</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Gwarantowana dostarczalność 98% dzięki dedykowanej infrastrukturze
+                        i zaawansowanemu zarządzaniu reputacją.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-600">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Dedykowane IP (wyższe plany)</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Spam testing</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Lista supresyjna</li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Dedicated IP addresses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>DKIM, SPF, DMARC authentication</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Spam testing & optimization</span>
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Feature 6 -->
-                <div class="group p-8 bg-gradient-to-br from-indigo-50 to-white rounded-2xl border border-indigo-100 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-plug text-white text-2xl"></i>
+                <div class="border border-gray-200 p-8 bg-white hover:border-navy-500 transition-colors group">
+                    <div class="w-12 h-12 bg-navy-500 flex items-center justify-center mb-6 group-hover:bg-navy-600 transition-colors">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/>
+                        </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">500+ Integracji</h3>
-                    <p class="text-gray-600 mb-4">
-                        Połącz Mailist z narzędziami, których używasz codziennie.
-                        Zapier, API i natywne integracje.
+                    <h3 class="text-xl font-bold text-navy-500 mb-3">API & Integrations</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Pełna integracja z ekosystemem Twojej firmy poprzez REST API,
+                        webhooks i natywne konektory.
                     </p>
                     <ul class="space-y-2 text-sm text-gray-600">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>Shopify, WooCommerce</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>WordPress, Webflow</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i>REST API & Webhooks</li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>RESTful API with SDKs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>500+ native integrations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 text-green-600 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Webhooks & event streaming</span>
+                        </li>
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Comparison Table CTA -->
-            <div class="bg-gradient-to-r from-primary-600 to-accent-600 rounded-2xl p-8 md:p-12 text-white text-center">
-                <h3 class="text-3xl font-bold mb-4">
-                    Dlaczego firmy przechodzą z konkurencji na Mailist?
-                </h3>
-                <p class="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
-                    Średnio nasze kampanie osiągają o 34% wyższy open rate i 52% wyższy CTR
-                    niż średnia w branży.
+    <!-- Comparison Section -->
+    <section class="py-24 px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-navy-500 mb-6">
+                    Dlaczego firmy wybierają Mailist zamiast konkurencji
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Porównanie kluczowych funkcjonalności i wartości dla biznesu
                 </p>
-                <a href="#cennik" class="inline-flex items-center bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-200">
-                    Zobacz porównanie funkcji i cen
-                    <i class="fas fa-arrow-right ml-2"></i>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="bg-white border border-gray-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-gray-50 border-b border-gray-200">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">Funkcjonalność</th>
+                                <th class="px-6 py-4 text-center text-sm font-semibold text-navy-500">Mailist</th>
+                                <th class="px-6 py-4 text-center text-sm font-medium text-gray-600">ActiveCampaign</th>
+                                <th class="px-6 py-4 text-center text-sm font-medium text-gray-600">MailerLite</th>
+                                <th class="px-6 py-4 text-center text-sm font-medium text-gray-600">GetResponse</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 text-sm text-gray-900">Cena (1,000 kontaktów)</td>
+                                <td class="px-6 py-4 text-center text-sm font-semibold text-navy-500">49 zł</td>
+                                <td class="px-6 py-4 text-center text-sm text-gray-600">135 zł</td>
+                                <td class="px-6 py-4 text-center text-sm text-gray-600">45 zł</td>
+                                <td class="px-6 py-4 text-center text-sm text-gray-600">76 zł</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 text-sm text-gray-900">Dostarczalność</td>
+                                <td class="px-6 py-4 text-center text-sm font-semibold text-navy-500">98%</td>
+                                <td class="px-6 py-4 text-center text-sm text-gray-600">97%</td>
+                                <td class="px-6 py-4 text-center text-sm text-gray-600">96%</td>
+                                <td class="px-6 py-4 text-center text-sm text-gray-600">97%</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-sm text-gray-900">Zaawansowana automatyzacja</td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-green-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-green-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-gray-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-gray-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 text-sm text-gray-900">Intuicyjny interfejs</td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-green-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-gray-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-green-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-gray-400 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 text-sm text-gray-900">Wsparcie 24/7 PL</td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-green-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 text-sm text-gray-900">Dedykowane IP (Enterprise)</td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-green-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-green-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-red-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                                <td class="px-6 py-4 text-center">
+                                    <svg class="w-5 h-5 text-green-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#cennik" class="inline-flex items-center bg-navy-500 text-white px-8 py-4 font-semibold hover:bg-navy-600 transition-colors">
+                    Zobacz szczegółowy cennik
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Automation Showcase -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left - Content -->
-                <div>
-                    <div class="inline-flex items-center space-x-2 bg-accent-100 text-accent-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                        <i class="fas fa-bolt"></i>
-                        <span>Automatyzacja na sterydach</span>
-                    </div>
-                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
-                        Pracuj mądrzej, nie ciężej
-                    </h2>
-                    <p class="text-xl text-gray-600 mb-8">
-                        Nasze narzędzie automatyzacji łączy moc platformy enterprise
-                        z prostotą, której oczekujesz od nowoczesnego oprogramowania.
-                    </p>
-
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-bezier-curve text-primary-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg mb-2">Wizualny Workflow Builder</h4>
-                                <p class="text-gray-600">
-                                    Przeciągaj i upuszczaj elementy, aby stworzyć złożone scenariusze.
-                                    Bez programowania, bez stresu.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-brain text-green-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg mb-2">AI-Powered Recommendations</h4>
-                                <p class="text-gray-600">
-                                    Sztuczna inteligencja analizuje Twoje kampanie i sugeruje
-                                    najlepsze czasy wysyłki i treści.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-clock text-purple-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg mb-2">Zaoszczędź 15h tygodniowo</h4>
-                                <p class="text-gray-600">
-                                    Średnio nasi klienci oszczędzają 15 godzin tygodniowo
-                                    dzięki automatyzacji powtarzalnych zadań.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right - Visual -->
-                <div class="relative">
-                    <div class="bg-white rounded-2xl shadow-2xl p-6">
-                        <div class="space-y-4">
-                            <!-- Workflow visualization -->
-                            <div class="flex items-center justify-between p-4 bg-green-50 border-2 border-green-200 rounded-lg">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-play text-white"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold">Trigger: Nowy subscriber</div>
-                                        <div class="text-xs text-gray-500">Działa automatycznie</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-center">
-                                <div class="w-1 h-8 bg-gray-300"></div>
-                            </div>
-
-                            <div class="flex items-center justify-between p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-envelope text-white"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold">Wyślij: Email powitalny</div>
-                                        <div class="text-xs text-gray-500">Natychmiast</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-center">
-                                <div class="w-1 h-8 bg-gray-300"></div>
-                            </div>
-
-                            <div class="flex items-center justify-between p-4 bg-purple-50 border border-purple-200 rounded-lg">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-hourglass-half text-white"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold">Czekaj: 2 dni</div>
-                                        <div class="text-xs text-gray-500">Opóźnienie czasowe</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex justify-center">
-                                <div class="w-1 h-8 bg-gray-300"></div>
-                            </div>
-
-                            <div class="flex items-center justify-between p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center">
-                                        <i class="fas fa-random text-white"></i>
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold">Warunek: Otworzył email?</div>
-                                        <div class="text-xs text-gray-500">Rozgałęzienie</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="p-3 bg-green-50 border border-green-200 rounded-lg text-center">
-                                    <div class="text-xs text-gray-600 mb-1">TAK</div>
-                                    <div class="text-sm font-semibold">Wyślij offer</div>
-                                </div>
-                                <div class="p-3 bg-red-50 border border-red-200 rounded-lg text-center">
-                                    <div class="text-xs text-gray-600 mb-1">NIE</div>
-                                    <div class="text-sm font-semibold">Wyślij reminder</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Floating stat -->
-                    <div class="absolute -top-4 -right-4 bg-gradient-to-r from-primary-600 to-accent-600 text-white px-6 py-3 rounded-lg shadow-xl">
-                        <div class="text-xs opacity-90">Konwersja</div>
-                        <div class="text-2xl font-bold">+127%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Pricing Section -->
-    <section id="cennik" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="cennik" class="py-24 px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto">
-            <!-- Section Header -->
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    <i class="fas fa-tag"></i>
-                    <span>Przejrzyste ceny</span>
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <div class="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-2 text-sm font-medium border border-blue-100 mb-6">
+                    <span>Transparentny model cenowy</span>
                 </div>
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4">
-                    Ceny, które
-                    <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">mają sens</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-navy-500 mb-6">
+                    Wybierz plan dopasowany do Twoich potrzeb
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                    Płać tylko za to, czego używasz. Bez ukrytych kosztów, bez niespodzianek.
+                <p class="text-xl text-gray-600">
+                    Bez ukrytych kosztów. Bez długoterminowych zobowiązań. Anuluj w dowolnym momencie.
                 </p>
-
-                <!-- Toggle (placeholder for annual/monthly) -->
-                <div class="inline-flex items-center bg-gray-100 rounded-lg p-1">
-                    <button class="px-6 py-2 bg-white rounded-md shadow-sm font-semibold text-gray-900">
-                        Miesięcznie
-                    </button>
-                    <button class="px-6 py-2 text-gray-600 font-semibold">
-                        Rocznie <span class="text-green-600 text-sm ml-1">(oszczędź 20%)</span>
-                    </button>
-                </div>
             </div>
 
             <!-- Pricing Cards -->
             <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <!-- Starter Plan -->
-                <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
-                    <div class="mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Starter</h3>
-                        <p class="text-gray-600">Dla małych firm i startupów</p>
+                <!-- Professional Plan -->
+                <div class="border-2 border-gray-200 bg-white p-8 hover:border-navy-500 transition-colors">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-navy-500 mb-2">Professional</h3>
+                        <p class="text-gray-600">Dla rosnących zespołów marketingowych</p>
                     </div>
 
-                    <div class="mb-6">
-                        <div class="flex items-baseline">
-                            <span class="text-5xl font-bold">49</span>
-                            <span class="text-2xl font-bold text-gray-600">zł</span>
+                    <div class="mb-8">
+                        <div class="flex items-baseline mb-2">
+                            <span class="text-5xl font-bold text-navy-500 stat-number">149</span>
+                            <span class="text-xl font-bold text-gray-600 ml-1">zł</span>
                             <span class="text-gray-500 ml-2">/miesiąc</span>
                         </div>
-                        <p class="text-sm text-gray-500 mt-2">Do 1,000 subskrybentów</p>
+                        <p class="text-sm text-gray-600">Do 10,000 kontaktów</p>
                     </div>
 
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>10,000 emaili/miesiąc</span>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">100,000 emaili miesięcznie</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Drag & drop builder</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Zaawansowana automatyzacja</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Podstawowa automatyzacja</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">A/B testing (unlimited)</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Formularze subskrypcyjne</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Advanced reporting</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Raporty podstawowe</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Priority support</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Wsparcie email</span>
-                        </li>
-                        <li class="flex items-start text-gray-400">
-                            <i class="fas fa-times mt-1 mr-3"></i>
-                            <span>A/B testing</span>
-                        </li>
-                        <li class="flex items-start text-gray-400">
-                            <i class="fas fa-times mt-1 mr-3"></i>
-                            <span>Zaawansowana segmentacja</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">API access</span>
                         </li>
                     </ul>
 
-                    <a href="#start" class="block w-full text-center bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
-                        Rozpocznij za darmo
+                    <a href="#demo" class="block w-full text-center border-2 border-navy-500 text-navy-500 px-6 py-3 font-semibold hover:bg-navy-500 hover:text-white transition-colors">
+                        Rozpocznij trial 14 dni
                     </a>
                 </div>
 
-                <!-- Professional Plan (Popular) -->
-                <div class="bg-gradient-to-br from-primary-600 to-accent-600 rounded-2xl p-8 text-white relative transform scale-105 shadow-2xl">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">
-                        Najpopularniejszy
+                <!-- Business Plan (Recommended) -->
+                <div class="border-2 border-navy-500 bg-navy-500 text-white p-8 relative transform scale-105 shadow-xl">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white px-4 py-1 text-sm font-semibold">
+                        Polecany
                     </div>
 
-                    <div class="mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Professional</h3>
-                        <p class="opacity-90">Dla rosnących firm</p>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-2">Business</h3>
+                        <p class="text-blue-100">Dla zaawansowanych zespołów</p>
                     </div>
 
-                    <div class="mb-6">
-                        <div class="flex items-baseline">
-                            <span class="text-5xl font-bold">149</span>
-                            <span class="text-2xl font-bold">zł</span>
-                            <span class="opacity-90 ml-2">/miesiąc</span>
+                    <div class="mb-8">
+                        <div class="flex items-baseline mb-2">
+                            <span class="text-5xl font-bold stat-number">399</span>
+                            <span class="text-xl font-bold ml-1">zł</span>
+                            <span class="text-blue-100 ml-2">/miesiąc</span>
                         </div>
-                        <p class="text-sm opacity-80 mt-2">Do 10,000 subskrybentów</p>
+                        <p class="text-sm text-blue-100">Do 50,000 kontaktów</p>
                     </div>
 
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <i class="fas fa-check mt-1 mr-3"></i>
-                            <span>100,000 emaili/miesiąc</span>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>500,000 emaili miesięcznie</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check mt-1 mr-3"></i>
-                            <span>Wszystko z planu Starter</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Wszystko z Professional</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check mt-1 mr-3"></i>
-                            <span>Zaawansowana automatyzacja</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Predictive AI features</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check mt-1 mr-3"></i>
-                            <span>A/B testing nielimitowany</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Custom reporting & dashboards</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check mt-1 mr-3"></i>
-                            <span>Zaawansowana segmentacja</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Dedicated account manager</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check mt-1 mr-3"></i>
-                            <span>Scoring i tagging</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check mt-1 mr-3"></i>
-                            <span>Priorytetowe wsparcie</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check mt-1 mr-3"></i>
-                            <span>Integracje premium</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>99.5% SLA</span>
                         </li>
                     </ul>
 
-                    <a href="#start" class="block w-full text-center bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-shadow">
-                        Wypróbuj 14 dni za darmo
+                    <a href="#demo" class="block w-full text-center bg-white text-navy-500 px-6 py-3 font-semibold hover:bg-blue-50 transition-colors">
+                        Rozpocznij trial 14 dni
                     </a>
                 </div>
 
                 <!-- Enterprise Plan -->
-                <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
-                    <div class="mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
-                        <p class="text-gray-600">Dla korporacji</p>
+                <div class="border-2 border-gray-200 bg-white p-8 hover:border-navy-500 transition-colors">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold text-navy-500 mb-2">Enterprise</h3>
+                        <p class="text-gray-600">Dla korporacji i dużych organizacji</p>
                     </div>
 
-                    <div class="mb-6">
-                        <div class="flex items-baseline">
-                            <span class="text-5xl font-bold">Indywidualnie</span>
+                    <div class="mb-8">
+                        <div class="flex items-baseline mb-2">
+                            <span class="text-3xl font-bold text-navy-500">Indywidualnie</span>
                         </div>
-                        <p class="text-sm text-gray-500 mt-2">Powyżej 10,000 subskrybentów</p>
+                        <p class="text-sm text-gray-600">Powyżej 50,000 kontaktów</p>
                     </div>
 
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Nielimitowane wysyłki</span>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Unlimited emails</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Wszystko z Professional</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Wszystko z Business</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Dedykowane IP</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Dedicated IP addresses</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Dedykowany opiekun</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Custom integrations</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>SLA 99.9%</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">Training & onboarding</span>
                         </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Zaawansowane API</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Onboarding & szkolenia</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span>Custom integracje</span>
+                        <li class="flex items-start text-sm">
+                            <svg class="w-5 h-5 text-green-600 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-700">99.9% SLA</span>
                         </li>
                     </ul>
 
-                    <a href="#kontakt" class="block w-full text-center border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
+                    <a href="#kontakt" class="block w-full text-center border-2 border-navy-500 text-navy-500 px-6 py-3 font-semibold hover:bg-navy-500 hover:text-white transition-colors">
                         Skontaktuj się
                     </a>
                 </div>
             </div>
 
-            <!-- Comparison Note -->
-            <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center">
-                <p class="text-gray-700">
-                    <i class="fas fa-info-circle text-primary-600 mr-2"></i>
-                    <strong>Porównaj z konkurencją:</strong> ActiveCampaign od 135 zł (do 500 kontaktów) •
-                    GetResponse od 76 zł (do 1000 kontaktów) • MailerLite od 45 zł (do 1000 kontaktów)
+            <!-- Additional Info -->
+            <div class="bg-gray-50 border border-gray-200 p-6 text-center">
+                <p class="text-gray-700 text-sm">
+                    <strong class="text-navy-500">Wszystkie plany zawierają:</strong> GDPR compliance • SSL encryption • Backup & restore • Migration assistance • Regular updates
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Integrations Section -->
-    <section id="integracje" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    <i class="fas fa-plug"></i>
-                    <span>Łatwe integracje</span>
-                </div>
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4">
-                    Połącz się z ulubionymi
-                    <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">narzędziami</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Ponad 500 gotowych integracji plus potężne API dla custom rozwiązań
-                </p>
-            </div>
-
-            <!-- Integration Categories -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                <div class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-shopping-cart text-blue-600 text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">E-commerce</h3>
-                    <p class="text-gray-600 text-sm mb-4">Shopify, WooCommerce, PrestaShop, Magento</p>
-                    <div class="flex -space-x-2">
-                        <div class="w-8 h-8 bg-green-500 rounded-full border-2 border-white"></div>
-                        <div class="w-8 h-8 bg-purple-500 rounded-full border-2 border-white"></div>
-                        <div class="w-8 h-8 bg-orange-500 rounded-full border-2 border-white"></div>
-                        <div class="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-xs">+12</div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-code text-purple-600 text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">CMS & Website</h3>
-                    <p class="text-gray-600 text-sm mb-4">WordPress, Webflow, Wix, Squarespace</p>
-                    <div class="flex -space-x-2">
-                        <div class="w-8 h-8 bg-blue-600 rounded-full border-2 border-white"></div>
-                        <div class="w-8 h-8 bg-teal-500 rounded-full border-2 border-white"></div>
-                        <div class="w-8 h-8 bg-black rounded-full border-2 border-white"></div>
-                        <div class="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-xs">+24</div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-chart-bar text-green-600 text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Analytics</h3>
-                    <p class="text-gray-600 text-sm mb-4">Google Analytics, Mixpanel, Segment</p>
-                    <div class="flex -space-x-2">
-                        <div class="w-8 h-8 bg-yellow-500 rounded-full border-2 border-white"></div>
-                        <div class="w-8 h-8 bg-red-500 rounded-full border-2 border-white"></div>
-                        <div class="w-8 h-8 bg-green-600 rounded-full border-2 border-white"></div>
-                        <div class="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-xs">+8</div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                        <i class="fas fa-cog text-orange-600 text-xl"></i>
-                    </div>
-                    <h3 class="font-bold text-lg mb-2">Automation</h3>
-                    <p class="text-gray-600 text-sm mb-4">Zapier, Make, n8n, Integromat</p>
-                    <div class="flex -space-x-2">
-                        <div class="w-8 h-8 bg-orange-400 rounded-full border-2 border-white"></div>
-                        <div class="w-8 h-8 bg-purple-600 rounded-full border-2 border-white"></div>
-                        <div class="w-8 h-8 bg-blue-500 rounded-full border-2 border-white"></div>
-                        <div class="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-xs">+6</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- API Highlight -->
-            <div class="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 md:p-12 text-white">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h3 class="text-3xl font-bold mb-4">Potężne API dla deweloperów</h3>
-                        <p class="text-gray-300 mb-6">
-                            RESTful API z pełną dokumentacją, webhooks, i SDK dla najpopularniejszych
-                            języków programowania.
-                        </p>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">Python</span>
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">JavaScript</span>
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">PHP</span>
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">Ruby</span>
-                            <span class="px-3 py-1 bg-white/10 rounded-full text-sm">Go</span>
-                        </div>
-                    </div>
-                    <div class="bg-gray-950 rounded-lg p-6 font-mono text-sm">
-                        <div class="text-green-400 mb-2">// Przykład użycia API</div>
-                        <div class="text-gray-400">const mailist = <span class="text-blue-400">require</span>(<span class="text-yellow-300">'mailist-sdk'</span>);</div>
-                        <div class="text-gray-400 mt-2">mailist.campaigns.<span class="text-purple-400">create</span>({</div>
-                        <div class="text-gray-400 ml-4">name: <span class="text-yellow-300">'Newsletter'</span>,</div>
-                        <div class="text-gray-400 ml-4">subject: <span class="text-yellow-300">'Najnowsze aktualności'</span></div>
-                        <div class="text-gray-400">});</div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="opinie" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="klienci" class="py-24 px-6 lg:px-8 bg-gray-50">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    <i class="fas fa-heart"></i>
-                    <span>Kochają nas klienci</span>
-                </div>
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4">
-                    Dołącz do
-                    <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">10,000+ zadowolonych firm</span>
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-navy-500 mb-6">
+                    Zaufali nam liderzy rynku
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Zobacz, co mówią o nas nasi klienci
+                <p class="text-xl text-gray-600">
+                    Zobacz, jak firmy wykorzystują Mailist do rozwoju biznesu
                 </p>
             </div>
 
             <!-- Testimonials Grid -->
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
                 <!-- Testimonial 1 -->
-                <div class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                <div class="bg-white border border-gray-200 p-8">
+                    <div class="flex text-yellow-500 mb-4">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
                     </div>
                     <p class="text-gray-700 mb-6 leading-relaxed">
-                        "Przeszliśmy z ActiveCampaign i natychmiast zauważyliśmy różnicę.
-                        Mailist jest prostszy, szybszy i kosztuje połowę ceny.
-                        Nasz open rate wzrósł o 34%!"
+                        "Migracja z ActiveCampaign była bezbolesna. Zaoszczędziliśmy 60% kosztów
+                        przy zachowaniu tej samej funkcjonalności. Open rate wzrósł o 31%."
                     </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white font-bold">
-                            AK
-                        </div>
-                        <div class="ml-3">
-                            <div class="font-bold">Anna Kowalska</div>
-                            <div class="text-sm text-gray-600">Marketing Manager, TechStart</div>
-                        </div>
+                    <div class="border-t border-gray-200 pt-6">
+                        <div class="font-semibold text-navy-500">Anna Kowalska</div>
+                        <div class="text-sm text-gray-600">Marketing Director, TechVentures</div>
                     </div>
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 border border-purple-100">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                <div class="bg-white border border-gray-200 p-8">
+                    <div class="flex text-yellow-500 mb-4">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
                     </div>
                     <p class="text-gray-700 mb-6 leading-relaxed">
-                        "Automatyzacja w Mailist to magia. To co w GetResponse zajmowało mi
-                        godziny, teraz robię w 15 minut. ROI wzrósł 3-krotnie w ciągu 2 miesięcy."
+                        "Automatyzacja w Mailist jest potężna ale intuicyjna. Wdrożyliśmy
+                        zaawansowane scenariusze lead nurturing w 2 tygodnie. ROI wzrósł o 420%."
                     </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white font-bold">
-                            MN
-                        </div>
-                        <div class="ml-3">
-                            <div class="font-bold">Michał Nowak</div>
-                            <div class="text-sm text-gray-600">CEO, GrowthLab</div>
-                        </div>
+                    <div class="border-t border-gray-200 pt-6">
+                        <div class="font-semibold text-navy-500">Michał Nowak</div>
+                        <div class="text-sm text-gray-600">Head of Growth, ScaleUp Pro</div>
                     </div>
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-green-100">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-yellow-400">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
+                <div class="bg-white border border-gray-200 p-8">
+                    <div class="flex text-yellow-500 mb-4">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
                     </div>
                     <p class="text-gray-700 mb-6 leading-relaxed">
-                        "Najlepsza kombinacja funkcjonalności i ceny na rynku.
-                        MailerLite był za prosty, ActiveCampaign za drogi.
-                        Mailist to idealny golden mean."
+                        "Najlepsza decyzja w 2024. Wsparcie techniczne jest wyjątkowe - zawsze
+                        otrzymuję odpowiedź w ciągu 30 minut. Dostarczalność rzeczywiście wynosi 98%."
                     </p>
-                    <div class="flex items-center">
-                        <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white font-bold">
-                            KW
-                        </div>
-                        <div class="ml-3">
-                            <div class="font-bold">Katarzyna Wiśniewska</div>
-                            <div class="text-sm text-gray-600">Founder, eShop Pro</div>
-                        </div>
+                    <div class="border-t border-gray-200 pt-6">
+                        <div class="font-semibold text-navy-500">Katarzyna Wiśniewska</div>
+                        <div class="text-sm text-gray-600">CMO, Enterprise Solutions Ltd</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Stats Row -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-12">
                 <div class="text-center">
-                    <div class="text-4xl font-bold text-primary-600 mb-2">4.9/5</div>
-                    <div class="text-gray-600">Ocena klientów</div>
+                    <div class="text-4xl font-bold text-navy-500 mb-2 stat-number">10,000+</div>
+                    <div class="text-sm text-gray-600">Aktywnych firm</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl font-bold text-primary-600 mb-2">10,000+</div>
-                    <div class="text-gray-600">Aktywnych firm</div>
+                    <div class="text-4xl font-bold text-navy-500 mb-2 stat-number">4.9/5</div>
+                    <div class="text-sm text-gray-600">Średnia ocena</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl font-bold text-primary-600 mb-2">98%</div>
-                    <div class="text-gray-600">Zadowolonych klientów</div>
+                    <div class="text-4xl font-bold text-navy-500 mb-2 stat-number">98%</div>
+                    <div class="text-sm text-gray-600">Customer retention</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl font-bold text-primary-600 mb-2">24/7</div>
-                    <div class="text-gray-600">Wsparcie PL</div>
+                    <div class="text-4xl font-bold text-navy-500 mb-2 stat-number">24/7</div>
+                    <div class="text-sm text-gray-600">Wsparcie techniczne</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4">
-                    Często zadawane pytania
-                </h2>
-                <p class="text-xl text-gray-600">
-                    Wszystko, co musisz wiedzieć o Mailist
-                </p>
-            </div>
-
-            <div class="space-y-4" x-data="{ openFaq: 1 }">
-                <!-- FAQ 1 -->
-                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
-                    <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                        <span class="font-bold text-lg">Czy trial jest naprawdę darmowy?</span>
-                        <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 1 }"></i>
-                    </button>
-                    <div x-show="openFaq === 1" x-cloak class="px-6 pb-5">
-                        <p class="text-gray-600">
-                            Tak! 14-dniowy trial jest w pełni darmowy i nie wymaga karty kredytowej.
-                            Masz dostęp do wszystkich funkcji planu Professional. Po zakończeniu trialu
-                            możesz wybrać plan lub kontynuować z darmowym planem (do 500 subskrybentów).
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ 2 -->
-                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
-                    <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                        <span class="font-bold text-lg">Jak Mailist wypada na tle konkurencji?</span>
-                        <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 2 }"></i>
-                    </button>
-                    <div x-show="openFaq === 2" x-cloak class="px-6 pb-5">
-                        <p class="text-gray-600 mb-3">
-                            Mailist łączy najlepsze cechy konkurencji:
-                        </p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Automatyzacja na poziomie ActiveCampaign (ale prostsza)</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Cena konkurencyjna z MailerLite (ale więcej funkcji)</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Nowoczesny interfejs (czego brakuje GetResponse)</li>
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Wsparcie w języku polskim 24/7</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
-                    <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                        <span class="font-bold text-lg">Czy mogę zmienić plan w każdej chwili?</span>
-                        <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 3 }"></i>
-                    </button>
-                    <div x-show="openFaq === 3" x-cloak class="px-6 pb-5">
-                        <p class="text-gray-600">
-                            Tak! Możesz upgradować lub downgradować swój plan w dowolnym momencie.
-                            Przy upgradzie zapłacisz tylko różnicę proporcjonalnie do czasu.
-                            Przy downgradzie zwrócimy niewykorzystaną część jako credit na kolejne miesiące.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
-                    <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                        <span class="font-bold text-lg">Jak wygląda proces migracji z innej platformy?</span>
-                        <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 4 }"></i>
-                    </button>
-                    <div x-show="openFaq === 4" x-cloak class="px-6 pb-5">
-                        <p class="text-gray-600">
-                            Migracja jest prosta i bezpłatna! Nasz zespół pomoże Ci przenieść:
-                            listy subskrybentów, szablony emaili, automatyzacje i tagi.
-                            Dla planów Professional i wyższych oferujemy dedykowaną pomoc migration specialist.
-                            Średni czas migracji to 24-48h.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- FAQ 5 -->
-                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
-                    <button @click="openFaq = openFaq === 5 ? null : 5" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
-                        <span class="font-bold text-lg">Jaka jest gwarancja dostarczalności?</span>
-                        <i class="fas fa-chevron-down transition-transform" :class="{ 'rotate-180': openFaq === 5 }"></i>
-                    </button>
-                    <div x-show="openFaq === 5" x-cloak class="px-6 pb-5">
-                        <p class="text-gray-600">
-                            Gwarantujemy 98% dostarczalności. Używamy najlepszej infrastruktury
-                            (Amazon SES, SendGrid), monitorujemy IP reputation w czasie rzeczywistym,
-                            i automatycznie zarządzamy DKIM, SPF, DMARC. Plany Enterprise otrzymują
-                            dedykowane IP dla maksymalnej kontroli.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA Section -->
-    <section id="start" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-600 to-accent-600 text-white">
+    <!-- CTA Section -->
+    <section id="demo" class="py-24 px-6 lg:px-8 bg-navy-500 text-white">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl lg:text-6xl font-bold mb-6">
-                Gotowy na wzrost?
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                Gotowy na wzrost efektywności email marketingu?
             </h2>
-            <p class="text-xl lg:text-2xl mb-8 opacity-90">
-                Dołącz do tysięcy firm, które rozwijają swój biznes z Mailist
+            <p class="text-xl text-blue-100 mb-12">
+                Umów bezpłatną prezentację platformy lub rozpocznij 14-dniowy trial.
+                Bez zobowiązań, bez karty kredytowej.
             </p>
 
-            <!-- Email signup form -->
-            <div class="max-w-md mx-auto mb-8">
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <input type="email" placeholder="Twój email" class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-4 focus:ring-white/50">
-                    <button class="bg-white text-primary-600 px-8 py-4 rounded-lg font-bold hover:shadow-xl hover:scale-105 transition-all duration-200">
-                        Rozpocznij za darmo
+            <!-- Form -->
+            <div class="max-w-xl mx-auto">
+                <form class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Imię i nazwisko" class="w-full px-4 py-3 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <input type="email" placeholder="Email służbowy" class="w-full px-4 py-3 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="Firma" class="w-full px-4 py-3 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <input type="tel" placeholder="Telefon" class="w-full px-4 py-3 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    </div>
+                    <button type="submit" class="w-full bg-white text-navy-500 px-8 py-4 font-bold hover:bg-blue-50 transition-colors">
+                        Umów prezentację platformy
                     </button>
-                </div>
-                <p class="text-sm mt-4 opacity-80">
-                    <i class="fas fa-check mr-2"></i>
-                    14 dni za darmo • Bez karty kredytowej • Anuluj w każdej chwili
+                </form>
+                <p class="text-sm text-blue-100 mt-6">
+                    Prezentacja trwa 30 minut. Pokażemy Ci dokładnie, jak Mailist może zwiększyć
+                    efektywność Twojego email marketingu.
                 </p>
             </div>
 
-            <!-- Trust badges -->
-            <div class="flex flex-wrap justify-center gap-6 items-center opacity-80">
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-shield-alt text-2xl"></i>
-                    <span>RODO compliant</span>
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap justify-center gap-8 items-center mt-16 pt-12 border-t border-blue-700">
+                <div class="flex items-center space-x-2 text-blue-100">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-sm font-medium">GDPR Compliant</span>
                 </div>
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-lock text-2xl"></i>
-                    <span>SSL secured</span>
+                <div class="flex items-center space-x-2 text-blue-100">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-sm font-medium">ISO 27001</span>
                 </div>
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-check-circle text-2xl"></i>
-                    <span>ISO 27001</span>
+                <div class="flex items-center space-x-2 text-blue-100">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-sm font-medium">SOC 2 Type II</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+    <footer class="bg-gray-900 text-gray-400 py-16 px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-5 gap-8 mb-8">
+            <div class="grid md:grid-cols-5 gap-12 mb-12">
                 <!-- Company Info -->
                 <div class="md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-envelope text-white text-xl"></i>
-                        </div>
-                        <span class="text-2xl font-bold text-white">Mailist</span>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <svg class="w-9 h-9" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="#1e40af"/>
+                            <path d="M12 14L20 20L28 14M12 26V14L20 20L28 14V26C28 26.5304 27.7893 27.0391 27.4142 27.4142C27.0391 27.7893 26.5304 28 26 28H14C13.4696 28 12.9609 27.7893 12.5858 27.4142C12.2107 27.0391 12 26.5304 12 26Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="text-xl font-semibold text-white">Mailist</span>
                     </div>
-                    <p class="text-gray-400 mb-4">
-                        Nowoczesna platforma email marketingu dla rosnących firm.
-                        Potężna automatyzacja w intuicyjnym interfejsie.
+                    <p class="text-gray-500 mb-6 leading-relaxed">
+                        Profesjonalna platforma email marketingu dla wymagających firm.
+                        Rozwijaj biznes z najlepszymi narzędziami do automatyzacji marketingowej.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                    <div class="text-sm text-gray-500">
+                        © 2025 Mailist sp. z o.o.<br>
+                        NIP: 123-456-78-90
                     </div>
                 </div>
 
-                <!-- Product Links -->
+                <!-- Product -->
                 <div>
-                    <h3 class="text-white font-bold mb-4">Produkt</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#funkcje" class="hover:text-primary-400 transition-colors">Funkcje</a></li>
-                        <li><a href="#cennik" class="hover:text-primary-400 transition-colors">Cennik</a></li>
-                        <li><a href="#integracje" class="hover:text-primary-400 transition-colors">Integracje</a></li>
-                        <li><a href="#" class="hover:text-primary-400 transition-colors">API</a></li>
-                        <li><a href="#" class="hover:text-primary-400 transition-colors">Changelog</a></li>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Produkt</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#platforma" class="hover:text-white transition-colors">Platforma</a></li>
+                        <li><a href="#cennik" class="hover:text-white transition-colors">Cennik</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Integracje</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">API</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Security</a></li>
                     </ul>
                 </div>
 
-                <!-- Resources Links -->
+                <!-- Resources -->
                 <div>
-                    <h3 class="text-white font-bold mb-4">Zasoby</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-primary-400 transition-colors">Blog</a></li>
-                        <li><a href="#" class="hover:text-primary-400 transition-colors">Dokumentacja</a></li>
-                        <li><a href="#" class="hover:text-primary-400 transition-colors">Szkolenia</a></li>
-                        <li><a href="#" class="hover:text-primary-400 transition-colors">Case studies</a></li>
-                        <li><a href="#" class="hover:text-primary-400 transition-colors">Webinary</a></li>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Zasoby</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Dokumentacja</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Case studies</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Webinary</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Status</a></li>
                     </ul>
                 </div>
 
-                <!-- Company Links -->
+                <!-- Company -->
                 <div>
-                    <h3 class="text-white font-bold mb-4">Firma</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-primary-400 transition-colors">O nas</a></li>
-                        <li><a href="#" class="hover:text-primary-400 transition-colors">Kariera</a></li>
-                        <li><a href="#" class="hover:text-primary-400 transition-colors">Kontakt</a></li>
-                        <li><a href="#" class="hover:text-primary-400 transition-colors">Partner program</a></li>
-                        <li><a href="#" class="hover:text-primary-400 transition-colors">Affiliate</a></li>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Firma</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">O nas</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Kariera</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Kontakt</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Partner program</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Polityka prywatności</a></li>
                     </ul>
                 </div>
             </div>
 
             <!-- Bottom Bar -->
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p class="text-gray-500 mb-4 md:mb-0">
                     © 2025 Mailist. Wszystkie prawa zastrzeżone.
                 </p>
-                <div class="flex space-x-6 text-sm">
-                    <a href="#" class="text-gray-500 hover:text-primary-400 transition-colors">Polityka prywatności</a>
-                    <a href="#" class="text-gray-500 hover:text-primary-400 transition-colors">Warunki użytkowania</a>
-                    <a href="#" class="text-gray-500 hover:text-primary-400 transition-colors">RODO</a>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors">LinkedIn</a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors">Twitter</a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors">GitHub</a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors">YouTube</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Scroll to top button -->
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-            class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-primary-600 to-accent-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-200 flex items-center justify-center">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
 </body>
 </html>
