@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mailist - Profesjonalna platforma email marketingu z zaawansowaną automatyzacją, AI i analizą. Zwiększ konwersje i zbuduj relacje z klientami.">
+
+    <!-- Link of CSS files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/remixicon.css">
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/home-one.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+
+    <title>Mailist - Profesjonalna Platforma Email Marketingu | Automatyzacja & AI</title>
+
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <style>
+        /* Custom styles for Mailist */
+        :root {
+            --primary-color: #4f46e5;
+            --secondary-color: #06b6d4;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+        }
+
+        .navbar-area {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .btn-primary-custom {
+            background: white;
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary-custom {
+            background: transparent;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid white;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary-custom:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .section-title-custom {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle-custom {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 3rem;
+        }
+
+        .stats-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--primary-color);
+            position: relative;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .price-amount {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .integration-logo {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            transition: all 0.3s;
+        }
+
+        .integration-logo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Start Navbar Area -->
+    <div class="navbar-area navbar-style-two">
+        <div class="pakap-responsive-nav">
+            <div class="container">
+                <div class="pakap-responsive-menu">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="assets/img/black-logo.png" alt="Mailist Logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pakap-nav">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/img/black-logo.png" alt="Mailist Logo">
+                    </a>
+                    <div class="collapse navbar-collapse mean-menu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="#features" class="nav-link">Funkcje</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#pricing" class="nav-link">Cennik</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="dropdown-toggle nav-link">Zasoby</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item"><a href="/blog/" class="nav-link"><i class="ri-article-line"></i> Blog</a></li>
+                                    <li class="nav-item"><a href="/docs/" class="nav-link"><i class="ri-book-line"></i> Dokumentacja</a></li>
+                                    <li class="nav-item"><a href="/blog/changelog.html" class="nav-link"><i class="ri-time-line"></i> Changelog</a></li>
+                                    <li class="nav-item"><a href="/docs/api/" class="nav-link"><i class="ri-code-line"></i> API</a></li>
+                                    <li class="nav-item"><a href="https://status.mailist.com" class="nav-link" target="_blank"><i class="ri-shield-check-line"></i> Status</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#contact" class="nav-link">Kontakt</a>
+                            </li>
+                        </ul>
+                        <div class="others-option">
+                            <a href="#demo" class="default-btn">Rozpocznij Za Darmo</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- End Navbar Area -->
+
+    <!-- Start Hero Section -->
+    <section class="hero-gradient">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content" data-aos="fade-right">
+                        <h1 class="hero-title">Email Marketing Nowej Generacji</h1>
+                        <p class="hero-subtitle">
+                            Zwiększ konwersje o 300% dzięki zaawansowanej automatyzacji AI,
+                            personalizacji i analityce w czasie rzeczywistym. Mailist to platforma,
+                            którą pokochają Twoi klienci.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#demo" class="btn-primary-custom me-3">Rozpocznij 30-dniowy Trial</a>
+                            <a href="#features" class="btn-secondary-custom">Zobacz Funkcje</a>
+                        </div>
+                        <p class="mt-4" style="font-size: 0.95rem; opacity: 0.9;">
+                            <i class="ri-check-line"></i> Bez karty kredytowej
+                            <i class="ri-check-line ms-3"></i> Pełny dostęp do wszystkich funkcji
+                            <i class="ri-check-line ms-3"></i> Anuluj kiedy chcesz
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+                        <img src="assets/img/banner-app2.png" alt="Mailist Dashboard" style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <!-- Start Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Dostarczalność Email</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Zadowolonych Klientów</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-number">1B+</div>
+                        <div class="stat-label">Email Wysłanych Miesięcznie</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Wsparcie Premium</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Stats Section -->
+
+    <!-- Start Features Section -->
+    <section id="features" class="py-5" style="padding: 100px 0; background: #f8fafc;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title-custom" data-aos="fade-up">Funkcje, Które Wyróżniają Mailist</h2>
+                <p class="section-subtitle-custom" data-aos="fade-up" data-aos-delay="100">
+                    Wszystko czego potrzebujesz, aby prowadzić skuteczne kampanie email marketingowe
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="ri-robot-line"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">AI-Powered Automatyzacja</h3>
+                        <p style="color: #64748b; line-height: 1.7;">
+                            Zaawansowane scenariusze automatyzacji wykorzystujące sztuczną inteligencję.
+                            Predykcja zachowań, optymalizacja czasu wysyłki i personalizacja treści w czasie rzeczywistym.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="ri-pie-chart-line"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Zaawansowana Analityka</h3>
+                        <p style="color: #64748b; line-height: 1.7;">
+                            Kompleksowe dashboardy z ROI, heatmapy kliknięć, analiza segmentów,
+                            attribution modeling i predykcja konwersji. Podejmuj decyzje oparte na danych.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="ri-send-plane-line"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Maksymalna Dostarczalność</h3>
+                        <p style="color: #64748b; line-height: 1.7;">
+                            99.9% deliverability dzięki dedykowanym IP, DKIM/SPF/DMARC,
+                            monitoring reputacji, spam score checking i automatyczne warm-up.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="ri-drag-drop-line"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Visual Email Builder</h3>
+                        <p style="color: #64748b; line-height: 1.7;">
+                            Intuicyjny drag & drop editor z ponad 500 responsywnymi szablonami,
+                            dynamic content blocks, A/B testing i preview na wszystkich urządzeniach.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="ri-group-line"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Smart Segmentacja</h3>
+                        <p style="color: #64748b; line-height: 1.7;">
+                            Dynamiczne segmenty oparte na zachowaniach, demografia, historia zakupów,
+                            engagement score i predykcje AI. Docieraj do właściwych osób we właściwym czasie.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="ri-shield-check-line"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">GDPR & Bezpieczeństwo</h3>
+                        <p style="color: #64748b; line-height: 1.7;">
+                            Pełna zgodność z GDPR, CCPA, double opt-in, encryption at rest,
+                            SOC 2 Type II certified, regularne audyty bezpieczeństwa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Features Section -->
+
+    <!-- Start Automation Section -->
+    <section class="py-5" style="padding: 100px 0;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="assets/img/progress-main.png" alt="Automation Flow" style="max-width: 100%; height: auto;">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="section-title-custom">Automatyzacja, Która Pracuje 24/7</h2>
+                    <p class="section-subtitle-custom">
+                        Twórz zaawansowane scenariusze automatyzacji bez znajomości kodu
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1.5rem; display: flex; align-items: start;">
+                            <div style="background: linear-gradient(135deg, #667eea, #764ba2); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                                <i class="ri-check-line" style="color: white; font-size: 1.3rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; font-weight: 600;">Welcome Series</h4>
+                                <p style="color: #64748b; margin: 0;">Automatyczne powitanie nowych subskrybentów z personalizowanymi wiadomościami</p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 1.5rem; display: flex; align-items: start;">
+                            <div style="background: linear-gradient(135deg, #667eea, #764ba2); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                                <i class="ri-check-line" style="color: white; font-size: 1.3rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; font-weight: 600;">Abandoned Cart Recovery</h4>
+                                <p style="color: #64748b; margin: 0;">Odzyskuj porzucone koszyki z inteligentnym timingiem i incentives</p>
+                            </div>
+                        </li>
+                        <li style="margin-bottom: 1.5rem; display: flex; align-items: start;">
+                            <div style="background: linear-gradient(135deg, #667eea, #764ba2); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                                <i class="ri-check-line" style="color: white; font-size: 1.3rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; font-weight: 600;">Re-engagement Campaigns</h4>
+                                <p style="color: #64748b; margin: 0;">Reaktywuj nieaktywnych subskrybentów z AI-driven content</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; align-items: start;">
+                            <div style="background: linear-gradient(135deg, #667eea, #764ba2); width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                                <i class="ri-check-line" style="color: white; font-size: 1.3rem;"></i>
+                            </div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem; font-weight: 600;">Behavioral Triggers</h4>
+                                <p style="color: #64748b; margin: 0;">Reaguj na zachowania użytkowników w czasie rzeczywistym</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Automation Section -->
+
+    <!-- Start Integrations Section -->
+    <section class="py-5" style="padding: 100px 0; background: #f8fafc;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title-custom" data-aos="fade-up">Integracje z Narzędziami, Których Używasz</h2>
+                <p class="section-subtitle-custom" data-aos="fade-up" data-aos-delay="100">
+                    Połącz Mailist z ponad 1000+ aplikacji i platform
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="integration-logo">
+                        <img src="assets/img/partner1.png" alt="Shopify" style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="integration-logo">
+                        <img src="assets/img/partner2.png" alt="WordPress" style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="integration-logo">
+                        <img src="assets/img/partner3.png" alt="Salesforce" style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="integration-logo">
+                        <img src="assets/img/partner4.png" alt="Zapier" style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="integration-logo">
+                        <img src="assets/img/partner5.png" alt="WooCommerce" style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="integration-logo">
+                        <img src="assets/img/partner6.png" alt="Stripe" style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="/docs/integrations/" class="default-btn">Zobacz Wszystkie Integracje</a>
+            </div>
+        </div>
+    </section>
+    <!-- End Integrations Section -->
+
+    <!-- Start Testimonials Section -->
+    <section class="py-5" style="padding: 100px 0;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title-custom" data-aos="fade-up">Co Mówią Nasi Klienci</h2>
+                <p class="section-subtitle-custom" data-aos="fade-up" data-aos-delay="100">
+                    Dołącz do tysięcy firm, które wybrały Mailist
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="mb-3">
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                        </div>
+                        <p style="font-style: italic; color: #64748b; margin-bottom: 1.5rem;">
+                            "Mailist zwiększył nasze konwersje o 340% w ciągu pierwszych 3 miesięcy.
+                            Automatyzacja AI to game-changer. Nigdy nie wrócimy do poprzedniej platformy."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/user1.jpg" alt="Anna Kowalska" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 1rem;">
+                            <div>
+                                <h5 style="margin: 0; font-weight: 600;">Anna Kowalska</h5>
+                                <p style="margin: 0; color: #64748b; font-size: 0.9rem;">CMO, TechStore24</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="mb-3">
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                        </div>
+                        <p style="font-style: italic; color: #64748b; margin-bottom: 1.5rem;">
+                            "Przeszliśmy z MailerLite do Mailist i różnica jest kolosalna.
+                            Zaawansowana analityka i segmentacja pozwoliły nam lepiej zrozumieć naszych klientów."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/user2.jpg" alt="Piotr Nowak" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 1rem;">
+                            <div>
+                                <h5 style="margin: 0; font-weight: 600;">Piotr Nowak</h5>
+                                <p style="margin: 0; color: #64748b; font-size: 0.9rem;">CEO, GrowthAgency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="mb-3">
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                            <i class="ri-star-fill" style="color: #fbbf24; font-size: 1.2rem;"></i>
+                        </div>
+                        <p style="font-style: italic; color: #64748b; margin-bottom: 1.5rem;">
+                            "Deliverability 99.9% to nie marketing - to rzeczywistość!
+                            Plus wsparcie techniczne jest najlepsze jakie kiedykolwiek doświadczyłem."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/user3.jpg" alt="Maria Wiśniewska" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 1rem;">
+                            <div>
+                                <h5 style="margin: 0; font-weight: 600;">Maria Wiśniewska</h5>
+                                <p style="margin: 0; color: #64748b; font-size: 0.9rem;">Marketing Director, FashionHub</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Testimonials Section -->
+
+    <!-- Start Pricing Section -->
+    <section id="pricing" class="py-5" style="padding: 100px 0; background: #f8fafc;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title-custom" data-aos="fade-up">Przejrzyste Ceny. Bez Ukrytych Kosztów.</h2>
+                <p class="section-subtitle-custom" data-aos="fade-up" data-aos-delay="100">
+                    Wybierz plan dopasowany do Twoich potrzeb
+                </p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="pricing-card">
+                        <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem;">Starter</h3>
+                        <p style="color: #64748b; margin-bottom: 2rem;">Dla małych firm i startupów</p>
+                        <div class="price-amount">$29<span style="font-size: 1.2rem; font-weight: 400; color: #64748b;">/miesiąc</span></div>
+                        <p style="color: #64748b; margin-bottom: 2rem;">Do 5,000 subskrybentów</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                15,000 email/miesiąc
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                Drag & Drop Email Builder
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                Podstawowa Automatyzacja
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                Raportowanie
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                Email Support
+                            </li>
+                        </ul>
+                        <a href="#demo" class="default-btn w-100 text-center">Rozpocznij Trial</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="pricing-card featured">
+                        <span class="pricing-badge">Najpopularniejszy</span>
+                        <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem;">Professional</h3>
+                        <p style="color: #64748b; margin-bottom: 2rem;">Dla rosnących biznesów</p>
+                        <div class="price-amount">$99<span style="font-size: 1.2rem; font-weight: 400; color: #64748b;">/miesiąc</span></div>
+                        <p style="color: #64748b; margin-bottom: 2rem;">Do 25,000 subskrybentów</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                75,000 email/miesiąc
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                <strong>AI-Powered Automatyzacja</strong>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                <strong>Zaawansowana Segmentacja</strong>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                <strong>A/B Testing</strong>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                Priority Support 24/7
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                Dedicated IP
+                            </li>
+                        </ul>
+                        <a href="#demo" class="default-btn w-100 text-center">Rozpocznij Trial</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="pricing-card">
+                        <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem;">Enterprise</h3>
+                        <p style="color: #64748b; margin-bottom: 2rem;">Dla dużych organizacji</p>
+                        <div class="price-amount">Custom<span style="font-size: 1.2rem; font-weight: 400; color: #64748b;"></span></div>
+                        <p style="color: #64748b; margin-bottom: 2rem;">Nielimitowane kontakty</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                Nielimitowane email
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                <strong>Dedykowany Account Manager</strong>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                <strong>Custom Integracje</strong>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                <strong>Advanced API Access</strong>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                White Label Options
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid #e2e8f0;">
+                                <i class="ri-check-line" style="color: #10b981; margin-right: 0.5rem;"></i>
+                                SLA 99.99%
+                            </li>
+                        </ul>
+                        <a href="#contact" class="default-btn w-100 text-center">Skontaktuj się</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Pricing Section -->
+
+    <!-- Start CTA Section -->
+    <section id="demo" class="hero-gradient" style="padding: 80px 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: white;" data-aos="fade-up">
+                        Gotowy, aby Zrewolucjonizować Swój Email Marketing?
+                    </h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem; color: white; opacity: 0.95;" data-aos="fade-up" data-aos-delay="100">
+                        Dołącz do 50,000+ firm, które wybrały Mailist. Rozpocznij 30-dniowy darmowy trial - bez karty kredytowej.
+                    </p>
+                    <form class="row g-3 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-lg-6">
+                            <input type="email" class="form-control" placeholder="Twój adres email" style="padding: 15px; border-radius: 8px; border: none; font-size: 1.1rem;">
+                        </div>
+                        <div class="col-lg-4">
+                            <button type="submit" class="btn-primary-custom w-100">Rozpocznij Za Darmo</button>
+                        </div>
+                    </form>
+                    <p class="mt-3" style="color: white; opacity: 0.9; font-size: 0.95rem;">
+                        <i class="ri-lock-line"></i> Twoje dane są bezpieczne. Anuluj w każdej chwili.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End CTA Section -->
+
+    <!-- Start Footer -->
+    <footer class="footer-area footer-style-two" style="background: #1e293b; color: white; padding: 80px 0 30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div>
+                        <a href="index.html" class="d-block mb-3">
+                            <img src="assets/img/black-logo.png" alt="Mailist Logo" style="filter: brightness(0) invert(1);">
+                        </a>
+                        <p style="color: #94a3b8; line-height: 1.7;">
+                            Mailist to nowoczesna platforma email marketingu,
+                            która łączy w sobie moc AI, zaawansowaną automatyzację
+                            i intuicyjny interfejs.
+                        </p>
+                        <ul class="social-links" style="list-style: none; padding: 0; display: flex; gap: 1rem; margin-top: 1.5rem;">
+                            <li><a href="#" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #334155; border-radius: 50%; color: white; transition: all 0.3s;"><i class="ri-facebook-fill"></i></a></li>
+                            <li><a href="#" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #334155; border-radius: 50%; color: white; transition: all 0.3s;"><i class="ri-twitter-fill"></i></a></li>
+                            <li><a href="#" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #334155; border-radius: 50%; color: white; transition: all 0.3s;"><i class="ri-linkedin-fill"></i></a></li>
+                            <li><a href="#" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #334155; border-radius: 50%; color: white; transition: all 0.3s;"><i class="ri-github-fill"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; color: white;">Produkt</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="#features" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Funkcje</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="#pricing" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Cennik</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="/docs/integrations/" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Integracje</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="/docs/api/" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">API</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; color: white;">Zasoby</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="/blog/" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Blog</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="/docs/" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Dokumentacja</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="/blog/changelog.html" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Changelog</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="https://status.mailist.com" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Status</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; color: white;">Firma</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="#" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">O Nas</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="#" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Kariera</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="#contact" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Kontakt</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="#" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Polityka Prywatności</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; color: white;">Wsparcie</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="#" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Centrum Pomocy</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="#" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">FAQ</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="#contact" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Kontakt</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="https://status.mailist.com" style="color: #94a3b8; text-decoration: none; transition: all 0.3s;">Status Systemu</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center pt-4 mt-5" style="border-top: 1px solid #334155;">
+                <p style="color: #94a3b8; margin: 0;">&copy; 2024 Mailist. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <div class="go-top"><i class="ri-arrow-up-s-line"></i></div>
+
+    <!-- Link of JS files -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/meanmenu.min.js"></script>
+    <script src="assets/js/appear.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+# Just the Docs Configuration for Mailist Documentation
+
+# Site settings
+title: Mailist Documentation
+description: Kompletna dokumentacja platformy email marketingu Mailist
+baseurl: "/docs"
+url: "https://mailist.com"
+
+# Theme
+remote_theme: just-the-docs/just-the-docs
+
+# Color scheme
+color_scheme: mailist
+
+# Logo
+logo: "/assets/images/logo.png"
+
+# Search
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# Heading anchors
+heading_anchors: true
+
+# Aux links
+aux_links:
+  "Mailist na GitHub":
+    - "//github.com/mailist"
+  "Wsparcie":
+    - "//support.mailist.com"
+
+# Footer
+footer_content: "Copyright &copy; 2024 Mailist. Wszelkie prawa zastrzeżone."
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Wróć do góry"
+
+# Footer last edit timestamp
+last_edit_timestamp: true
+last_edit_time_format: "%d %b %Y %H:%M"
+
+# Navigation
+nav_sort: case_insensitive
+nav_external_links:
+  - title: Strona główna
+    url: https://mailist.com
+  - title: Blog
+    url: https://mailist.com/blog
+  - title: API Status
+    url: https://status.mailist.com
+
+# Collections
+collections:
+  docs:
+    permalink: "/:collection/:path/"
+    output: true
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      nav_order: 999
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude
+exclude:
+  - node_modules/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# kramdown settings
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true

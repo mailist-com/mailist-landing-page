@@ -1,0 +1,53 @@
+# Jekyll Configuration for Mailist Blog
+
+# Site settings
+title: Mailist Blog
+description: Odkryj najlepsze praktyki email marketingu, automatyzacji i rozwoju biznesu
+baseurl: "/blog"
+url: "https://mailist.com"
+
+# Author
+author:
+  name: Mailist Team
+  email: blog@mailist.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Pagination
+paginate: 9
+paginate_path: "/page/:num/"
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Mailist Team"
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Theme settings
+theme_color: "#4f46e5"
