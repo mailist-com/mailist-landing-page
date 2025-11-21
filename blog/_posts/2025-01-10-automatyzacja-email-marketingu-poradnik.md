@@ -7,7 +7,7 @@ category: "Automatyzacja"
 tags: ["automatyzacja", "workflows", "drip campaigns", "onboarding"]
 featured: false
 read_time: "12 min"
-image: "/assets/images/landing/order-overview.jpg"
+image: "/blog/assets/images/order-overview.jpg"
 excerpt: "Dowiedz się, jak automatyzacja może zaoszczędzić Ci 15+ godzin tygodniowo i zwiększyć przychody. Praktyczny przewodnik z przykładami scenariuszy."
 ---
 
