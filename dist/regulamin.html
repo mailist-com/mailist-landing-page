@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Regulamin - Mailist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Regulamin korzystania z platformy Mailist" name="description">
+    <meta content="Mailist" name="author">
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/favicon-CK1QI2Xs.ico">
+
+    <script>
+        (function () {
+            const html = document.documentElement;
+            const storageKey = "__TAILWICK_CONFIG__";
+            const savedConfig = sessionStorage.getItem(storageKey);
+
+            // Default config
+            const defaultConfig = {
+                dir: "ltr",
+                theme: "light",
+                sidenav: {
+                    color: "light",
+                    size: "default",
+                },
+            };
+
+            // Build config from HTML attributes
+            function getSystemTheme() {
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+            }
+
+            // Build config from HTML attributes
+            const htmlConfig = {
+                dir: html.getAttribute("dir") || defaultConfig.dir,
+
+                theme: html.getAttribute("data-theme") === 'system'
+                    ? getSystemTheme()
+                    : html.getAttribute("data-theme") || (defaultConfig.theme === 'system' ? getSystemTheme() : defaultConfig.theme),
+                sidenav: {
+                    color: html.getAttribute("data-sidenav-color") || defaultConfig.sidenav.color,
+                    size: html.getAttribute("data-sidenav-size") || defaultConfig.sidenav.size,
+                },
+            };
+
+            // Save merged config as defaults globally
+            window.defaultConfig = structuredClone(htmlConfig);
+
+            // Load from session if exists
+            let config = savedConfig ? JSON.parse(savedConfig) : htmlConfig;
+            window.config = config;
+
+            // Apply layout attributes immediately
+            html.setAttribute("dir", config.dir);
+            html.setAttribute("data-theme", config.theme);
+            html.setAttribute("data-sidenav-color", config.sidenav.color);
+
+            if (config.sidenav.size) {
+                let size = config.sidenav.size;
+
+                if (window.innerWidth <= 1140) {
+                    size = "offcanvas";
+                }
+
+                html.setAttribute("data-sidenav-size", size);
+            }
+        })();
+    </script>
+
+    <script type="module" crossorigin src="/assets/app-DOPhicSe.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/app-1Gqs6GNA.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="fixed inset-x-0 top-0 z-50 bg-card py-6 shadow flex justify-between items-center">
+            <div class="container">
+                <div class="grid lg:grid-cols-12 md:grid-cols-10 grid-cols-2 items-center">
+                    <div class="lg:col-span-2 md:col-span-2">
+                        <a href="mailist-landing.html">
+                            <span class="text-2xl font-bold text-primary">Mailist</span>
+                        </a>
+                    </div>
+
+                    <div class="lg:col-span-8 md:col-span-6 md:block hidden">
+                        <ul class="flex items-center justify-center lg:gap-8 md:gap-6 font-medium text-sm">
+                            <li>
+                                <a href="mailist-landing.html#home" class="text-default-800 hover:text-primary transition duration-300">Start</a>
+                            </li>
+                            <li>
+                                <a href="mailist-landing.html#problems" class="text-default-800 hover:text-primary transition duration-300">Problemy</a>
+                            </li>
+                            <li>
+                                <a href="mailist-landing.html#solutions" class="text-default-800 hover:text-primary transition duration-300">Rozwiązania</a>
+                            </li>
+                            <li>
+                                <a href="regulamin.html" class="text-primary font-semibold transition duration-300">Regulamin</a>
+                            </li>
+                            <li>
+                                <a href="polityka-prywatnosci.html" class="text-default-800 hover:text-primary transition duration-300">Prywatność</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="lg:col-span-2 md:col-span-2 flex items-center justify-end gap-2">
+                        <a href="#" class="flex justify-end">
+                            <button type="button" class="btn bg-primary text-white">
+                                Zaloguj się
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <section class="relative lg:pt-36 pt-28 pb-20">
+        <div class="container">
+            <div class="max-w-4xl mx-auto">
+                <!-- Header -->
+                <div class="mb-12">
+                    <h1 class="text-4xl md:text-5xl font-bold text-default-900 mb-4">Regulamin korzystania z platformy Mailist</h1>
+                    <p class="text-lg text-default-600">Ostatnia aktualizacja: 21 listopada 2025</p>
+                </div>
+
+                <!-- Content -->
+                <div class="prose prose-lg max-w-none">
+                    <!-- Section 1 -->
+                    <div class="card rounded-xl shadow-sm bg-card p-8 mb-6">
+                        <h2 class="text-2xl font-semibold text-default-900 mb-4 flex items-center gap-3">
+                            <span class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary font-bold">1</span>
+                            Postanowienia ogólne
+                        </h2>
+                        <div class="space-y-4 text-default-700">
+                            <p>
+                                <strong>1.1</strong> Niniejszy Regulamin określa zasady korzystania z platformy Mailist (zwanej dalej "Platformą"), dostępnej pod adresem mailist.com, stanowiącej usługę email marketingu świadczoną przez [Nazwa firmy] (zwaną dalej "Usługodawcą").
+                            </p>
+                            <p>
+                                <strong>1.2</strong> Korzystanie z Platformy oznacza akceptację postanowień niniejszego Regulaminu.
+                            </p>
+                            <p>
+                                <strong>1.3</strong> Usługodawca zastrzega sobie prawo do zmiany Regulaminu. Użytkownicy zostaną poinformowani o zmianach z co najmniej 7-dniowym wyprzedzeniem za pośrednictwem poczty elektronicznej.
+                            </p>
+                            <p>
+                                <strong>1.4</strong> W przypadku braku akceptacji zmian w Regulaminie, Użytkownik ma prawo do rozwiązania Umowy ze skutkiem natychmiastowym.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="card rounded-xl shadow-sm bg-card p-8 mb-6">
+                        <h2 class="text-2xl font-semibold text-default-900 mb-4 flex items-center gap-3">
+                            <span class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary font-bold">2</span>
+                            Definicje
+                        </h2>
+                        <div class="space-y-4 text-default-700">
+                            <p>
+                                <strong>2.1 Platforma</strong> - system informatyczny Mailist służący do zarządzania kampaniami email marketingowymi, dostępny za pośrednictwem przeglądarki internetowej.
+                            </p>
+                            <p>
+                                <strong>2.2 Użytkownik</strong> - osoba fizyczna, osoba prawna lub jednostka organizacyjna nieposiadająca osobowości prawnej, która zarejestrowała się i korzysta z Platformy.
+                            </p>
+                            <p>
+                                <strong>2.3 Konto</strong> - indywidualne konto Użytkownika w Platformie, zabezpieczone loginem i hasłem.
+                            </p>
+                            <p>
+                                <strong>2.4 Kampania</strong> - zestaw wiadomości email wysyłanych do określonej grupy odbiorców zgodnie z parametrami ustalonymi przez Użytkownika.
+                            </p>
+                            <p>
+                                <strong>2.5 Odbiorca</strong> - osoba, której dane kontaktowe zostały dodane do bazy kontaktów Użytkownika w celu wysyłki komunikatów marketingowych.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class="card rounded-xl shadow-sm bg-card p-8 mb-6">
+                        <h2 class="text-2xl font-semibold text-default-900 mb-4 flex items-center gap-3">
+                            <span class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary font-bold">3</span>
+                            Warunki korzystania z Platformy
+                        </h2>
+                        <div class="space-y-4 text-default-700">
+                            <p>
+                                <strong>3.1</strong> Korzystanie z Platformy wymaga rejestracji poprzez utworzenie Konta.
+                            </p>
+                            <p>
+                                <strong>3.2</strong> Użytkownik zobowiązuje się do podania prawdziwych i aktualnych danych podczas rejestracji.
+                            </p>
+                            <p>
+                                <strong>3.3</strong> Użytkownik jest odpowiedzialny za zachowanie poufności danych logowania do Konta.
+                            </p>
+                            <p>
+                                <strong>3.4</strong> Jedna osoba lub podmiot może posiadać tylko jedno aktywne Konto, chyba że Usługodawca wyrazi pisemną zgodę na inne rozwiązanie.
+                            </p>
+                            <p>
+                                <strong>3.5</strong> Użytkownik nie może przekazywać dostępu do swojego Konta osobom trzecim.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div class="card rounded-xl shadow-sm bg-card p-8 mb-6">
+                        <h2 class="text-2xl font-semibold text-default-900 mb-4 flex items-center gap-3">
+                            <span class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary font-bold">4</span>
+                            Zasady wysyłki kampanii
+                        </h2>
+                        <div class="space-y-4 text-default-700">
+                            <p>
+                                <strong>4.1</strong> Użytkownik oświadcza, że posiada zgodę (opt-in) wszystkich Odbiorców na wysyłkę komunikacji marketingowej, zgodnie z obowiązującymi przepisami prawa, w tym RODO i ustawą o świadczeniu usług drogą elektroniczną.
+                            </p>
+                            <p>
+                                <strong>4.2</strong> Zabrania się wykorzystywania Platformy do:
+                            </p>
+                            <ul class="list-disc list-inside ml-4 space-y-2">
+                                <li>Wysyłki spamu lub niezamówionej korespondencji</li>
+                                <li>Rozsyłania treści nielegalnych, obscenicznych, obraźliwych lub naruszających prawa osób trzecich</li>
+                                <li>Phishingu, rozpowszechniania złośliwego oprogramowania lub innych działań cyberprzestępczych</li>
+                                <li>Wykorzystywania cudzych danych osobowych bez zgody</li>
+                                <li>Naruszania praw autorskich lub innych praw własności intelektualnej</li>
+                            </ul>
+                            <p>
+                                <strong>4.3</strong> Każda wysyłana wiadomość musi zawierać wyraźny i funkcjonalny link do rezygnacji z subskrypcji (unsubscribe).
+                            </p>
+                            <p>
+                                <strong>4.4</strong> Użytkownik zobowiązuje się niezwłocznie usuwać z bazy kontaktów osoby, które zrezygnowały z subskrypcji.
+                            </p>
+                            <p>
+                                <strong>4.5</strong> Usługodawca zastrzega sobie prawo do zablokowania lub usunięcia kampanii naruszających niniejszy Regulamin bez wcześniejszego powiadomienia.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 5 -->
+                    <div class="card rounded-xl shadow-sm bg-card p-8 mb-6">
+                        <h2 class="text-2xl font-semibold text-default-900 mb-4 flex items-center gap-3">
+                            <span class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary font-bold">5</span>
+                            Płatności i rozliczenia
+                        </h2>
+                        <div class="space-y-4 text-default-700">
+                            <p>
+                                <strong>5.1</strong> Platforma oferuje różne plany abonamentowe, których szczegóły są dostępne na stronie cennika.
+                            </p>
+                            <p>
+                                <strong>5.2</strong> Opłaty są pobierane z góry za każdy okres rozliczeniowy (miesięczny lub roczny).
+                            </p>
+                            <p>
+                                <strong>5.3</strong> Usługodawca akceptuje płatności kartą kredytową, przelewem bankowym lub innymi metodami wskazanymi na stronie.
+                            </p>
+                            <p>
+                                <strong>5.4</strong> W przypadku braku płatności, Usługodawca ma prawo zawiesić dostęp do Konta po upływie 7 dni od terminu płatności.
+                            </p>
+                            <p>
+                                <strong>5.5</strong> Użytkownik może zmienić plan abonamentowy w dowolnym momencie. Zmiany wchodzą w życie z początkiem następnego okresu rozliczeniowego.
+                            </p>
+                            <p>
+                                <strong>5.6</strong> Zwroty płatności są możliwe w ciągu 14 dni od dokonania płatności, zgodnie z prawem konsumenckim.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 6 -->
+                    <div class="card rounded-xl shadow-sm bg-card p-8 mb-6">
+                        <h2 class="text-2xl font-semibold text-default-900 mb-4 flex items-center gap-3">
+                            <span class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary font-bold">6</span>
+                            Ochrona danych osobowych
+                        </h2>
+                        <div class="space-y-4 text-default-700">
+                            <p>
+                                <strong>6.1</strong> Usługodawca przetwarza dane osobowe zgodnie z Polityką Prywatności oraz obowiązującymi przepisami o ochronie danych osobowych, w tym RODO.
+                            </p>
+                            <p>
+                                <strong>6.2</strong> Użytkownik działa jako administrator danych osobowych swoich Odbiorców i ponosi pełną odpowiedzialność za zgodność przetwarzania z przepisami prawa.
+                            </p>
+                            <p>
+                                <strong>6.3</strong> Usługodawca działa jako procesor danych w rozumieniu RODO i zobowiązuje się do przetwarzania danych Odbiorców wyłącznie zgodnie z instrukcjami Użytkownika.
+                            </p>
+                            <p>
+                                <strong>6.4</strong> Szczegółowe zasady przetwarzania danych osobowych określa Polityka Prywatności, dostępna pod adresem: <a href="polityka-prywatnosci.html" class="text-primary hover:underline">polityka-prywatnosci.html</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 7 -->
+                    <div class="card rounded-xl shadow-sm bg-card p-8 mb-6">
+                        <h2 class="text-2xl font-semibold text-default-900 mb-4 flex items-center gap-3">
+                            <span class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary font-bold">7</span>
+                            Własność intelektualna
+                        </h2>
+                        <div class="space-y-4 text-default-700">
+                            <p>
+                                <strong>7.1</strong> Wszystkie prawa własności intelektualnej do Platformy, w tym kod źródłowy, interfejs użytkownika, grafiki i loga, należą do Usługodawcy.
+                            </p>
+                            <p>
+                                <strong>7.2</strong> Użytkownik zachowuje pełne prawa autorskie do treści, które tworzy i publikuje za pomocą Platformy.
+                            </p>
+                            <p>
+                                <strong>7.3</strong> Użytkownik udziela Usługodawcy niewyłącznej licencji na hosting, przechowywanie i wyświetlanie treści w celu świadczenia usług.
+                            </p>
+                            <p>
+                                <strong>7.4</strong> Zabrania się kopiowania, modyfikowania, reverse engineering lub dystrybucji jakichkolwiek elementów Platformy bez pisemnej zgody Usługodawcy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 8 -->
+                    <div class="card rounded-xl shadow-sm bg-card p-8 mb-6">
+                        <h2 class="text-2xl font-semibold text-default-900 mb-4 flex items-center gap-3">
+                            <span class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary font-bold">8</span>
+                            Odpowiedzialność
+                        </h2>
+                        <div class="space-y-4 text-default-700">
+                            <p>
+                                <strong>8.1</strong> Usługodawca nie ponosi odpowiedzialności za treści tworzone i wysyłane przez Użytkowników za pośrednictwem Platformy.
+                            </p>
+                            <p>
+                                <strong>8.2</strong> Usługodawca dokłada wszelkich starań, aby zapewnić ciągłość działania Platformy, jednak nie gwarantuje, że będzie ona dostępna bez przerw i wolna od błędów.
+                            </p>
+                            <p>
+                                <strong>8.3</strong> Usługodawca nie ponosi odpowiedzialności za:
+                            </p>
+                            <ul class="list-disc list-inside ml-4 space-y-2">
+                                <li>Straty wynikające z przerw w dostępie do Platformy</li>
+                                <li>Utratę danych spowodowaną działaniami Użytkownika</li>
+                                <li>Działania osób trzecich uzyskujących dostęp do Konta Użytkownika</li>
+                                <li>Decyzje biznesowe podjęte na podstawie danych z Platformy</li>
+                            </ul>
+                            <p>
+                                <strong>8.4</strong> Odpowiedzialność Usługodawcy wobec Użytkownika jest ograniczona do wysokości opłat zapłaconych przez Użytkownika za ostatni pełny okres rozliczeniowy.
+                            </p>
+                            <p>
+                                <strong>8.5</strong> Użytkownik zobowiązuje się zabezpieczyć i bronić Usługodawcę przed roszczeniami osób trzecich wynikającymi z naruszenia Regulaminu lub prawa przez Użytkownika.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 9 -->
+                    <div class="card rounded-xl shadow-sm bg-card p-8 mb-6">
+                        <h2 class="text-2xl font-semibold text-default-900 mb-4 flex items-center gap-3">
+                            <span class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary font-bold">9</span>
+                            Rozwiązanie umowy
+                        </h2>
+                        <div class="space-y-4 text-default-700">
+                            <p>
+                                <strong>9.1</strong> Użytkownik może rozwiązać umowę w każdym czasie poprzez usunięcie Konta w ustawieniach Platformy lub kontakt z obsługą klienta.
+                            </p>
+                            <p>
+                                <strong>9.2</strong> Usługodawca może rozwiązać umowę z Użytkownikiem ze skutkiem natychmiastowym w przypadku:
+                            </p>
+                            <ul class="list-disc list-inside ml-4 space-y-2">
+                                <li>Rażącego naruszenia postanowień Regulaminu</li>
+                                <li>Wykorzystywania Platformy w celach nielegalnych</li>
+                                <li>Zalegania z płatnościami przez okres dłuższy niż 30 dni</li>
+                                <li>Działań mogących zaszkodzić reputacji lub infrastrukturze Usługodawcy</li>
+                            </ul>
+                            <p>
+                                <strong>9.3</strong> Po rozwiązaniu umowy:
+                            </p>
+                            <ul class="list-disc list-inside ml-4 space-y-2">
+                                <li>Dostęp do Konta zostanie natychmiast zablokowany</li>
+                                <li>Dane będą przechowywane przez 30 dni, po czym zostaną trwale usunięte</li>
+                                <li>Użytkownik może pobrać kopię swoich danych przed usunięciem Konta</li>
+                                <li>Niewykorzystane środki z przedpłaconego okresu nie podlegają zwrotowi, chyba że umowa zostaje rozwiązana przez Usługodawcę bez winy Użytkownika</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Section 10 -->
+                    <div class="card rounded-xl shadow-sm bg-card p-8 mb-6">
+                        <h2 class="text-2xl font-semibold text-default-900 mb-4 flex items-center gap-3">
+                            <span class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary font-bold">10</span>
+                            Postanowienia końcowe
+                        </h2>
+                        <div class="space-y-4 text-default-700">
+                            <p>
+                                <strong>10.1</strong> W sprawach nieuregulowanych niniejszym Regulaminem zastosowanie mają przepisy prawa polskiego, w szczególności Kodeksu cywilnego oraz ustawy o prawach konsumenta.
+                            </p>
+                            <p>
+                                <strong>10.2</strong> Spory wynikające z realizacji postanowień Regulaminu będą rozstrzygane przez sąd właściwy dla siedziby Usługodawcy, z zastrzeżeniem bezwzględnie obowiązujących przepisów o właściwości sądów w sprawach konsumenckich.
+                            </p>
+                            <p>
+                                <strong>10.3</strong> Jeżeli którekolwiek z postanowień Regulaminu zostanie uznane za nieważne lub nieskuteczne, pozostałe postanowienia zachowują pełną moc.
+                            </p>
+                            <p>
+                                <strong>10.4</strong> Usługodawca nie odpowiada za opóźnienia lub niewykonanie zobowiązań spowodowane siłą wyższą.
+                            </p>
+                            <p>
+                                <strong>10.5</strong> Wszelkie uwagi, pytania i reklamacje należy zgłaszać na adres: <strong>kontakt@mailist.com</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact info -->
+                    <div class="card rounded-xl shadow-sm bg-primary/5 border-2 border-primary/20 p-8 mt-8">
+                        <h2 class="text-2xl font-semibold text-default-900 mb-4">Dane kontaktowe</h2>
+                        <div class="space-y-3 text-default-700">
+                            <p><strong>Usługodawca:</strong> [Nazwa firmy]</p>
+                            <p><strong>Adres:</strong> [Adres siedziby]</p>
+                            <p><strong>NIP:</strong> [Numer NIP]</p>
+                            <p><strong>REGON:</strong> [Numer REGON]</p>
+                            <p><strong>Email:</strong> kontakt@mailist.com</p>
+                            <p><strong>Telefon:</strong> +48 XXX XXX XXX</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back button -->
+                <div class="mt-12 text-center">
+                    <a href="mailist-landing.html" class="btn bg-primary text-white">
+                        <i data-lucide="arrow-left" class="size-4"></i>
+                        Powrót do strony głównej
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative py-12 bg-default-900 border-t border-default-800">
+        <div class="container">
+            <div class="text-center text-default-400 text-sm">
+                <p>© 2025 Mailist. Wszelkie prawa zastrzeżone.</p>
+                <div class="flex items-center justify-center gap-6 mt-4">
+                    <a href="regulamin.html" class="hover:text-primary transition-all">Regulamin</a>
+                    <a href="polityka-prywatnosci.html" class="hover:text-primary transition-all">Polityka prywatności</a>
+                    <a href="#" class="hover:text-primary transition-all">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

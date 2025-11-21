@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Mailist - Platforma Email Marketingu, która działa dla Ciebie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Mailist - Profesjonalna platforma email marketingu. Zarządzaj kontaktami, twórz kampanie i automatyzuj komunikację." name="description">
+    <meta content="Mailist" name="author">
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/favicon-CK1QI2Xs.ico">
+
+    <script>
+        (function () {
+            const html = document.documentElement;
+            const storageKey = "__TAILWICK_CONFIG__";
+            const savedConfig = sessionStorage.getItem(storageKey);
+
+            // Default config
+            const defaultConfig = {
+                dir: "ltr",
+                theme: "light",
+                sidenav: {
+                    color: "light",
+                    size: "default",
+                },
+            };
+
+            // Build config from HTML attributes
+            function getSystemTheme() {
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+            }
+
+            // Build config from HTML attributes
+            const htmlConfig = {
+                dir: html.getAttribute("dir") || defaultConfig.dir,
+
+                theme: html.getAttribute("data-theme") === 'system'
+                    ? getSystemTheme()
+                    : html.getAttribute("data-theme") || (defaultConfig.theme === 'system' ? getSystemTheme() : defaultConfig.theme),
+                sidenav: {
+                    color: html.getAttribute("data-sidenav-color") || defaultConfig.sidenav.color,
+                    size: html.getAttribute("data-sidenav-size") || defaultConfig.sidenav.size,
+                },
+            };
+
+            // Save merged config as defaults globally
+            window.defaultConfig = structuredClone(htmlConfig);
+
+            // Load from session if exists
+            let config = savedConfig ? JSON.parse(savedConfig) : htmlConfig;
+            window.config = config;
+
+            // Apply layout attributes immediately
+            html.setAttribute("dir", config.dir);
+            html.setAttribute("data-theme", config.theme);
+            html.setAttribute("data-sidenav-color", config.sidenav.color);
+
+            if (config.sidenav.size) {
+                let size = config.sidenav.size;
+
+                if (window.innerWidth <= 1140) {
+                    size = "offcanvas";
+                }
+
+                html.setAttribute("data-sidenav-size", size);
+            }
+        })();
+    </script>
+
+    <script type="module" crossorigin src="/assets/app-DOPhicSe.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/app-1Gqs6GNA.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="fixed inset-x-0 top-0 z-50 bg-card py-6 shadow flex justify-between items-center">
+            <div class="container">
+                <div class="grid lg:grid-cols-12 md:grid-cols-10 grid-cols-2 items-center">
+                    <div class="lg:col-span-2 md:col-span-2">
+                        <a href="mailist-landing.html">
+                            <span class="text-2xl font-bold text-primary">Mailist</span>
+                        </a>
+                    </div>
+
+                    <div class="lg:col-span-8 md:col-span-6 md:block hidden">
+                        <ul class="flex items-center justify-center lg:gap-8 md:gap-6 font-medium text-sm">
+                            <li>
+                                <a href="#home" class="text-default-800 hover:text-primary transition duration-300">Start</a>
+                            </li>
+
+                            <li>
+                                <a href="#problems" class="text-default-800 hover:text-primary transition duration-300">Problemy</a>
+                            </li>
+
+                            <li>
+                                <a href="#solutions" class="text-default-800 hover:text-primary transition duration-300">Rozwiązania</a>
+                            </li>
+
+                            <li>
+                                <a href="#how-it-works" class="text-default-800 hover:text-primary transition duration-300">Jak to działa</a>
+                            </li>
+
+                            <li>
+                                <a href="regulamin.html" class="text-default-800 hover:text-primary transition duration-300">Regulamin</a>
+                            </li>
+
+                            <li>
+                                <a href="polityka-prywatnosci.html" class="text-default-800 hover:text-primary transition duration-300">Prywatność</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="lg:col-span-2 md:col-span-2 flex items-center justify-end gap-2">
+                        <button class="btn size-9 bg-primary text-white md:hidden" aria-haspopup="dialog" aria-expanded="false" aria-controls="navbarMenu" data-hs-overlay="#navbarMenu">
+                            <i data-lucide="menu"></i>
+                        </button>
+
+                        <a href="#" class="flex justify-end">
+                            <button type="button" class="btn bg-primary text-white">
+                                Rozpocznij za darmo
+                                <i data-lucide="arrow-right" class="size-4"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero section -->
+    <section id="home" class="relative lg:pt-44 lg:pb-36 md:pt-34 md:pb-20 pt-30 pb-16">
+        <div class="absolute rotate-45 size-125 border border-dashed border-t-primary/30 border-l-primary/30 border-r-primary/10 border-b-primary/70 rounded-full end-40 -bottom-62.5 z-20 lg:block hidden">
+        </div>
+
+        <div class="absolute rotate-45 size-175 border border-dashed border-t-primary/30 border-l-primary/30 border-r-primary/10 border-b-primary/70 rounded-full end-16 -bottom-87.5 z-20 lg:block hidden">
+        </div>
+
+        <div class="container">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-flex items-center py-1.5 px-3 rounded-full text-xs font-medium border border-primary/30 bg-primary/10 text-primary mb-4">
+                        Email Marketing, który naprawdę działa
+                    </span>
+                    <h1 class="mb-8 leading-tight md:text-5xl text-4xl font-semibold text-default-800">
+                        Przestań tracić czas na <span class="relative inline-block px-2 mx-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-primary/10 before:rounded-md"><span class="relative text-primary">chaos w komunikacji</span></span>
+                    </h1>
+                    <p class="mb-6 text-xl text-default-600">
+                        Czy zmagasz się z nieefektywnym email marketingiem? Mailist pomaga firmom odzyskać kontrolę nad komunikacją z klientami i zwiększyć sprzedaż bez dodatkowego wysiłku.
+                    </p>
+                    <div class="flex items-center gap-4 flex-wrap">
+                        <a href="#">
+                            <button type="button" class="btn bg-primary text-white text-lg px-8 py-3">
+                                <i data-lucide="rocket" class="size-5"></i>
+                                Rozpocznij za darmo
+                            </button>
+                        </a>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="size-5 text-success"></i>
+                            <span class="text-sm text-default-500">Bez karty kredytowej • 14 dni za darmo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-500/20 blur-3xl"></div>
+                    <div class="relative bg-card rounded-2xl shadow-2xl p-8 border border-default-200">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 bg-success/10 border border-success/30 rounded-lg p-4">
+                                <i data-lucide="mail-check" class="size-8 text-success"></i>
+                                <div>
+                                    <h3 class="font-semibold text-default-900">+187% otwarć</h3>
+                                    <p class="text-sm text-default-600">w pierwszym miesiącu</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-primary/10 border border-primary/30 rounded-lg p-4">
+                                <i data-lucide="users" class="size-8 text-primary"></i>
+                                <div>
+                                    <h3 class="font-semibold text-default-900">+3,400 kontaktów</h3>
+                                    <p class="text-sm text-default-600">zorganizowanych automatycznie</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
+                                <i data-lucide="trending-up" class="size-8 text-purple-500"></i>
+                                <div>
+                                    <h3 class="font-semibold text-default-900">+42% konwersji</h3>
+                                    <p class="text-sm text-default-600">dzięki automatyzacji</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems section -->
+    <section id="problems" class="relative py-24 bg-default-50">
+        <div class="container">
+            <div class="text-center mb-16">
+                <span class="inline-flex items-center py-1.5 px-3 rounded-full text-xs font-medium border border-danger/30 bg-danger/10 text-danger mb-4">
+                    Rozpoznajesz te problemy?
+                </span>
+                <h2 class="mb-4 text-4xl font-semibold text-default-800">Wyzwania w email marketingu</h2>
+                <p class="text-lg text-default-600 max-w-2xl mx-auto">
+                    Większość firm mierzy się z tymi samymi frustracjami w komunikacji z klientami
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
+                <div class="card rounded-xl shadow-md bg-card hover:shadow-xl transition-all duration-300">
+                    <div class="card-body p-8">
+                        <div class="size-16 flex items-center justify-center rounded-full bg-danger/10 mb-6">
+                            <i data-lucide="users-x" class="size-8 text-danger"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-default-900">Rosnąca baza kontaktów wymyka się spod kontroli</h3>
+                        <p class="text-default-600">
+                            Setki, tysiące kontaktów w arkuszach kalkulacyjnych. Nie wiesz kto jest kim, nie możesz segmentować, tracisz możliwości sprzedaży.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card rounded-xl shadow-md bg-card hover:shadow-xl transition-all duration-300">
+                    <div class="card-body p-8">
+                        <div class="size-16 flex items-center justify-center rounded-full bg-danger/10 mb-6">
+                            <i data-lucide="clock-alert" class="size-8 text-danger"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-default-900">Brak czasu na regularne kampanie</h3>
+                        <p class="text-default-600">
+                            Chciałbyś wysyłać newslettery, ale każda kampania to godziny pracy. W międzyczasie konkurencja angażuje Twoich potencjalnych klientów.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card rounded-xl shadow-md bg-card hover:shadow-xl transition-all duration-300">
+                    <div class="card-body p-8">
+                        <div class="size-16 flex items-center justify-center rounded-full bg-danger/10 mb-6">
+                            <i data-lucide="mail-x" class="size-8 text-danger"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-default-900">Niskie wskaźniki otwarć i kliknięć</h3>
+                        <p class="text-default-600">
+                            Wysyłasz wiadomości do wszystkich, ale niewiele osób je otwiera. Brakuje personalizacji i odpowiedniego timingu.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card rounded-xl shadow-md bg-card hover:shadow-xl transition-all duration-300">
+                    <div class="card-body p-8">
+                        <div class="size-16 flex items-center justify-center rounded-full bg-danger/10 mb-6">
+                            <i data-lucide="repeat" class="size-8 text-danger"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-default-900">Powtarzalne zadania zabierają cenny czas</h3>
+                        <p class="text-default-600">
+                            Ciągle wysyłasz te same wiadomości powitalne, przypomnienia, follow-upy. To wszystko można zautomatyzować, ale nie wiesz jak.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card rounded-xl shadow-md bg-card hover:shadow-xl transition-all duration-300">
+                    <div class="card-body p-8">
+                        <div class="size-16 flex items-center justify-center rounded-full bg-danger/10 mb-6">
+                            <i data-lucide="bar-chart-2" class="size-8 text-danger"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-default-900">Nie wiesz co działa, a co nie</h3>
+                        <p class="text-default-600">
+                            Wysyłasz maile, ale nie masz pojęcia które kampanie przynoszą najlepsze rezultaty. Działasz po omacku bez danych.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card rounded-xl shadow-md bg-card hover:shadow-xl transition-all duration-300">
+                    <div class="card-body p-8">
+                        <div class="size-16 flex items-center justify-center rounded-full bg-danger/10 mb-6">
+                            <i data-lucide="puzzle" class="size-8 text-danger"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-default-900">Skomplikowane narzędzia paraliżują</h3>
+                        <p class="text-default-600">
+                            Profesjonalne platformy są zbyt skomplikowane i drogie. Potrzebujesz czegoś prostego, co po prostu działa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions section -->
+    <section id="solutions" class="relative py-24">
+        <div class="container">
+            <div class="text-center mb-16">
+                <span class="inline-flex items-center py-1.5 px-3 rounded-full text-xs font-medium border border-success/30 bg-success/10 text-success mb-4">
+                    Mailist rozwiązuje te problemy
+                </span>
+                <h2 class="mb-4 text-4xl font-semibold text-default-800">Jak możemy Ci pomóc</h2>
+                <p class="text-lg text-default-600 max-w-2xl mx-auto">
+                    Prosty system, który organizuje chaos i automatyzuje to, co zabiera Ci czas
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <div class="order-2 lg:order-1">
+                    <div class="relative">
+                        <div class="card rounded-2xl shadow-xl p-8 border-2 border-primary/20">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="size-12 flex items-center justify-center rounded-full bg-primary text-white">
+                                    <i data-lucide="folder-tree" class="size-6"></i>
+                                </div>
+                                <h3 class="text-2xl font-semibold text-default-900">Lista kontaktów</h3>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3 p-3 bg-default-50 rounded-lg">
+                                    <i data-lucide="tag" class="size-5 text-primary"></i>
+                                    <span class="text-default-700">Automatyczna segmentacja</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 bg-default-50 rounded-lg">
+                                    <i data-lucide="filter" class="size-5 text-primary"></i>
+                                    <span class="text-default-700">Zaawansowane filtry</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 bg-default-50 rounded-lg">
+                                    <i data-lucide="import" class="size-5 text-primary"></i>
+                                    <span class="text-default-700">Import z każdego źródła</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <div class="size-16 flex items-center justify-center rounded-full bg-success/10 mb-6">
+                        <i data-lucide="users-round" class="size-8 text-success"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-4 text-default-900">Organizuj kontakty bez wysiłku</h3>
+                    <p class="text-lg text-default-600 mb-6">
+                        Zamiast tracić czas na kategoryzowanie kontaktów ręcznie, Mailist automatycznie organizuje bazę według zachowań, zainteresowań i etapu ścieżki zakupowej. W każdej chwili wiesz, kto jest gotowy na Twoją ofertę.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="size-6 text-success mt-0.5"></i>
+                            <span class="text-default-700">Inteligentne tagi i segmenty tworzone automatycznie</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="size-6 text-success mt-0.5"></i>
+                            <span class="text-default-700">Import kontaktów z CRM, arkuszy, formularzy w sekundach</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="size-6 text-success mt-0.5"></i>
+                            <span class="text-default-700">Czyszczenie duplikatów i weryfikacja adresów email</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <div class="size-16 flex items-center justify-center rounded-full bg-success/10 mb-6">
+                        <i data-lucide="mail" class="size-8 text-success"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-4 text-default-900">Twórz kampanie w minuty, nie godziny</h3>
+                    <p class="text-lg text-default-600 mb-6">
+                        Zapomnij o skomplikowanych edytorach. Wybierz szablon, dostosuj do swojej marki i wyślij. System podpowie najlepszy czas wysyłki i treść, która konwertuje.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="size-6 text-success mt-0.5"></i>
+                            <span class="text-default-700">Gotowe szablony dla każdej branży i okazji</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="size-6 text-success mt-0.5"></i>
+                            <span class="text-default-700">Prosty edytor drag & drop - jak w PowerPoint</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="size-6 text-success mt-0.5"></i>
+                            <span class="text-default-700">Personalizacja treści dla każdego odbiorcy</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="relative">
+                        <div class="card rounded-2xl shadow-xl p-8 border-2 border-primary/20">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="size-12 flex items-center justify-center rounded-full bg-primary text-white">
+                                    <i data-lucide="layout-template" class="size-6"></i>
+                                </div>
+                                <h3 class="text-2xl font-semibold text-default-900">Kreator kampanii</h3>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3 p-3 bg-default-50 rounded-lg">
+                                    <i data-lucide="palette" class="size-5 text-primary"></i>
+                                    <span class="text-default-700">50+ gotowych szablonów</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 bg-default-50 rounded-lg">
+                                    <i data-lucide="smartphone" class="size-5 text-primary"></i>
+                                    <span class="text-default-700">Responsive na wszystkich urządzeniach</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 bg-default-50 rounded-lg">
+                                    <i data-lucide="zap" class="size-5 text-primary"></i>
+                                    <span class="text-default-700">AI optymalizuje treść</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="relative">
+                        <div class="card rounded-2xl shadow-xl p-8 border-2 border-primary/20">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="size-12 flex items-center justify-center rounded-full bg-primary text-white">
+                                    <i data-lucide="workflow" class="size-6"></i>
+                                </div>
+                                <h3 class="text-2xl font-semibold text-default-900">Automatyzacje</h3>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3 p-3 bg-default-50 rounded-lg">
+                                    <i data-lucide="user-plus" class="size-5 text-primary"></i>
+                                    <span class="text-default-700">Seria powitalna nowych subskrybentów</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 bg-default-50 rounded-lg">
+                                    <i data-lucide="shopping-cart" class="size-5 text-primary"></i>
+                                    <span class="text-default-700">Przypomnienia o porzuconym koszyku</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 bg-default-50 rounded-lg">
+                                    <i data-lucide="gift" class="size-5 text-primary"></i>
+                                    <span class="text-default-700">Życzenia urodzinowe i oferty specjalne</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <div class="size-16 flex items-center justify-center rounded-full bg-success/10 mb-6">
+                        <i data-lucide="bot" class="size-8 text-success"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-4 text-default-900">Automatyzuj komunikację - pracuj we śnie</h3>
+                    <p class="text-lg text-default-600 mb-6">
+                        Ustaw raz scenariusze automatycznych wiadomości i pozwól systemowi pracować za Ciebie 24/7. Nowi klienci otrzymają serię powitalną, nieaktywni dostaną przypomnienie, a urodzinowy rabat wyśle się sam.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="size-6 text-success mt-0.5"></i>
+                            <span class="text-default-700">Gotowe scenariusze dla typowych sytuacji</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="size-6 text-success mt-0.5"></i>
+                            <span class="text-default-700">Wyzwalacze oparte na zachowaniach użytkowników</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="size-6 text-success mt-0.5"></i>
+                            <span class="text-default-700">Testy A/B i optymalizacja w czasie rzeczywistym</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works section -->
+    <section id="how-it-works" class="relative py-24 bg-gradient-to-b from-primary/5 to-transparent">
+        <div class="container">
+            <div class="text-center mb-16">
+                <span class="inline-flex items-center py-1.5 px-3 rounded-full text-xs font-medium border border-primary/30 bg-primary/10 text-primary mb-4">
+                    Proste jak 1-2-3
+                </span>
+                <h2 class="mb-4 text-4xl font-semibold text-default-800">Jak zacząć z Mailist</h2>
+                <p class="text-lg text-default-600 max-w-2xl mx-auto">
+                    Nie potrzebujesz specjalistycznych umiejętności ani szkoleń - zacznij wysyłać profesjonalne kampanie w kilka minut
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 size-16 flex items-center justify-center rounded-full bg-primary text-white text-2xl font-bold shadow-lg">
+                        1
+                    </div>
+                    <div class="card rounded-2xl shadow-lg p-8 bg-card h-full border-2 border-primary/10 hover:border-primary/30 transition-all">
+                        <div class="mt-8">
+                            <div class="size-16 flex items-center justify-center rounded-full bg-primary/10 mb-6">
+                                <i data-lucide="upload" class="size-8 text-primary"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4 text-default-900">Importuj kontakty</h3>
+                            <p class="text-default-600">
+                                Prześlij plik CSV, połącz z CRM lub dodaj formularz na swoją stronę. System automatycznie zorganizuje i posegmentuje bazę.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 size-16 flex items-center justify-center rounded-full bg-primary text-white text-2xl font-bold shadow-lg">
+                        2
+                    </div>
+                    <div class="card rounded-2xl shadow-lg p-8 bg-card h-full border-2 border-primary/10 hover:border-primary/30 transition-all">
+                        <div class="mt-8">
+                            <div class="size-16 flex items-center justify-center rounded-full bg-primary/10 mb-6">
+                                <i data-lucide="pen-tool" class="size-8 text-primary"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4 text-default-900">Stwórz kampanię</h3>
+                            <p class="text-default-600">
+                                Wybierz szablon, dostosuj treść i kolory do swojej marki. Lub pozwól AI napisać przekonującą treść za Ciebie.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 size-16 flex items-center justify-center rounded-full bg-primary text-white text-2xl font-bold shadow-lg">
+                        3
+                    </div>
+                    <div class="card rounded-2xl shadow-lg p-8 bg-card h-full border-2 border-primary/10 hover:border-primary/30 transition-all">
+                        <div class="mt-8">
+                            <div class="size-16 flex items-center justify-center rounded-full bg-primary/10 mb-6">
+                                <i data-lucide="send" class="size-8 text-primary"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold mb-4 text-default-900">Wyślij i analizuj</h3>
+                            <p class="text-default-600">
+                                Wyślij natychmiast lub zaplanuj wysyłkę. Śledź otwarcia, kliknięcia i konwersje w przejrzystym dashboardzie.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="#">
+                    <button type="button" class="btn bg-primary text-white text-lg px-10 py-4">
+                        Zacznij teraz za darmo
+                        <i data-lucide="arrow-right" class="size-5"></i>
+                    </button>
+                </a>
+                <p class="text-sm text-default-500 mt-4">Bez karty kredytowej • Pełny dostęp przez 14 dni • Anuluj w każdej chwili</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA section -->
+    <section class="relative py-20 bg-gradient-to-r from-primary to-primary/80">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLTItMi0yLTJzLTIgMC0yIDItMiAyLTIgMiAwIDIgMiAyIDIgMCAyLTIgMi0yIDItMiAwLTIgMi0yIDJ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-10"></div>
+        <div class="container relative">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="mb-6 text-4xl md:text-5xl font-bold text-white leading-tight">
+                    Gotowy aby odzyskać kontrolę nad email marketingiem?
+                </h2>
+                <p class="text-xl text-white/90 mb-8">
+                    Dołącz do tysięcy firm, które zwiększyły sprzedaż dzięki Mailist. Bez ryzyka, bez zobowiązań.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#">
+                        <button type="button" class="btn bg-white text-primary text-lg px-10 py-4 hover:bg-white/90">
+                            <i data-lucide="rocket" class="size-5"></i>
+                            Rozpocznij 14-dniowy trial
+                        </button>
+                    </a>
+                    <a href="#">
+                        <button type="button" class="btn bg-transparent border-2 border-white text-white text-lg px-10 py-4 hover:bg-white/10">
+                            <i data-lucide="play-circle" class="size-5"></i>
+                            Zobacz jak to działa
+                        </button>
+                    </a>
+                </div>
+                <div class="flex items-center justify-center gap-8 mt-12 text-white/80">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="size-5"></i>
+                        <span>Bez karty kredytowej</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="size-5"></i>
+                        <span>Setup w 5 minut</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="size-5"></i>
+                        <span>Anuluj kiedy chcesz</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative pt-20 pb-12 bg-default-900">
+        <div class="container">
+            <div class="grid lg:grid-cols-12 md:grid-cols-2 gap-8">
+                <div class="lg:col-span-4">
+                    <a href="mailist-landing.html" class="inline-block mb-6">
+                        <span class="text-3xl font-bold text-white">Mailist</span>
+                    </a>
+                    <p class="text-default-400 mb-6">
+                        Profesjonalna platforma email marketingu, która pomaga firmom zwiększać sprzedaż poprzez skuteczną komunikację z klientami.
+                    </p>
+                    <div class="flex gap-3">
+                        <button type="button" class="size-10 btn border border-default-400/40 bg-transparent rounded-full text-default-400 hover:text-primary hover:border-primary">
+                            <i data-lucide="facebook" class="size-4"></i>
+                        </button>
+                        <button type="button" class="size-10 btn border border-default-400/40 bg-transparent rounded-full text-default-400 hover:text-primary hover:border-primary">
+                            <i data-lucide="twitter" class="size-4"></i>
+                        </button>
+                        <button type="button" class="size-10 btn border border-default-400/40 bg-transparent rounded-full text-default-400 hover:text-primary hover:border-primary">
+                            <i data-lucide="linkedin" class="size-4"></i>
+                        </button>
+                        <button type="button" class="size-10 btn border border-default-400/40 bg-transparent rounded-full text-default-400 hover:text-primary hover:border-primary">
+                            <i data-lucide="instagram" class="size-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h5 class="mb-4 font-medium text-white text-lg">Produkt</h5>
+                    <ul class="flex flex-col gap-y-3 text-sm">
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">Funkcje</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">Cennik</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">Integracje</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">API</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h5 class="mb-4 font-medium text-white text-lg">Firma</h5>
+                    <ul class="flex flex-col gap-y-3 text-sm">
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">O nas</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">Kariera</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h5 class="mb-4 font-medium text-white text-lg">Pomoc</h5>
+                    <ul class="flex flex-col gap-y-3 text-sm">
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">Centrum pomocy</a>
+                        </li>
+                        <li>
+                            <a href="regulamin.html" class="text-default-400 hover:text-primary transition-all">Regulamin</a>
+                        </li>
+                        <li>
+                            <a href="polityka-prywatnosci.html" class="text-default-400 hover:text-primary transition-all">Polityka prywatności</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">Status</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h5 class="mb-4 font-medium text-white text-lg">Zasoby</h5>
+                    <ul class="flex flex-col gap-y-3 text-sm">
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">Dokumentacja</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">Szablony</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">Webinary</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-default-400 hover:text-primary transition-all">Case studies</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="py-6 mt-12 border-t border-default-400/20">
+                <div class="text-center text-default-400 text-sm">
+                    <p>© 2025 Mailist. Wszelkie prawa zastrzeżone.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu -->
+    <div class="hs-overlay hs-overlay-open:translate-y-0 -translate-y-full fixed top-0 inset-x-0 transition-all duration-300 transform max-h-64 p-5 size-full z-80 card border-b border-default-200 hidden" role="dialog" tabindex="-1" aria-labelledby="navbarMenu-label" id="navbarMenu">
+        <div class="flex items-center justify-between">
+            <a href="mailist-landing.html">
+                <span class="text-2xl font-bold text-primary">Mailist</span>
+            </a>
+
+            <button aria-label="Close" data-hs-overlay="#navbarMenu" class="inline-flex justify-end items-center gap-x-2 rounded-full">
+                <i data-lucide="x" class="size-4"></i>
+            </button>
+        </div>
+
+        <div class="pt-8">
+            <ul class="flex flex-col gap-y-4 font-medium text-sm">
+                <li>
+                    <a href="#home" class="text-default-800 hover:text-primary transition duration-300">Start</a>
+                </li>
+                <li>
+                    <a href="#problems" class="text-default-800 hover:text-primary transition duration-300">Problemy</a>
+                </li>
+                <li>
+                    <a href="#solutions" class="text-default-800 hover:text-primary transition duration-300">Rozwiązania</a>
+                </li>
+                <li>
+                    <a href="#how-it-works" class="text-default-800 hover:text-primary transition duration-300">Jak to działa</a>
+                </li>
+                <li>
+                    <a href="regulamin.html" class="text-default-800 hover:text-primary transition duration-300">Regulamin</a>
+                </li>
+                <li>
+                    <a href="polityka-prywatnosci.html" class="text-default-800 hover:text-primary transition duration-300">Prywatność</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
