@@ -4,73 +4,31 @@ description: Kompletna dokumentacja techniczna platformy email marketingowej Mai
 baseurl: "/docs"
 url: "https://mailist.pl"
 
-# Theme
-theme: just-the-docs
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
 
-# Just the Docs configuration
-# Color scheme
-color_scheme: mailist
-
-# Logo
-logo: "/assets/images/logo.png"
-
-# Search
-search_enabled: true
-search:
-  heading_level: 2
-  previews: 3
-  preview_words_before: 5
-  preview_words_after: 10
-  tokenizer_separator: /[\s/]+/
-  rel_url: true
-  button: false
-
-# Mermaid diagrams
-mermaid:
-  version: "9.1.6"
-
-# Heading anchors
-heading_anchors: true
-
-# Auxiliary links
-aux_links:
-  "Mailist":
-    - "/"
-  "Blog":
-    - "/blog"
-  "GitHub":
-    - "https://github.com/mailist-com"
-
-# Auxiliary links position
-aux_links_new_tab: false
-
-# Footer
-footer_content: "© 2025 Mailist. Wszelkie prawa zastrzeżone. | <a href=\"/polityka-prywatnosci.html\">Polityka Prywatności</a> | <a href=\"/regulamin.html\">Regulamin</a>"
-
-# Back to top link
-back_to_top: true
-back_to_top_text: "Wróć na górę"
-
-# Footer last edit timestamp
-last_edit_timestamp: true
-last_edit_time_format: "%d %b %Y o %H:%M"
-
-# Navigation
-nav_sort: case_insensitive
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: javascript
+    css_class: 'highlight'
 
 # Collections
 collections:
   docs:
-    permalink: "/:collection/:path/"
     output: true
+    permalink: /:collection/:path/
 
+# Defaults
 defaults:
   - scope:
       path: ""
-      type: "docs"
+      type: "pages"
     values:
       layout: "default"
-      nav_exclude: false
   - scope:
       path: "pages"
     values:
@@ -86,40 +44,14 @@ exclude:
   - .jekyll-cache
   - gemfiles
   - README.md
+  - .bundle
+  - .git
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-
-kramdown:
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
-
-# Callouts
-callouts_level: quiet
-callouts:
-  note:
-    title: Uwaga
-    color: blue
-  tip:
-    title: Wskazówka
-    color: green
-  warning:
-    title: Ostrzeżenie
-    color: yellow
-  danger:
-    title: Niebezpieczeństwo
-    color: red
-  info:
-    title: Informacja
-    color: purple
 
 # Author
 author:
