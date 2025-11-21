@@ -1,0 +1,59 @@
+# Jekyll Configuration
+title: Blog Mailist
+description: Praktyczne porady, case studies i najnowsze trendy w email marketingu
+baseurl: "/blog"
+url: "https://mailist.pl"
+permalink: /:year/:month/:day/:title/
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Pagination
+paginate: 10
+paginate_path: "/strona/:num/"
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Zespół Mailist"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - README.md
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Author
+author:
+  name: Mailist
+  email: blog@mailist.pl
+  twitter: mailist_pl
+
+# Social
+social:
+  facebook: https://facebook.com/mailist
+  twitter: https://twitter.com/mailist_pl
+  linkedin: https://linkedin.com/company/mailist

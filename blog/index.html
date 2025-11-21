@@ -1,0 +1,188 @@
+---
+layout: default
+title: Blog o Email Marketingu
+description: Praktyczne porady, case studies i najnowsze trendy w email marketingu od ekspertów Mailist
+---
+
+<!-- Hero Section -->
+<section class="relative lg:pt-44 lg:pb-20 md:pt-34 md:pb-16 pt-30 pb-12 bg-default-100 dark:bg-default-950">
+    <div class="container">
+        <div class="max-w-3xl mx-auto text-center">
+            <h1 class="mb-6 leading-relaxed md:text-5xl text-4xl font-semibold text-default-800">
+                Blog
+                <span class="relative inline-block px-2 mx-2 before:block before:absolute before:-inset-1 before:-skew-y-6 before:bg-primary/10 before:rounded-md before:backdrop-blur-xl">
+                    <span class="relative text-primary">Mailist</span>
+                </span>
+            </h1>
+            <p class="text-lg text-default-600">
+                Praktyczne porady, case studies i najnowsze trendy w email marketingu.
+                Dowiedz się, jak zwiększyć skuteczność swoich kampanii.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Post -->
+{% assign featured = site.posts | where: "featured", true | first %}
+{% if featured %}
+<section class="relative py-16 bg-default-100 dark:bg-default-950">
+    <div class="container">
+        <div class="max-w-6xl mx-auto">
+            <div class="card rounded-md shadow-lg overflow-hidden">
+                <div class="grid lg:grid-cols-2 gap-0">
+                    {% if featured.image %}
+                    <div class="h-full">
+                        <img src="{{ featured.image }}" alt="{{ featured.title }}" class="w-full h-full object-cover">
+                    </div>
+                    {% endif %}
+                    <div class="card-body p-8 lg:p-12">
+                        <div class="mb-4">
+                            <span class="inline-flex items-center py-1 px-3 rounded text-xs font-medium border border-primary/30 bg-primary/15 text-primary">
+                                Wyróżniony artykuł
+                            </span>
+                        </div>
+                        <h2 class="text-3xl font-semibold text-default-800 mb-4">
+                            <a href="{{ featured.url | relative_url }}" class="hover:text-primary transition">
+                                {{ featured.title }}
+                            </a>
+                        </h2>
+                        <p class="text-lg text-default-600 mb-6">
+                            {{ featured.excerpt | strip_html | truncate: 200 }}
+                        </p>
+                        <div class="flex items-center gap-4 text-sm text-default-500 mb-6">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="calendar" class="size-4"></i>
+                                <time datetime="{{ featured.date | date_to_xmlschema }}">
+                                    {{ featured.date | date: "%d %B %Y" }}
+                                </time>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="clock" class="size-4"></i>
+                                <span>{{ featured.read_time | default: "5 min" }} czytania</span>
+                            </div>
+                        </div>
+                        <a href="{{ featured.url | relative_url }}" class="btn bg-primary text-white">
+                            Czytaj więcej
+                            <i data-lucide="arrow-right" class="size-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Blog Posts Grid -->
+<section class="relative lg:py-24 md:py-16 py-12">
+    <div class="container">
+        <div class="max-w-6xl mx-auto">
+            <!-- Categories Filter -->
+            <div class="mb-12">
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <button class="btn border border-primary bg-primary text-white">
+                        Wszystkie
+                    </button>
+                    <button class="btn border border-dashed border-primary bg-transparent text-primary hover:bg-primary/20">
+                        Email Marketing
+                    </button>
+                    <button class="btn border border-dashed border-primary bg-transparent text-primary hover:bg-primary/20">
+                        Automatyzacja
+                    </button>
+                    <button class="btn border border-dashed border-primary bg-transparent text-primary hover:bg-primary/20">
+                        Case Studies
+                    </button>
+                    <button class="btn border border-dashed border-primary bg-transparent text-primary hover:bg-primary/20">
+                        Poradniki
+                    </button>
+                </div>
+            </div>
+
+            <!-- Posts Grid -->
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-6">
+                {% for post in paginator.posts %}
+                <article class="card rounded-md shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                    <a href="{{ post.url | relative_url }}" class="block">
+                        {% if post.image %}
+                        <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-48 object-cover rounded-t-md">
+                        {% endif %}
+                        <div class="card-body">
+                            <div class="mb-3">
+                                {% if post.category %}
+                                <span class="inline-flex items-center py-0.5 px-2.5 rounded text-xs font-medium border border-primary/30 bg-primary/15 text-primary">
+                                    {{ post.category }}
+                                </span>
+                                {% endif %}
+                            </div>
+                            <h3 class="text-xl font-semibold text-default-800 mb-3 hover:text-primary transition">
+                                {{ post.title }}
+                            </h3>
+                            <p class="text-default-600 mb-4">
+                                {{ post.excerpt | strip_html | truncate: 120 }}
+                            </p>
+                            <div class="flex items-center gap-4 text-sm text-default-500">
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="calendar" class="size-4"></i>
+                                    <time datetime="{{ post.date | date_to_xmlschema }}">
+                                        {{ post.date | date: "%d.%m.%Y" }}
+                                    </time>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="clock" class="size-4"></i>
+                                    <span>{{ post.read_time | default: "5 min" }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            {% if paginator.total_pages > 1 %}
+            <div class="mt-12 flex justify-center">
+                <nav class="flex items-center gap-2">
+                    {% if paginator.previous_page %}
+                    <a href="{{ paginator.previous_page_path | relative_url }}" class="btn border border-dashed border-primary bg-transparent text-primary hover:bg-primary/20">
+                        <i data-lucide="chevron-left" class="size-4"></i>
+                        Poprzednia
+                    </a>
+                    {% endif %}
+
+                    <span class="px-4 py-2 text-default-600">
+                        Strona {{ paginator.page }} z {{ paginator.total_pages }}
+                    </span>
+
+                    {% if paginator.next_page %}
+                    <a href="{{ paginator.next_page_path | relative_url }}" class="btn border border-dashed border-primary bg-transparent text-primary hover:bg-primary/20">
+                        Następna
+                        <i data-lucide="chevron-right" class="size-4"></i>
+                    </a>
+                    {% endif %}
+                </nav>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter CTA -->
+<section class="relative py-20 bg-blue-700/80 dark:bg-blue-900">
+    <div class="container">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="mb-4 text-blue-50 leading-normal text-4xl font-semibold">
+                Zapisz się na newsletter
+            </h2>
+            <p class="text-lg text-blue-200 mb-8">
+                Otrzymuj najnowsze artykuły, porady i case studies prosto na swoją skrzynkę mailową.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-xl mx-auto">
+                <input type="email" placeholder="twoj@email.pl" class="flex-1 px-4 py-3 rounded-md border-none bg-white text-default-800 focus:outline-none focus:ring-2 focus:ring-primary" />
+                <button type="button" class="btn bg-primary text-white hover:bg-primary/90 px-8">
+                    Subskrybuj
+                    <i data-lucide="mail" class="size-4"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
