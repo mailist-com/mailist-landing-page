@@ -7,7 +7,7 @@ category: "Poradniki"
 tags: ["błędy", "best practices", "początkujący"]
 featured: false
 read_time: "5 min"
-image: "/assets/images/landing/chat.jpg"
+image: "/blog/assets/images/chat.jpg"
 excerpt: "Czy popełniasz te błędy w swoich kampaniach email? Zobacz 5 najczęstszych potknięć i dowiedz się, jak je naprawić."
 ---
 

@@ -7,7 +7,7 @@ category: "Email Marketing"
 tags: ["wskaźnik otwarć", "subject line", "segmentacja", "personalizacja"]
 featured: true
 read_time: "8 min"
-image: "/assets/images/landing/email.jpg"
+image: "/blog/assets/images/email.jpg"
 excerpt: "Dowiedz się, jak jednym z naszych klientów udało się zwiększyć wskaźnik otwarć emaili z 12% do 34% w ciągu zaledwie 3 miesięcy. Poznaj 7 sprawdzonych strategii."
 ---
 
