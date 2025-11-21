@@ -1,0 +1,438 @@
+/**
+ * Documentation Custom Styles
+ * Additional styles for documentation content and layout
+ * Based on Mailist landing page design system
+ */
+
+/* Import Just the Docs styles */
+@import url('https://unpkg.com/just-the-docs@0.10.0/assets/css/just-the-docs-default.css');
+
+/* Prose styles for documentation content */
+.prose {
+    color: var(--color-default-700);
+    max-width: 75ch;
+}
+
+.prose :where(p):not(:where([class~="not-prose"] *)) {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    line-height: 1.75;
+}
+
+.prose :where([class~="lead"]):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-600);
+    font-size: 1.25em;
+    line-height: 1.6;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+}
+
+.prose :where(a):not(:where([class~="not-prose"] *)) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.prose :where(a):hover:not(:where([class~="not-prose"] *)) {
+    color: var(--color-blue-700);
+}
+
+.prose :where(strong):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-800);
+    font-weight: 600;
+}
+
+.prose :where(ol):not(:where([class~="not-prose"] *)) {
+    list-style-type: decimal;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.625em;
+}
+
+.prose :where(ul):not(:where([class~="not-prose"] *)) {
+    list-style-type: disc;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.625em;
+}
+
+.prose :where(li):not(:where([class~="not-prose"] *)) {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.prose :where(h1):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-800);
+    font-weight: 700;
+    font-size: 2.25em;
+    margin-top: 0;
+    margin-bottom: 0.8888889em;
+    line-height: 1.1111111;
+}
+
+.prose :where(h2):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-800);
+    font-weight: 700;
+    font-size: 1.875em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.3333333;
+}
+
+.prose :where(h3):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-800);
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-top: 1.6em;
+    margin-bottom: 0.6em;
+    line-height: 1.6;
+}
+
+.prose :where(h4):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-800);
+    font-weight: 600;
+    font-size: 1.25em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-800);
+    font-weight: 500;
+    font-size: 0.875em;
+    background-color: var(--color-default-100);
+    padding: 0.25em 0.375em;
+    border-radius: 0.25rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.prose :where(pre):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-100);
+    background-color: var(--color-default-900);
+    overflow-x: auto;
+    font-size: 0.875em;
+    line-height: 1.7142857;
+    margin-top: 1.7142857em;
+    margin-bottom: 1.7142857em;
+    border-radius: 0.5rem;
+    padding: 1em 1.5em;
+}
+
+.prose :where(pre code):not(:where([class~="not-prose"] *)) {
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 0;
+    padding: 0;
+    font-weight: 400;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+}
+
+.prose :where(table):not(:where([class~="not-prose"] *)) {
+    width: 100%;
+    table-layout: auto;
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 0.875em;
+    line-height: 1.7142857;
+    border-collapse: collapse;
+}
+
+.prose :where(thead):not(:where([class~="not-prose"] *)) {
+    border-bottom-width: 2px;
+    border-bottom-color: var(--color-default-300);
+}
+
+.prose :where(thead th):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-800);
+    font-weight: 600;
+    vertical-align: bottom;
+    padding: 0.5714286em;
+}
+
+.prose :where(tbody tr):not(:where([class~="not-prose"] *)) {
+    border-bottom-width: 1px;
+    border-bottom-color: var(--color-default-200);
+}
+
+.prose :where(tbody td):not(:where([class~="not-prose"] *)) {
+    vertical-align: top;
+    padding: 0.5714286em;
+}
+
+.prose :where(blockquote):not(:where([class~="not-prose"] *)) {
+    font-weight: 500;
+    font-style: italic;
+    color: var(--color-default-800);
+    border-left-width: 0.25rem;
+    border-left-color: var(--color-primary);
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+    padding-left: 1em;
+    background-color: var(--color-default-50);
+    padding: 1em;
+    border-radius: 0.375rem;
+}
+
+/* Callout boxes */
+.callout {
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid;
+    border-radius: 0.375rem;
+    background-color: var(--color-default-50);
+}
+
+.callout-note {
+    border-left-color: #3b82f6;
+    background-color: #eff6ff;
+}
+
+.callout-tip {
+    border-left-color: #10b981;
+    background-color: #f0fdf4;
+}
+
+.callout-warning {
+    border-left-color: #f59e0b;
+    background-color: #fffbeb;
+}
+
+.callout-danger {
+    border-left-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.callout-info {
+    border-left-color: #8b5cf6;
+    background-color: #faf5ff;
+}
+
+.callout-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Code blocks with line numbers */
+.highlight {
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.highlight pre {
+    padding: 1rem 1.5rem;
+    overflow-x: auto;
+}
+
+.highlight .lineno {
+    color: var(--color-default-400);
+    padding-right: 1rem;
+    user-select: none;
+}
+
+/* API documentation styles */
+.api-method {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.api-method-get {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.api-method-post {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.api-method-put {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.api-method-delete {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.api-method-patch {
+    background-color: #e9d5ff;
+    color: #6b21a8;
+}
+
+/* Parameter tables */
+.parameter-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+}
+
+.parameter-table th {
+    background-color: var(--color-default-100);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-default-300);
+}
+
+.parameter-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-default-200);
+}
+
+.parameter-required {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.parameter-optional {
+    color: #64748b;
+}
+
+.parameter-type {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.875rem;
+    background-color: var(--color-default-100);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+}
+
+/* Navigation improvements */
+.site-nav {
+    padding-top: 1rem;
+}
+
+.site-nav .nav-list-link {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s;
+}
+
+.site-nav .nav-list-link:hover {
+    background-color: var(--color-default-100);
+}
+
+.site-nav .nav-list-link.active {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Search improvements */
+.search-input {
+    border: 2px solid var(--color-default-200);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Custom spacing utilities */
+.pt-30 {
+    padding-top: 7.5rem;
+}
+
+.pt-34 {
+    padding-top: 8.5rem;
+}
+
+/* Dark mode adjustments */
+.dark .prose {
+    color: var(--color-default-300);
+}
+
+.dark .prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-100);
+}
+
+.dark .prose :where(strong):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-100);
+}
+
+.dark .prose :where(code):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-100);
+    background-color: var(--color-default-800);
+}
+
+.dark .prose :where(blockquote):not(:where([class~="not-prose"] *)) {
+    color: var(--color-default-100);
+    background-color: var(--color-default-800);
+}
+
+/* Better list markers */
+.prose ul li::marker {
+    color: var(--color-primary);
+}
+
+.prose ol li::marker {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Version badge */
+.version-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Status indicators */
+.status-stable {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.status-beta {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.status-deprecated {
+    color: #ef4444;
+    font-weight: 600;
+    text-decoration: line-through;
+}
+
+/* Copy code button */
+.copy-code-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--color-default-700);
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.highlight:hover .copy-code-button {
+    opacity: 1;
+}
+
+.copy-code-button:hover {
+    background-color: var(--color-default-600);
+}
