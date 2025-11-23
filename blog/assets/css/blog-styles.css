@@ -1,7 +1,65 @@
 /**
  * Blog Custom Styles
  * Additional styles for blog content and layout
+ * Aligned with Mailist Landing Page styling
  */
+
+/* ========================================
+   Primary Color Override - Match Landing Page
+   Landing Page uses violet/purple as primary
+   ======================================== */
+:root {
+    --color-primary: var(--color-violet-500);
+    --blog-primary: #8b5cf6; /* violet-500 */
+    --blog-primary-dark: #7c3aed; /* violet-600 */
+    --blog-primary-light: #a78bfa; /* violet-400 */
+    --blog-gradient-start: #8b5cf6;
+    --blog-gradient-end: #6366f1;
+}
+
+/* Override primary color for blog */
+.bg-primary {
+    background-color: var(--blog-primary) !important;
+}
+
+.text-primary {
+    color: var(--blog-primary) !important;
+}
+
+.border-primary {
+    border-color: var(--blog-primary) !important;
+}
+
+.hover\:text-primary:hover {
+    color: var(--blog-primary-dark) !important;
+}
+
+.hover\:bg-primary:hover,
+.hover\:bg-primary\/90:hover {
+    background-color: var(--blog-primary-dark) !important;
+}
+
+.bg-primary\/10,
+.bg-primary\/15,
+.bg-primary\/20 {
+    background-color: rgba(139, 92, 246, 0.15) !important;
+}
+
+.border-primary\/30 {
+    border-color: rgba(139, 92, 246, 0.3) !important;
+}
+
+/* Focus states */
+.focus\:ring-primary:focus {
+    --tw-ring-color: var(--blog-primary);
+}
+
+/* ========================================
+   CTA Sections - Match Landing Page Purple Theme
+   ======================================== */
+.bg-violet-gradient {
+    background: linear-gradient(135deg, var(--blog-gradient-start) 0%, var(--blog-gradient-end) 100%);
+}
 
 /* Prose styles for blog post content */
 .prose {
@@ -24,13 +82,13 @@
 }
 
 .prose :where(a):not(:where([class~="not-prose"] *)) {
-    color: var(--color-primary);
+    color: var(--blog-primary);
     text-decoration: underline;
     font-weight: 500;
 }
 
 .prose :where(a):hover:not(:where([class~="not-prose"] *)) {
-    color: var(--color-blue-700);
+    color: var(--blog-primary-dark);
 }
 
 .prose :where(strong):not(:where([class~="not-prose"] *)) {
@@ -253,12 +311,12 @@
     font-style: italic;
     color: var(--color-default-800);
     border-left-width: 0.25rem;
-    border-left-color: var(--color-primary);
+    border-left-color: var(--blog-primary);
     quotes: "\201C""\201D""\2018""\2019";
     margin-top: 1.6em;
     margin-bottom: 1.6em;
     padding-left: 1em;
-    background-color: var(--color-default-50);
+    background-color: #f3f0ff; /* violet-50 equivalent */
     padding: 1em;
     border-radius: 0.375rem;
 }
@@ -367,11 +425,11 @@
 
 /* Better list markers */
 .prose ul li::marker {
-    color: var(--color-primary);
+    color: var(--blog-primary);
 }
 
 .prose ol li::marker {
-    color: var(--color-primary);
+    color: var(--blog-primary);
     font-weight: 600;
 }
 
