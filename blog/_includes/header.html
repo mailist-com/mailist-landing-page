@@ -1,47 +1,26 @@
-<header class="header-wrapper" style="position: fixed; top: 0; left: 0; right: 0; z-index: 99999; isolation: isolate;">
-    <nav class="py-4 shadow-lg flex justify-between items-center" style="background-color: #ffffff; position: relative; z-index: 1;">
-        <div class="container">
-            <div class="grid lg:grid-cols-12 md:grid-cols-10 grid-cols-2 items-center">
-                <div class="lg:col-span-2 md:col-span-2">
-                    <a href="../index.html" class="flex items-center">
-                        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Mailist Logo" class="h-8" />
-                    </a>
-                </div>
-
-                <div class="lg:col-span-8 md:col-span-6 md:block hidden">
-                    <ul class="flex items-center justify-center lg:gap-8 md:gap-6 font-medium text-sm">
-                        <li>
-                            <a href="../index.html#funkcje" class="text-zinc-700 hover:text-violet-600 transition duration-300">Rozwiązania</a>
-                        </li>
-
-                        <li>
-                            <a href="../index.html#automatyzacja" class="text-zinc-700 hover:text-violet-600 transition duration-300">Automatyzacja</a>
-                        </li>
-
-                        <li>
-                            <a href="../index.html#cennik" class="text-zinc-700 hover:text-violet-600 transition duration-300">Cennik</a>
-                        </li>
-
-                        <li>
-                            <a href="{{ site.baseurl }}/index.html" style="color: #5a49f8;" class="font-semibold transition duration-300">Blog</a>
-                        </li>
-
-                        <li>
-                            <a href="../regulamin.html" class="text-zinc-700 hover:text-violet-600 transition duration-300">Regulamin</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="lg:col-span-2 md:col-span-2 flex items-center justify-end gap-2">
-                    <button class="size-9 flex items-center justify-center rounded-full md:hidden" style="background-color: #5a49f8;" aria-haspopup="dialog" aria-expanded="false" aria-controls="navbarMenu" data-hs-overlay="#navbarMenu">
-                        <i data-lucide="menu" class="size-4 text-white"></i>
-                    </button>
-
-                    <a href="../index.html#trial" class="header-btn hidden md:inline-block">
-                        Wypróbuj za darmo
-                    </a>
+<!-- Start Navbar Area -->
+<div class="navbar-area">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="../index.html">
+                <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Mailist Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="../index.html#funkcje" class="nav-link">Rozwiązania</a></li>
+                    <li class="nav-item"><a href="../index.html#automatyzacja" class="nav-link">Automatyzacja</a></li>
+                    <li class="nav-item"><a href="../index.html#cennik" class="nav-link">Cennik</a></li>
+                    <li class="nav-item"><a href="{{ site.baseurl }}/index.html" class="nav-link active">Blog</a></li>
+                    <li class="nav-item"><a href="../regulamin.html" class="nav-link">Regulamin</a></li>
+                </ul>
+                <div class="others-option">
+                    <a href="../index.html#trial" class="default-btn">Wypróbuj za darmo</a>
                 </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </div>
+</div>
+<!-- End Navbar Area -->

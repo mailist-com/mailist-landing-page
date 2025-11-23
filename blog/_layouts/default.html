@@ -11,39 +11,60 @@
     {% seo %}
 
     <!-- Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/blog-styles.css">
 
     <!-- LP-aligned styles -->
     <style>
-        /* Header wrapper styling */
-        .header-wrapper {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            z-index: 99999 !important;
-            isolation: isolate;
+        /* ============================================
+           LP Navbar Styles
+           ============================================ */
+        .navbar-area {
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            padding: 15px 0;
+            box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
         }
-        .header-wrapper nav {
-            background-color: #ffffff !important;
-            position: relative;
+        .navbar-area .navbar {
+            padding: 0;
         }
-        /* Ensure main content stays below header */
-        main {
-            position: relative;
-            z-index: 1;
+        .navbar-area .navbar-brand img {
+            max-height: 35px;
         }
-        main section {
-            position: relative;
-            z-index: 1;
+        .navbar-area .navbar-nav {
+            margin-left: auto;
+            margin-right: auto;
         }
-        main section img {
+        .navbar-area .navbar-nav .nav-item {
             position: relative;
-            z-index: 1;
+            margin: 0 12px;
+        }
+        .navbar-area .navbar-nav .nav-link {
+            color: #5d6267;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+        .navbar-area .navbar-nav .nav-link:hover,
+        .navbar-area .navbar-nav .nav-link.active {
+            color: #5a49f8;
+        }
+        .navbar-area .others-option .default-btn {
+            padding: 12px 30px;
+            font-size: 14px;
         }
 
-        /* LP default-btn style */
+        /* ============================================
+           LP Button Styles
+           ============================================ */
         .default-btn {
             display: inline-block;
             padding: 15px 35px;
@@ -64,7 +85,9 @@
             box-shadow: 0 10px 25px rgba(90, 73, 248, 0.3);
         }
 
-        /* LP sub-title style */
+        /* ============================================
+           LP Sub-title Styles
+           ============================================ */
         .sub-title {
             display: inline-block;
             color: #5a49f8;
@@ -75,52 +98,224 @@
             margin-bottom: 12px;
         }
 
-        /* Alternative button - outline style */
-        .link-btn {
-            display: inline-block;
-            color: #5a49f8;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
+        /* ============================================
+           LP Free Trial / Newsletter Section
+           ============================================ */
+        .free-trial-area {
+            padding: 100px 0;
         }
-        .link-btn:hover {
-            color: #4338ca;
-            text-decoration: underline;
+        .free-trial-content {
+            text-align: center;
+            padding: 80px 50px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
-
-        /* Newsletter input style matching LP */
-        .input-newsletter {
+        .free-trial-content.bg-color {
+            background: linear-gradient(135deg, #5a49f8 0%, #7c3aed 100%);
+        }
+        .free-trial-content .sub-title {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .free-trial-content h2 {
+            color: #fff;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .free-trial-content p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .free-trial-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+        .free-trial-form .input-newsletter {
+            flex: 1;
             height: 55px;
             padding: 0 25px;
             border-radius: 30px;
-            border: 1px solid #e5e7eb;
+            border: none;
             font-size: 15px;
-            width: 100%;
-            transition: all 0.3s ease;
+            background: #fff;
         }
-        .input-newsletter:focus {
+        .free-trial-form .input-newsletter:focus {
             outline: none;
-            border-color: #5a49f8;
-            box-shadow: 0 0 0 3px rgba(90, 73, 248, 0.1);
+        }
+        .free-trial-form .default-btn {
+            background-color: #1e1e1e;
+            white-space: nowrap;
+        }
+        .free-trial-form .default-btn:hover {
+            background-color: #333;
         }
 
-        /* Header buttons */
-        .header-btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #5a49f8;
-            color: #fff;
+        /* ============================================
+           LP Footer Styles
+           ============================================ */
+        .footer-area {
+            background-color: #0d1216;
+            padding-top: 100px;
+        }
+        .footer-area .single-footer-widget .logo img {
+            max-height: 35px;
+        }
+        .footer-area .single-footer-widget p {
+            color: #a1a1a1;
             font-size: 14px;
+            line-height: 1.8;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .footer-area .single-footer-widget h3 {
+            color: #fff;
+            font-size: 18px;
             font-weight: 600;
-            border-radius: 30px;
+            margin-bottom: 25px;
+        }
+        .footer-area .single-footer-widget .links-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .footer-area .single-footer-widget .links-list li {
+            margin-bottom: 12px;
+        }
+        .footer-area .single-footer-widget .links-list li a {
+            color: #a1a1a1;
+            font-size: 14px;
             transition: all 0.3s ease;
             text-decoration: none;
-            border: none;
         }
-        .header-btn:hover {
-            background-color: #4338ca;
+        .footer-area .single-footer-widget .links-list li a:hover {
+            color: #5a49f8;
+            padding-left: 5px;
+        }
+        .footer-area .single-footer-widget .social-links {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            gap: 10px;
+        }
+        .footer-area .single-footer-widget .social-links li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
             color: #fff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .footer-area .single-footer-widget .social-links li a:hover {
+            background: #5a49f8;
+            transform: translateY(-3px);
+        }
+        .footer-area .single-footer-widget .newsletter-form {
+            position: relative;
+            max-width: 100%;
+        }
+        .footer-area .single-footer-widget .newsletter-form .input-newsletter {
+            width: 100%;
+            height: 50px;
+            padding: 0 60px 0 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 14px;
+        }
+        .footer-area .single-footer-widget .newsletter-form .input-newsletter::placeholder {
+            color: #a1a1a1;
+        }
+        .footer-area .single-footer-widget .newsletter-form .input-newsletter:focus {
+            outline: none;
+            border-color: #5a49f8;
+        }
+        .footer-area .single-footer-widget .newsletter-form button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #5a49f8;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .footer-area .single-footer-widget .newsletter-form button:hover {
+            background: #4338ca;
+        }
+        .footer-area .copyright-area {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 0;
+            margin-top: 70px;
+            text-align: center;
+        }
+        .footer-area .copyright-area p {
+            color: #a1a1a1;
+            font-size: 14px;
+            margin: 0;
+        }
+        .footer-area .copyright-area p strong {
+            color: #fff;
+        }
+
+        /* ============================================
+           Header wrapper for blog (fixed positioning)
+           ============================================ */
+        .header-wrapper {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 99999 !important;
+            isolation: isolate;
+        }
+        .header-wrapper nav {
+            background-color: #ffffff !important;
+            position: relative;
+        }
+
+        /* Ensure main content stays below header */
+        main {
+            position: relative;
+            z-index: 1;
+        }
+        main section {
+            position: relative;
+            z-index: 1;
+        }
+        main section img {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .free-trial-form {
+                flex-direction: column;
+            }
+            .free-trial-content h2 {
+                font-size: 28px;
+            }
+            .free-trial-content {
+                padding: 50px 30px;
+            }
         }
     </style>
 
@@ -198,47 +393,7 @@
 
     {% include footer.html %}
 
-    <!-- Mobile Menu Overlay -->
-    <div class="hs-overlay hs-overlay-open:translate-y-0 -translate-y-full fixed top-0 inset-x-0 transition-all duration-300 transform max-h-80 p-5 size-full z-80 bg-white border-b border-zinc-200 shadow-lg hidden" role="dialog" tabindex="-1" aria-labelledby="navbarMenu-label" id="navbarMenu">
-        <div class="flex items-center justify-between">
-            <a href="../index.html" class="flex items-center">
-                <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Mailist Logo" class="h-8" />
-            </a>
-
-            <button aria-label="Close" data-hs-overlay="#navbarMenu" class="inline-flex justify-center items-center size-8 rounded-full bg-zinc-100 hover:bg-zinc-200 transition duration-300">
-                <i data-lucide="x" class="size-4 text-zinc-600"></i>
-            </button>
-        </div>
-
-        <div class="pt-6">
-            <ul class="flex flex-col gap-y-4 font-medium text-sm">
-                <li>
-                    <a href="../index.html#funkcje" class="text-zinc-700 hover:text-violet-600 transition duration-300">Rozwiązania</a>
-                </li>
-
-                <li>
-                    <a href="../index.html#automatyzacja" class="text-zinc-700 hover:text-violet-600 transition duration-300">Automatyzacja</a>
-                </li>
-
-                <li>
-                    <a href="../index.html#cennik" class="text-zinc-700 hover:text-violet-600 transition duration-300">Cennik</a>
-                </li>
-
-                <li>
-                    <a href="{{ site.baseurl }}/index.html" style="color: #5a49f8;" class="font-semibold">Blog</a>
-                </li>
-
-                <li>
-                    <a href="../regulamin.html" class="text-zinc-700 hover:text-violet-600 transition duration-300">Regulamin</a>
-                </li>
-            </ul>
-
-            <div class="mt-6 pt-4 border-t border-zinc-200">
-                <a href="../index.html#trial" class="text-white rounded-full w-full py-3 font-medium transition duration-300 text-center block" style="background-color: #5a49f8;">
-                    Wypróbuj za darmo
-                </a>
-            </div>
-        </div>
-    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
