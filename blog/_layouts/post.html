@@ -2,19 +2,15 @@
 layout: default
 ---
 
-<section class="relative lg:pt-44 lg:pb-20 md:pt-34 md:pb-16 pt-30 pb-12 bg-gradient-to-br from-blue-50 to-white dark:from-zinc-900 dark:to-zinc-950">
+<section class="relative lg:pt-44 lg:pb-20 md:pt-34 md:pb-16 pt-30 pb-12 bg-gradient-to-br from-violet-50 to-white dark:from-zinc-900 dark:to-zinc-950">
     <div class="container">
         <div class="max-w-4xl mx-auto">
             <!-- Post Header -->
             <article class="mb-12">
                 <header class="mb-8">
-                    <div class="mb-4">
-                        {% if page.category %}
-                        <span class="tag-lp">
-                            {{ page.category }}
-                        </span>
-                        {% endif %}
-                    </div>
+                    {% if page.category %}
+                    <span class="sub-title">{{ page.category }}</span>
+                    {% endif %}
 
                     <h1 class="mb-6 leading-tight md:text-5xl text-4xl font-semibold text-zinc-800">
                         {{ page.title }}
@@ -58,7 +54,7 @@ layout: default
                     <div class="flex items-center gap-2 flex-wrap">
                         <span class="text-sm font-medium text-zinc-600">Tagi:</span>
                         {% for tag in page.tags %}
-                        <a href="#" class="inline-flex items-center py-1 px-3 rounded-full text-xs font-medium border border-zinc-300 bg-zinc-100 text-zinc-700 hover:bg-blue-100 hover:border-blue-200 hover:text-blue-700 transition">
+                        <a href="#" class="inline-flex items-center py-1 px-3 rounded-full text-xs font-medium border border-zinc-300 bg-zinc-100 text-zinc-700 hover:bg-violet-100 hover:border-violet-200 hover:text-violet-700 transition">
                             {{ tag }}
                         </a>
                         {% endfor %}
@@ -70,15 +66,15 @@ layout: default
                 <div class="mt-8 pt-8 border-t border-zinc-200">
                     <p class="text-sm font-medium text-zinc-600 mb-4">Udostępnij:</p>
                     <div class="flex gap-3">
-                        <a href="#" class="size-10 flex items-center justify-center rounded-full border border-zinc-300 text-zinc-500 hover:bg-blue-600 hover:border-blue-600 hover:text-white transition duration-300">
+                        <a href="#" class="size-10 flex items-center justify-center rounded-full border border-zinc-300 text-zinc-500 hover:text-white transition duration-300" style="--hover-bg: #5a49f8;" onmouseover="this.style.backgroundColor='#5a49f8';this.style.borderColor='#5a49f8'" onmouseout="this.style.backgroundColor='';this.style.borderColor=''">
                             <i data-lucide="facebook" class="size-4"></i>
                         </a>
 
-                        <a href="#" class="size-10 flex items-center justify-center rounded-full border border-zinc-300 text-zinc-500 hover:bg-blue-600 hover:border-blue-600 hover:text-white transition duration-300">
+                        <a href="#" class="size-10 flex items-center justify-center rounded-full border border-zinc-300 text-zinc-500 hover:text-white transition duration-300" onmouseover="this.style.backgroundColor='#5a49f8';this.style.borderColor='#5a49f8'" onmouseout="this.style.backgroundColor='';this.style.borderColor=''">
                             <i data-lucide="linkedin" class="size-4"></i>
                         </a>
 
-                        <a href="#" class="size-10 flex items-center justify-center rounded-full border border-zinc-300 text-zinc-500 hover:bg-blue-600 hover:border-blue-600 hover:text-white transition duration-300">
+                        <a href="#" class="size-10 flex items-center justify-center rounded-full border border-zinc-300 text-zinc-500 hover:text-white transition duration-300" onmouseover="this.style.backgroundColor='#5a49f8';this.style.borderColor='#5a49f8'" onmouseout="this.style.backgroundColor='';this.style.borderColor=''">
                             <i data-lucide="twitter" class="size-4"></i>
                         </a>
                     </div>
@@ -89,8 +85,8 @@ layout: default
             <div class="bg-white rounded-xl shadow-md border border-zinc-100 p-6 mb-12">
                 <div class="flex items-start gap-4">
                     <div class="flex-shrink-0">
-                        <div class="size-16 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i data-lucide="user" class="size-8 text-blue-600"></i>
+                        <div class="size-16 rounded-full flex items-center justify-center" style="background-color: rgba(90, 73, 248, 0.1);">
+                            <i data-lucide="user" class="size-8" style="color: #5a49f8;"></i>
                         </div>
                     </div>
                     <div>
@@ -117,7 +113,7 @@ layout: default
                             <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
                             {% endif %}
                             <div class="p-6">
-                                <h3 class="text-xl font-semibold text-zinc-800 mb-2 hover:text-blue-600 transition">
+                                <h3 class="text-xl font-semibold text-zinc-800 mb-2 hover:text-violet-600 transition">
                                     {{ post.title }}
                                 </h3>
                                 <p class="text-zinc-600 mb-4 text-sm">{{ post.excerpt | strip_html | truncate: 120 }}</p>
@@ -138,19 +134,17 @@ layout: default
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 lg:py-24 bg-zinc-50 border-t border-zinc-100">
+<section class="py-16 lg:py-24 bg-zinc-50">
     <div class="container">
         <div class="max-w-2xl mx-auto text-center">
-            <span class="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-sm font-medium mb-6">
-                Bezpłatny test
-            </span>
+            <span class="sub-title">Bezpłatny test</span>
             <h2 class="text-3xl md:text-4xl font-semibold text-zinc-800 mb-4">
                 Gotowy na skuteczny email marketing?
             </h2>
-            <p class="text-lg text-zinc-500 mb-8">
+            <p class="text-lg text-zinc-600 mb-8">
                 Zacznij 14-dniową darmową próbę. Bez karty kredytowej, bez zobowiązań.
             </p>
-            <a href="../index.html#trial" class="btn-lp inline-flex items-center justify-center gap-2">
+            <a href="../index.html#trial" class="default-btn inline-flex items-center justify-center gap-2">
                 <i data-lucide="rocket" class="size-5"></i>
                 Zacznij za darmo
             </a>

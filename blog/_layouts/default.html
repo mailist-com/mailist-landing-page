@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/blog-styles.css">
 
-    <!-- Header fix - ensure solid background and proper stacking -->
+    <!-- LP-aligned styles -->
     <style>
         /* Header wrapper styling */
         .header-wrapper {
@@ -29,7 +29,7 @@
             background-color: #ffffff !important;
             position: relative;
         }
-        /* Ensure main content sections stay below header */
+        /* Ensure main content stays below header */
         main {
             position: relative;
             z-index: 1;
@@ -42,11 +42,12 @@
             position: relative;
             z-index: 1;
         }
-        /* LP-style button */
-        .btn-lp {
+
+        /* LP default-btn style */
+        .default-btn {
             display: inline-block;
-            padding: 14px 30px;
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            padding: 15px 35px;
+            background-color: #5a49f8;
             color: #fff;
             font-size: 15px;
             font-weight: 600;
@@ -56,25 +57,70 @@
             border: none;
             cursor: pointer;
         }
-        .btn-lp:hover {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        .default-btn:hover {
+            background-color: #4338ca;
+            color: #fff;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 25px rgba(90, 73, 248, 0.3);
         }
-        /* LP-style tag/badge */
-        .tag-lp {
+
+        /* LP sub-title style */
+        .sub-title {
             display: inline-block;
-            padding: 6px 16px;
-            background-color: rgba(59, 130, 246, 0.1);
-            color: #3b82f6;
-            font-size: 13px;
+            color: #5a49f8;
+            font-size: 14px;
             font-weight: 600;
-            border-radius: 20px;
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        /* Alternative button - outline style */
+        .link-btn {
+            display: inline-block;
+            color: #5a49f8;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
             transition: all 0.3s ease;
         }
-        .tag-lp:hover {
-            background-color: rgba(59, 130, 246, 0.2);
+        .link-btn:hover {
+            color: #4338ca;
+            text-decoration: underline;
+        }
+
+        /* Newsletter input style matching LP */
+        .input-newsletter {
+            height: 55px;
+            padding: 0 25px;
+            border-radius: 30px;
+            border: 1px solid #e5e7eb;
+            font-size: 15px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .input-newsletter:focus {
+            outline: none;
+            border-color: #5a49f8;
+            box-shadow: 0 0 0 3px rgba(90, 73, 248, 0.1);
+        }
+
+        /* Header buttons */
+        .header-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #5a49f8;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+        }
+        .header-btn:hover {
+            background-color: #4338ca;
+            color: #fff;
         }
     </style>
 
@@ -167,28 +213,28 @@
         <div class="pt-6">
             <ul class="flex flex-col gap-y-4 font-medium text-sm">
                 <li>
-                    <a href="../index.html#funkcje" class="text-zinc-700 hover:text-blue-600 transition duration-300">Rozwiązania</a>
+                    <a href="../index.html#funkcje" class="text-zinc-700 hover:text-violet-600 transition duration-300">Rozwiązania</a>
                 </li>
 
                 <li>
-                    <a href="../index.html#automatyzacja" class="text-zinc-700 hover:text-blue-600 transition duration-300">Automatyzacja</a>
+                    <a href="../index.html#automatyzacja" class="text-zinc-700 hover:text-violet-600 transition duration-300">Automatyzacja</a>
                 </li>
 
                 <li>
-                    <a href="../index.html#cennik" class="text-zinc-700 hover:text-blue-600 transition duration-300">Cennik</a>
+                    <a href="../index.html#cennik" class="text-zinc-700 hover:text-violet-600 transition duration-300">Cennik</a>
                 </li>
 
                 <li>
-                    <a href="{{ site.baseurl }}/index.html" class="text-blue-600 font-semibold">Blog</a>
+                    <a href="{{ site.baseurl }}/index.html" style="color: #5a49f8;" class="font-semibold">Blog</a>
                 </li>
 
                 <li>
-                    <a href="../regulamin.html" class="text-zinc-700 hover:text-blue-600 transition duration-300">Regulamin</a>
+                    <a href="../regulamin.html" class="text-zinc-700 hover:text-violet-600 transition duration-300">Regulamin</a>
                 </li>
             </ul>
 
             <div class="mt-6 pt-4 border-t border-zinc-200">
-                <a href="../index.html#trial" class="btn bg-blue-600 hover:bg-blue-700 text-white rounded-full w-full py-3 font-medium transition duration-300 text-center block">
+                <a href="../index.html#trial" class="text-white rounded-full w-full py-3 font-medium transition duration-300 text-center block" style="background-color: #5a49f8;">
                     Wypróbuj za darmo
                 </a>
             </div>
