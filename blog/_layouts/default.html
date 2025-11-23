@@ -14,6 +14,49 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/blog-styles.css">
 
+    <!-- Header fix - ensure solid background -->
+    <style>
+        header nav {
+            background-color: #ffffff !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+        /* LP-style button */
+        .btn-lp {
+            display: inline-block;
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-lp:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+        /* LP-style tag/badge */
+        .tag-lp {
+            display: inline-block;
+            padding: 6px 16px;
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 20px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+        .tag-lp:hover {
+            background-color: rgba(59, 130, 246, 0.2);
+        }
+    </style>
+
     <script>
         (function () {
             const html = document.documentElement;
