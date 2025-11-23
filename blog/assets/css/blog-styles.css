@@ -6,15 +6,15 @@
 
 /* ========================================
    Primary Color Override - Match Landing Page
-   Landing Page uses violet/purple as primary
+   Landing Page uses blue as primary color
    ======================================== */
 :root {
-    --color-primary: var(--color-violet-500);
-    --blog-primary: #8b5cf6; /* violet-500 */
-    --blog-primary-dark: #7c3aed; /* violet-600 */
-    --blog-primary-light: #a78bfa; /* violet-400 */
-    --blog-gradient-start: #8b5cf6;
-    --blog-gradient-end: #6366f1;
+    --color-primary: var(--color-blue-500);
+    --blog-primary: #3b82f6; /* blue-500 */
+    --blog-primary-dark: #2563eb; /* blue-600 */
+    --blog-primary-light: #60a5fa; /* blue-400 */
+    --blog-gradient-start: #3b82f6;
+    --blog-gradient-end: #1d4ed8;
 }
 
 /* Override primary color for blog */
@@ -316,7 +316,7 @@
     margin-top: 1.6em;
     margin-bottom: 1.6em;
     padding-left: 1em;
-    background-color: #f3f0ff; /* violet-50 equivalent */
+    background-color: #eff6ff; /* blue-50 equivalent */
     padding: 1em;
     border-radius: 0.375rem;
 }
