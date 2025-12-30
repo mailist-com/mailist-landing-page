@@ -1,181 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
+
 <head>
     <meta charset="utf-8">
-    <title>Regulamin - Mailist</title>
+    <title>Regulamin - Mailist | Profesjonalna Platforma Email Marketingu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Regulamin korzystania z platformy Mailist" name="description">
-    <meta content="Mailist" name="author">
-
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="/assets/favicon-CK1QI2Xs.ico">
+    <meta name="description" content="Regulamin świadczenia usług platformy Mailist - warunki korzystania, prawa i obowiązki użytkowników.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mailist.pl/regulamin.html">
+    <link rel="shortcut icon" href="/assets/images/favicon-CK1QI2Xs.ico">
 
     <script>
         (function () {
             const html = document.documentElement;
-            const storageKey = "__TAILWICK_CONFIG__";
+            const storageKey = "__MAILIST_CONFIG__";
             const savedConfig = sessionStorage.getItem(storageKey);
-    
-            // Default config
             const defaultConfig = {
                 dir: "ltr",
                 theme: "light",
-                sidenav: {
-                    color: "light",
-                    size: "default",
-                },
+                sidenav: { color: "light", size: "default" },
             };
-    
-            // Build config from HTML attributes
             function getSystemTheme() {
                 return window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
             }
-    
-            // Build config from HTML attributes
             const htmlConfig = {
                 dir: html.getAttribute("dir") || defaultConfig.dir,
-    
-                theme: html.getAttribute("data-theme") === 'system'
-                    ? getSystemTheme()
-                    : html.getAttribute("data-theme") || (defaultConfig.theme === 'system' ? getSystemTheme() : defaultConfig.theme),
+                theme: html.getAttribute("data-theme") === 'system' ? getSystemTheme() : html.getAttribute("data-theme") || (defaultConfig.theme === 'system' ? getSystemTheme() : defaultConfig.theme),
                 sidenav: {
                     color: html.getAttribute("data-sidenav-color") || defaultConfig.sidenav.color,
                     size: html.getAttribute("data-sidenav-size") || defaultConfig.sidenav.size,
                 },
             };
-    
-            // Save merged config as defaults globally
             window.defaultConfig = structuredClone(htmlConfig);
-    
-            // Load from session if exists
             let config = savedConfig ? JSON.parse(savedConfig) : htmlConfig;
             window.config = config;
-    
-            // Apply layout attributes immediately
             html.setAttribute("dir", config.dir);
             html.setAttribute("data-theme", config.theme);
             html.setAttribute("data-sidenav-color", config.sidenav.color);
-    
             if (config.sidenav.size) {
                 let size = config.sidenav.size;
-    
                 if (window.innerWidth <= 1140) {
                     size = "offcanvas";
                 }
-    
                 html.setAttribute("data-sidenav-size", size);
             }
         })();
     </script>
-    
-      <script type="module" crossorigin src="/assets/app-CXjZ6wz7.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/app-Z9-Qoek0.css">
+
+  <script type="module" crossorigin src="/assets/js/vendor-core-BbTcv2-F.js"></script>
+  <script type="module" crossorigin src="/assets/js/vendor-preline-LLmV8e4s.js"></script>
+  <script type="module" crossorigin src="/assets/js/vendor-ui-BdR8abFd.js"></script>
+  <script type="module" crossorigin src="/assets/js/vendor-lucide-BRI3kKg5.js"></script>
+  <script type="module" crossorigin src="/assets/js/app-BtDRLtmY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/css/app-_7aQvZOR.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <nav class="fixed inset-x-0 top-0 z-50 bg-card py-6 shadow flex justify-between items-center">
-            <div class="container">
-                <div class="grid lg:grid-cols-12 md:grid-cols-10 grid-cols-2 items-center">
-                    <div class="lg:col-span-2 md:col-span-2">
-                        <a href="index.html">
-                            <span class="text-2xl font-bold text-primary">Mailist</span>
-                        </a>
-                    </div>
-
-                    <div class="lg:col-span-8 md:col-span-6 md:block hidden">
-                        <ul class="flex items-center justify-center lg:gap-8 md:gap-6 font-medium text-sm">
-                            <li>
-                                <a href="index.html#home" class="text-default-800 hover:text-primary transition duration-300">Start</a>
-                            </li>
-                            <li>
-                                <a href="index.html#problems" class="text-default-800 hover:text-primary transition duration-300">Problemy</a>
-                            </li>
-                            <li>
-                                <a href="index.html#solutions" class="text-default-800 hover:text-primary transition duration-300">Rozwiązania</a>
-                            </li>
-                            <li>
-                                <a href="regulamin.html" class="text-primary font-semibold transition duration-300">Regulamin</a>
-                            </li>
-                            <li>
-                                <a href="polityka-prywatnosci.html" class="text-default-800 hover:text-primary transition duration-300">Prywatność</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="lg:col-span-2 md:col-span-2 flex items-center justify-end gap-2">
-                        <a href="#" class="flex justify-end">
-                            <button type="button" class="btn bg-primary text-white">
-                                Zaloguj się
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main content -->
-    <section class="relative lg:pt-36 pt-28 pb-20">
+<header>
+    <nav class="fixed inset-x-0 top-0 z-50 bg-card py-6 shadow flex justify-between items-center" role="navigation" aria-label="Nawigacja główna">
         <div class="container">
-            <div class="max-w-4xl mx-auto">
-                <!-- Header -->
-                <div class="mb-12">
-                    <h1 class="text-4xl md:text-5xl font-bold text-default-900 mb-4">Regulamin korzystania z platformy Mailist</h1>
-                    <p class="text-lg text-default-600">Ostatnia aktualizacja: 21 listopada 2025</p>
-                </div>
+            <div class="flex justify-between items-center">
+                <a href="index.html" aria-label="Mailist - Strona główna">
+                    <img src="/assets/images/logo-dark-BRT9tiBX.png" alt="Mailist - Logo" class="h-6 block dark:hidden" width="120" height="24">
+                    <img src="/assets/images/logo-light-CCjoJosn.png" alt="Mailist - Logo jasne" class="h-6 hidden dark:block" width="120" height="24">
+                </a>
 
-                <!-- Content -->
-                <div class="prose prose-lg max-w-none">
-                    <!-- Section 1 -->
-                    <div class="card rounded-xl shadow-sm bg-card p-8 mb-6">
-                        <h2 class="text-2xl font-semibold text-default-900 mb-4 flex items-center gap-3">
-                            <span class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary font-bold">1</span>
-                            Postanowienia ogólne
-                        </h2>
-                        <div class="space-y-4 text-default-700">
-                            <p>
-                                <strong>1.1</strong> Niniejszy Regulamin określa zasady korzystania z platformy Mailist (zwanej dalej "Platformą"), dostępnej pod adresem mailist.com, stanowiącej usługę email marketingu świadczoną przez [Nazwa firmy] (zwaną dalej "Usługodawcą").
-                            </p>
-                            <p>
-                                <strong>1.2</strong> Korzystanie z Platformy oznacza akceptację postanowień niniejszego Regulaminu.
-                            </p>
-                            <p>
-                                <strong>1.3</strong> Usługodawca zastrzega sobie prawo do zmiany Regulaminu. Użytkownicy zostaną poinformowani o zmianach z co najmniej 7-dniowym wyprzedzeniem za pośrednictwem poczty elektronicznej.
-                            </p>
-                            <p>
-                                <strong>1.4</strong> W przypadku braku akceptacji zmian w Regulaminie, Użytkownik ma prawo do rozwiązania Umowy ze skutkiem natychmiastowym.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Back button -->
-                    <div class="mt-12 text-center">
-                        <a href="index.html" class="btn bg-primary text-white">
-                            <i data-lucide="arrow-left" class="size-4"></i>
-                            Powrót do strony głównej
-                        </a>
-                    </div>
-                </div>
+                <a href="index.html" class="btn border-primary text-primary hover:bg-primary hover:text-white bg-transparent">
+                    <i data-lucide="arrow-left" class="size-4"></i>
+                    Powrót do strony głównej
+                </a>
             </div>
         </div>
-    </section>
+    </nav>
+</header>
 
-    <!-- Footer -->
-    <footer class="relative py-12 bg-default-900 border-t border-default-800">
-        <div class="container">
-            <div class="text-center text-default-400 text-sm">
-                <p>© 2025 Mailist. Wszelkie prawa zastrzeżone.</p>
-                <div class="flex items-center justify-center gap-6 mt-4">
-                    <a href="regulamin.html" class="hover:text-primary transition-all">Regulamin</a>
-                    <a href="polityka-prywatnosci.html" class="hover:text-primary transition-all">Polityka prywatności</a>
-                    <a href="#" class="hover:text-primary transition-all">Kontakt</a>
-                </div>
+<main class="pt-32 pb-20 bg-default-100 dark:bg-default-950">
+    <div class="container max-w-4xl">
+        <article class="card">
+            <div class="card-body p-8">
+                <h1 class="text-4xl font-semibold text-default-900 mb-4">Regulamin Świadczenia Usług</h1>
+                <p class="text-sm text-default-500 mb-8">Data ostatniej aktualizacji: 11 grudnia 2025</p>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">1. Postanowienia Ogólne</h2>
+                    <p class="text-default-700 mb-4">
+                        Niniejszy Regulamin określa zasady świadczenia usług drogą elektroniczną przez platformę Mailist,
+                        dostępną pod adresem mailist.pl oraz app.mailist.pl, zwaną dalej "Platformą".
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Administratorem Platformy i dostawcą usług jest Mailist Sp. z o.o., z siedzibą w Polsce.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">2. Definicje</h2>
+                    <ul class="list-disc list-inside text-default-700 space-y-2">
+                        <li><strong>Usługodawca</strong> - Mailist Sp. z o.o., operator Platformy</li>
+                        <li><strong>Użytkownik</strong> - osoba fizyczna, prawna lub jednostka organizacyjna korzystająca z Platformy</li>
+                        <li><strong>Konto</strong> - indywidualny profil Użytkownika w Platformie</li>
+                        <li><strong>Abonament</strong> - płatny plan subskrypcyjny (Free, Standard, Pro)</li>
+                        <li><strong>Kampania</strong> - wysyłka wiadomości email do listy kontaktów</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">3. Zasady Korzystania z Platformy</h2>
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">3.1. Rejestracja</h3>
+                    <p class="text-default-700 mb-4">
+                        Użytkownik zobowiązany jest do podania prawdziwych danych podczas rejestracji. Rejestracja jest dobrowolna,
+                        ale niezbędna do korzystania z pełnych funkcji Platformy.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">3.2. Bezpieczeństwo Konta</h3>
+                    <p class="text-default-700 mb-4">
+                        Użytkownik odpowiada za zachowanie poufności danych dostępowych do Konta. W przypadku
+                        podejrzenia nieuprawnionego dostępu należy niezwłocznie poinformować Usługodawcę.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">3.3. Zabronione Działania</h3>
+                    <p class="text-default-700 mb-2">Użytkownik zobowiązuje się nie wysyłać:</p>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Spamu lub niezamówionych wiadomości handlowych</li>
+                        <li>Treści niezgodnych z prawem, obraźliwych lub naruszających prawa osób trzecich</li>
+                        <li>Wiadomości zawierających wirusy, malware lub inne szkodliwe oprogramowanie</li>
+                        <li>Wiadomości naruszających regulacje RODO i prawa ochrony danych osobowych</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">4. Plany Abonamentowe</h2>
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">4.1. Plan Free</h3>
+                    <p class="text-default-700 mb-4">
+                        Plan darmowy obejmuje do 1,000 kontaktów i 9,000 emaili miesięcznie. Usługodawca zastrzega
+                        sobie prawo do zmiany limitów planu darmowego z 30-dniowym wyprzedzeniem.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">4.2. Plany Płatne (Standard, Pro)</h3>
+                    <p class="text-default-700 mb-4">
+                        Płatne abonamenty są rozliczane cyklicznie (miesięcznie). Opłaty pobierane są automatycznie
+                        zgodnie z wybranym planem i liczbą kontaktów.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">4.3. Anulowanie Abonamentu</h3>
+                    <p class="text-default-700 mb-4">
+                        Użytkownik może anulować płatny abonament w dowolnym momencie. Dostęp do funkcji płatnych
+                        pozostaje aktywny do końca opłaconego okresu. Zwrot środków za niewykorzystany okres nie jest możliwy.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">5. Ochrona Danych Osobowych</h2>
+                    <p class="text-default-700 mb-4">
+                        Szczegółowe informacje dotyczące przetwarzania danych osobowych znajdują się w
+                        <a href="polityka-prywatnosci.html" class="text-primary hover:underline">Polityce Prywatności</a>.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Użytkownik jako administrator danych odpowiada za zgodność swoich działań z RODO i innymi przepisami
+                        o ochronie danych osobowych.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">6. Odpowiedzialność</h2>
+                    <p class="text-default-700 mb-4">
+                        Usługodawca nie ponosi odpowiedzialności za treści kampanii wysyłanych przez Użytkowników ani
+                        za szkody wynikające z niewłaściwego korzystania z Platformy.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Platforma świadczona jest w modelu "as is". Usługodawca dołoży starań, aby zapewnić ciągłość
+                        działania, ale nie gwarantuje nieprzerwanego dostępu 24/7.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">7. Zmiana Regulaminu</h2>
+                    <p class="text-default-700 mb-4">
+                        Usługodawca zastrzega sobie prawo do zmiany Regulaminu. Użytkownicy zostaną poinformowani
+                        o zmianach z co najmniej 14-dniowym wyprzedzeniem za pośrednictwem email oraz powiadomienia w Platformie.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Kontynuowanie korzystania z Platformy po wejściu w życie zmian oznacza akceptację nowego Regulaminu.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">8. Rozwiązywanie Sporów</h2>
+                    <p class="text-default-700 mb-4">
+                        W sprawach nieuregulowanych niniejszym Regulaminem zastosowanie mają przepisy prawa polskiego.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Ewentualne spory będą rozstrzygane przez sąd właściwy dla siedziby Usługodawcy.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">9. Kontakt</h2>
+                    <p class="text-default-700 mb-4">
+                        W sprawach dotyczących Regulaminu prosimy o kontakt: <br>
+                        Email: <a href="mailto:kontakt@mailist.pl" class="text-primary hover:underline">kontakt@mailist.pl</a>
+                    </p>
+                </section>
             </div>
+        </article>
+    </div>
+</main>
+
+<footer class="relative py-12 bg-default-800 dark:bg-default-900" role="contentinfo">
+    <div class="container">
+        <div class="text-center text-default-400">
+            <p>2025 © Mailist. Wszelkie prawa zastrzeżone. |
+                <a href="regulamin.html" class="underline text-white hover:text-primary">Regulamin</a> |
+                <a href="polityka-prywatnosci.html" class="underline text-white hover:text-primary">Polityka Prywatności</a>
+            </p>
         </div>
-    </footer>
+    </div>
+</footer>
 
 </body>
 

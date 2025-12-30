@@ -1,54 +1,265 @@
-{{> main }}
+<!DOCTYPE html>
+<html lang="pl">
 
 <head>
     <meta charset="utf-8">
-    <title>Polityka Prywatności - Mailist</title>
+    <title>Polityka Prywatności - Mailist | Ochrona Danych Osobowych</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Polityka prywatności platformy Mailist" name="description">
+    <meta name="description" content="Polityka prywatności platformy Mailist - informacje o przetwarzaniu danych osobowych zgodnie z RODO.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mailist.pl/polityka-prywatnosci.html">
     <link rel="shortcut icon" href="assets/images/favicon.ico">
-    {{> head-css}}
+
+    <script>
+        (function () {
+            const html = document.documentElement;
+            const storageKey = "__MAILIST_CONFIG__";
+            const savedConfig = sessionStorage.getItem(storageKey);
+            const defaultConfig = {
+                dir: "ltr",
+                theme: "light",
+                sidenav: { color: "light", size: "default" },
+            };
+            function getSystemTheme() {
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+            }
+            const htmlConfig = {
+                dir: html.getAttribute("dir") || defaultConfig.dir,
+                theme: html.getAttribute("data-theme") === 'system' ? getSystemTheme() : html.getAttribute("data-theme") || (defaultConfig.theme === 'system' ? getSystemTheme() : defaultConfig.theme),
+                sidenav: {
+                    color: html.getAttribute("data-sidenav-color") || defaultConfig.sidenav.color,
+                    size: html.getAttribute("data-sidenav-size") || defaultConfig.sidenav.size,
+                },
+            };
+            window.defaultConfig = structuredClone(htmlConfig);
+            let config = savedConfig ? JSON.parse(savedConfig) : htmlConfig;
+            window.config = config;
+            html.setAttribute("dir", config.dir);
+            html.setAttribute("data-theme", config.theme);
+            html.setAttribute("data-sidenav-color", config.sidenav.color);
+            if (config.sidenav.size) {
+                let size = config.sidenav.size;
+                if (window.innerWidth <= 1140) {
+                    size = "offcanvas";
+                }
+                html.setAttribute("data-sidenav-size", size);
+            }
+        })();
+    </script>
+
+    <script src="assets/js/vendor.js" type="module"></script>
+    <script src="assets/js/app.js" type="module"></script>
 </head>
 
 <body>
-    <header>
-        <nav class="fixed inset-x-0 top-0 z-50 bg-card py-6 shadow">
-            <div class="container">
-                <div class="grid lg:grid-cols-12 items-center">
-                    <div class="lg:col-span-2">
-                        <a href="index.html"><span class="text-2xl font-bold text-primary">Mailist</span></a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <section class="lg:pt-36 pt-28 pb-20">
+<header>
+    <nav class="fixed inset-x-0 top-0 z-50 bg-card py-6 shadow flex justify-between items-center" role="navigation" aria-label="Nawigacja główna">
         <div class="container">
-            <div class="max-w-4xl mx-auto">
-                <h1 class="text-4xl font-bold text-default-900 mb-4">Polityka Prywatności</h1>
-                <p class="text-lg text-default-600 mb-8">Ostatnia aktualizacja: 21 listopada 2025</p>
-                
-                <div class="card p-8 mb-6">
-                    <h2 class="text-2xl font-semibold mb-4">1. Administrator danych</h2>
-                    <p class="text-default-700">Administratorem danych osobowych jest [Nazwa firmy].</p>
-                </div>
+            <div class="flex justify-between items-center">
+                <a href="index.html" aria-label="Mailist - Strona główna">
+                    <img src="assets/images/logo-dark.png" alt="Mailist - Logo" class="h-6 block dark:hidden" width="120" height="24">
+                    <img src="assets/images/logo-light.png" alt="Mailist - Logo jasne" class="h-6 hidden dark:block" width="120" height="24">
+                </a>
 
-                <div class="text-center mt-12">
-                    <a href="index.html" class="btn bg-primary text-white">
-                        <i data-lucide="arrow-left" class="size-4"></i>
-                        Powrót do strony głównej
-                    </a>
-                </div>
+                <a href="index.html" class="btn border-primary text-primary hover:bg-primary hover:text-white bg-transparent">
+                    <i data-lucide="arrow-left" class="size-4"></i>
+                    Powrót do strony głównej
+                </a>
             </div>
         </div>
-    </section>
+    </nav>
+</header>
 
-    <footer class="py-12 bg-default-900">
-        <div class="container">
-            <div class="text-center text-default-400 text-sm">
-                <p>© 2025 Mailist. Wszelkie prawa zastrzeżone.</p>
+<main class="pt-32 pb-20 bg-default-100 dark:bg-default-950">
+    <div class="container max-w-4xl">
+        <article class="card">
+            <div class="card-body p-8">
+                <h1 class="text-4xl font-semibold text-default-900 mb-4">Polityka Prywatności</h1>
+                <p class="text-sm text-default-500 mb-8">Data ostatniej aktualizacji: 11 grudnia 2025</p>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">1. Postanowienia Ogólne</h2>
+                    <p class="text-default-700 mb-4">
+                        Niniejsza Polityka Prywatności określa zasady przetwarzania danych osobowych w związku z korzystaniem
+                        z platformy Mailist dostępnej pod adresem mailist.pl oraz app.mailist.pl.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Administratorem danych osobowych jest Mailist Sp. z o.o., z siedzibą w Polsce.
+                        Kontakt: <a href="mailto:kontakt@mailist.pl" class="text-primary hover:underline">kontakt@mailist.pl</a>
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">2. Podstawy Prawne Przetwarzania Danych</h2>
+                    <p class="text-default-700 mb-4">
+                        Przetwarzanie danych osobowych odbywa się zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE)
+                        2016/679 z dnia 27 kwietnia 2016 r. (RODO) oraz ustawą o ochronie danych osobowych.
+                    </p>
+                    <p class="text-default-700 mb-2">Dane przetwarzane są na podstawie:</p>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Zgody użytkownika (art. 6 ust. 1 lit. a RODO)</li>
+                        <li>Wykonania umowy (art. 6 ust. 1 lit. b RODO)</li>
+                        <li>Prawnie uzasadnionego interesu administratora (art. 6 ust. 1 lit. f RODO)</li>
+                        <li>Obowiązku prawnego (art. 6 ust. 1 lit. c RODO)</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">3. Zakres Zbieranych Danych</h2>
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">3.1. Dane Rejestracyjne</h3>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Imię i nazwisko</li>
+                        <li>Adres email</li>
+                        <li>Numer telefonu (opcjonalnie)</li>
+                        <li>Nazwa firmy (opcjonalnie)</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">3.2. Dane Rozliczeniowe</h3>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Dane do faktury (nazwa firmy, NIP, adres)</li>
+                        <li>Informacje o płatnościach (przetwarzane przez dostawcę płatności)</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">3.3. Dane Techniczne</h3>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Adres IP</li>
+                        <li>Informacje o przeglądarce i urządzeniu</li>
+                        <li>Logi systemowe</li>
+                        <li>Pliki cookies</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">4. Cele Przetwarzania Danych</h2>
+                    <p class="text-default-700 mb-2">Zbierane dane wykorzystywane są w celu:</p>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Świadczenia usług email marketingu</li>
+                        <li>Obsługi rejestracji i zarządzania kontem</li>
+                        <li>Rozliczeń i wystawiania faktur</li>
+                        <li>Komunikacji z użytkownikami</li>
+                        <li>Zapewnienia bezpieczeństwa platformy</li>
+                        <li>Analiz statystycznych i poprawy jakości usług</li>
+                        <li>Marketingu (za zgodą użytkownika)</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">5. Udostępnianie Danych Osobowych</h2>
+                    <p class="text-default-700 mb-2">Dane osobowe mogą być udostępniane:</p>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Dostawcom usług płatniczych (Stripe, PayU)</li>
+                        <li>Dostawcom usług hostingowych</li>
+                        <li>Dostawcom narzędzi analitycznych</li>
+                        <li>Organom państwowym na podstawie przepisów prawa</li>
+                    </ul>
+                    <p class="text-default-700 mb-4">
+                        Wszyscy odbiorcy danych zobowiązani są do zachowania poufności i przetwarzania danych zgodnie z RODO.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">6. Okres Przechowywania Danych</h2>
+                    <p class="text-default-700 mb-4">
+                        Dane osobowe przechowywane są przez okres niezbędny do realizacji celów, dla których zostały zebrane,
+                        nie krócej jednak niż wymaga tego prawo (np. przepisy podatkowe - 5 lat).
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Dane marketingowe przetwarzane są do momentu cofnięcia zgody.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">7. Prawa Użytkownika</h2>
+                    <p class="text-default-700 mb-2">Każdy użytkownik ma prawo do:</p>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Dostępu do swoich danych osobowych (art. 15 RODO)</li>
+                        <li>Sprostowania danych (art. 16 RODO)</li>
+                        <li>Usunięcia danych "prawo do bycia zapomnianym" (art. 17 RODO)</li>
+                        <li>Ograniczenia przetwarzania (art. 18 RODO)</li>
+                        <li>Przenoszenia danych (art. 20 RODO)</li>
+                        <li>Sprzeciwu wobec przetwarzania (art. 21 RODO)</li>
+                        <li>Cofnięcia zgody w dowolnym momencie</li>
+                        <li>Wniesienia skargi do organu nadzorczego (UODO)</li>
+                    </ul>
+                    <p class="text-default-700 mb-4">
+                        W celu realizacji swoich praw prosimy o kontakt: <a href="mailto:kontakt@mailist.pl" class="text-primary hover:underline">kontakt@mailist.pl</a>
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">8. Pliki Cookies</h2>
+                    <p class="text-default-700 mb-4">
+                        Platforma wykorzystuje pliki cookies do zapewnienia prawidłowego funkcjonowania, personalizacji treści
+                        oraz analizy ruchu.
+                    </p>
+                    <p class="text-default-700 mb-2">Wykorzystywane są następujące rodzaje cookies:</p>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Niezbędne - wymagane do działania platformy</li>
+                        <li>Funkcjonalne - zapamiętujące preferencje użytkownika</li>
+                        <li>Analityczne - służące do analizy ruchu (Google Analytics)</li>
+                        <li>Marketingowe - służące do personalizacji reklam (za zgodą)</li>
+                    </ul>
+                    <p class="text-default-700 mb-4">
+                        Użytkownik może zarządzać cookies w ustawieniach przeglądarki.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">9. Bezpieczeństwo Danych</h2>
+                    <p class="text-default-700 mb-4">
+                        Stosujemy odpowiednie środki techniczne i organizacyjne w celu zapewnienia bezpieczeństwa danych:
+                    </p>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Szyfrowanie połączeń (SSL/TLS)</li>
+                        <li>Szyfrowanie haseł</li>
+                        <li>Regularne kopie zapasowe</li>
+                        <li>Ograniczony dostęp do danych osobowych</li>
+                        <li>Monitoring bezpieczeństwa</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">10. Przekazywanie Danych poza EOG</h2>
+                    <p class="text-default-700 mb-4">
+                        W ograniczonym zakresie dane mogą być przekazywane do państw trzecich (np. dostawcy usług cloudowych).
+                        W takich przypadkach stosujemy odpowiednie zabezpieczenia zgodnie z art. 46 RODO (np. standardowe
+                        klauzule umowne zatwierdzone przez Komisję Europejską).
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">11. Zmiany Polityki Prywatności</h2>
+                    <p class="text-default-700 mb-4">
+                        Zastrzegamy sobie prawo do wprowadzania zmian w Polityce Prywatności. O wszelkich zmianach
+                        użytkownicy zostaną poinformowani z odpowiednim wyprzedzeniem.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">12. Kontakt</h2>
+                    <p class="text-default-700 mb-4">
+                        W sprawach dotyczących ochrony danych osobowych prosimy o kontakt:<br>
+                        Email: <a href="mailto:kontakt@mailist.pl" class="text-primary hover:underline">kontakt@mailist.pl</a><br>
+                        Inspektor Ochrony Danych (IOD): <a href="mailto:iod@mailist.pl" class="text-primary hover:underline">iod@mailist.pl</a>
+                    </p>
+                </section>
             </div>
+        </article>
+    </div>
+</main>
+
+<footer class="relative py-12 bg-default-800 dark:bg-default-900" role="contentinfo">
+    <div class="container">
+        <div class="text-center text-default-400">
+            <p>2025 © Mailist. Wszelkie prawa zastrzeżone. |
+                <a href="regulamin.html" class="underline text-white hover:text-primary">Regulamin</a> |
+                <a href="polityka-prywatnosci.html" class="underline text-white hover:text-primary">Polityka Prywatności</a>
+            </p>
         </div>
-    </footer>
+    </div>
+</footer>
+
 </body>
+
 </html>

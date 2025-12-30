@@ -1,0 +1,234 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+# Uprawnienia potrzebne do deployment na GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Pozwól na tylko jeden deployment naraz, anuluj poprzednie w trakcie
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build for GitHub Pages
+        env:
+          GITHUB_PAGES: 'true'
+        run: npm run build
+
+      - name: Add .nojekyll file
+        run: touch dist/.nojekyll
+
+      - name: Create CNAME file (optional - usuń jeśli nie używasz custom domain)
+        run: echo "mailist.pl" > dist/CNAME
+        continue-on-error: true
+
+      # PERFORMANCE OPTIMIZATION: Analiza bundle size
+      - name: Analyze bundle size
+        run: |
+          echo "=== Bundle Size Report ==="
+          du -sh dist/
+          echo ""
+          echo "=== Largest files ==="
+          find dist -type f -exec du -h {} + | sort -rh | head -20
+          echo ""
+          echo "=== JS bundle sizes ==="
+          find dist/assets/js -name "*.js" -exec du -h {} + | sort -rh
+          echo ""
+          echo "=== CSS bundle sizes ==="
+          find dist/assets/css -name "*.css" -exec du -h {} + | sort -rh
+
+      # PERFORMANCE OPTIMIZATION: Gzip compression test
+      - name: Test gzip compression
+        run: |
+          echo "=== Testing gzip compression ratios ==="
+          for file in $(find dist -name "*.js" -o -name "*.css" -o -name "*.html"); do
+            original=$(stat -c%s "$file" 2>/dev/null || stat -f%z "$file" 2>/dev/null || echo "0")
+            gzip -c "$file" > "$file.gz.tmp"
+            compressed=$(stat -c%s "$file.gz.tmp" 2>/dev/null || stat -f%z "$file.gz.tmp" 2>/dev/null || echo "0")
+            rm "$file.gz.tmp"
+            if [ "$original" -gt 0 ]; then
+              ratio=$(echo "scale=1; (1 - $compressed/$original) * 100" | bc)
+              echo "$file: ${original}B → ${compressed}B (${ratio}% savings)"
+            fi
+          done | head -15
+
+      # PERFORMANCE OPTIMIZATION: Optimize HTML
+      - name: Minify HTML files
+        run: |
+          npm install -g html-minifier-terser
+          find dist -name "*.html" -type f -exec html-minifier-terser \
+            --collapse-whitespace \
+            --remove-comments \
+            --remove-optional-tags \
+            --remove-redundant-attributes \
+            --remove-script-type-attributes \
+            --remove-tag-whitespace \
+            --use-short-doctype \
+            --minify-css true \
+            --minify-js true \
+            --output {} {} \;
+
+      # PERFORMANCE OPTIMIZATION: Optimize images
+      - name: Optimize images
+        run: |
+          # Install optimization tools
+          sudo apt-get update
+          sudo apt-get install -y jpegoptim optipng
+
+          # Optimize JPEG images
+          find dist -name "*.jpg" -o -name "*.jpeg" | while read img; do
+            jpegoptim --strip-all --max=85 "$img" || true
+          done
+
+          # Optimize PNG images
+          find dist -name "*.png" | while read img; do
+            optipng -o3 -strip all "$img" || true
+          done
+
+      # PERFORMANCE OPTIMIZATION: Generate security headers recommendations
+      - name: Generate _headers file for security
+        run: |
+          cat > dist/_headers << 'EOF'
+          /*
+            # Security Headers
+            X-Frame-Options: SAMEORIGIN
+            X-Content-Type-Options: nosniff
+            X-XSS-Protection: 1; mode=block
+            Referrer-Policy: strict-origin-when-cross-origin
+            Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+
+            # Cache Control for HTML - revalidate always
+            Cache-Control: public, max-age=0, must-revalidate
+
+          /assets/*
+            # Long cache for hashed assets (1 year)
+            Cache-Control: public, max-age=31536000, immutable
+
+          /*.js
+            # JavaScript files
+            Content-Type: application/javascript; charset=utf-8
+            Cache-Control: public, max-age=31536000, immutable
+
+          /*.css
+            # CSS files
+            Content-Type: text/css; charset=utf-8
+            Cache-Control: public, max-age=31536000, immutable
+
+          /*.woff2
+            # Font files
+            Cache-Control: public, max-age=31536000, immutable
+            Access-Control-Allow-Origin: *
+
+          /*.png
+            Cache-Control: public, max-age=31536000, immutable
+
+          /*.jpg
+            Cache-Control: public, max-age=31536000, immutable
+
+          /*.svg
+            Cache-Control: public, max-age=31536000, immutable
+          EOF
+
+      # PERFORMANCE OPTIMIZATION: Create robots.txt
+      - name: Generate robots.txt
+        run: |
+          cat > dist/robots.txt << 'EOF'
+          User-agent: *
+          Allow: /
+
+          Sitemap: https://mailist.pl/sitemap.xml
+          EOF
+
+      # PERFORMANCE OPTIMIZATION: Create basic sitemap.xml
+      - name: Generate sitemap.xml
+        run: |
+          cat > dist/sitemap.xml << 'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url>
+              <loc>https://mailist.pl/</loc>
+              <lastmod>$(date -u +"%Y-%m-%dT%H:%M:%S+00:00")</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>1.0</priority>
+            </url>
+            <url>
+              <loc>https://mailist.pl/regulamin.html</loc>
+              <changefreq>monthly</changefreq>
+              <priority>0.5</priority>
+            </url>
+            <url>
+              <loc>https://mailist.pl/polityka-prywatnosci.html</loc>
+              <changefreq>monthly</changefreq>
+              <priority>0.5</priority>
+            </url>
+          </urlset>
+          EOF
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Deployment summary
+        run: |
+          echo "✅ Deployment successful!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🌐 Site URL: ${{ steps.deployment.outputs.page_url }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Performance Checklist" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Code minification (Terser)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ CSS minification (LightningCSS)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ HTML minification" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Image optimization (JPEG/PNG)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Code splitting (vendor chunks)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Cache busting (file hashing)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Security headers configured" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ robots.txt and sitemap.xml generated" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Test site at deployment URL" >> $GITHUB_STEP_SUMMARY
+          echo "2. Run Lighthouse audit" >> $GITHUB_STEP_SUMMARY
+          echo "3. Check Core Web Vitals in Google Search Console" >> $GITHUB_STEP_SUMMARY
