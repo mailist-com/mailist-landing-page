@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailist - Zrewolucjonizuj swój Email Marketing</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#06b6d4', /* Cyjan z Twojego logo */
+                            DEFAULT: '#2563eb', /* Niebieski */
+                            dark: '#4f46e5', /* Indigo/Fiolet z makiety */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Delikatne tło siatki jak na makiecie */
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, #f0f0f0 1px, transparent 1px),
+            linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased overflow-x-hidden">
+
+<div class="fixed inset-0 -z-10 bg-grid-pattern h-screen w-screen opacity-60"></div>
+<div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-light/20 rounded-full blur-[120px] -z-10"></div>
+
+<nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/70 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                <img class="h-10 w-auto" src="favicon.png" alt="Mailist Logo">
+                <span class="font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-brand-light to-brand-dark">Mailist</span>
+            </div>
+
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#" class="text-gray-600 hover:text-brand-dark font-medium transition">Strona główna</a>
+                <a href="#features" class="text-gray-600 hover:text-brand-dark font-medium transition">Funkcje</a>
+                <a href="#pricing" class="text-gray-600 hover:text-brand-dark font-medium transition">Cennik</a>
+                <a href="#contact" class="text-gray-600 hover:text-brand-dark font-medium transition">Kontakt</a>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#" class="text-brand-dark font-semibold hover:text-brand-light transition">Zaloguj się</a>
+                <a href="#" class="bg-brand-dark hover:bg-brand-DEFAULT text-white px-6 py-2.5 rounded-full font-medium transition shadow-lg shadow-brand-dark/30">
+                    Dołącz teraz
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section class="pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+
+        <div class="inline-flex items-center px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm mb-8 animate-fade-in-up">
+            <span class="flex h-2 w-2 rounded-full bg-brand-light mr-2"></span>
+            <span class="text-sm font-medium text-gray-600">Powered by AI Technology</span>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+            Zrewolucjonizuj swój sukces w <br class="hidden md:block" />
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-dark via-brand-DEFAULT to-brand-light">
+                    Email Marketingu
+                </span>
+        </h1>
+
+        <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 mb-10">
+            Witaj w Mailist. Nasi specjaliści AI tworzą kampanie, które angażują Twoich odbiorców i dostarczają mierzalny wzrost.
+        </p>
+
+        <div class="flex justify-center gap-4 mb-16">
+            <a href="#" class="bg-brand-dark hover:bg-brand-DEFAULT text-white text-lg px-8 py-4 rounded-full font-bold transition shadow-xl shadow-brand-dark/40 transform hover:-translate-y-1">
+                Rozpocznij za darmo
+            </a>
+        </div>
+
+        <div class="relative mx-auto max-w-5xl rounded-2xl shadow-2xl border border-gray-200 bg-white overflow-hidden transform rotate-x-12 perspective-1000">
+            <div class="bg-gray-50 border-b border-gray-200 px-4 py-3 flex items-center gap-2">
+                <div class="flex gap-1.5">
+                    <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                </div>
+                <div class="mx-auto text-xs text-gray-400 font-mono">mailist-app.com</div>
+            </div>
+            <div class="p-6 grid grid-cols-12 gap-6 bg-gray-50/50">
+                <div class="col-span-2 hidden md:block space-y-4">
+                    <div class="h-8 bg-gray-200 rounded w-3/4"></div>
+                    <div class="h-4 bg-gray-200 rounded w-full"></div>
+                    <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+                    <div class="h-4 bg-gray-200 rounded w-4/6"></div>
+                </div>
+                <div class="col-span-12 md:col-span-10 grid grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                        <div class="text-sm text-gray-500 mb-1">Email Opened</div>
+                        <div class="text-2xl font-bold text-gray-800">1,321</div>
+                        <div class="text-xs text-green-500 mt-2">▲ 2.5% vs last month</div>
+                    </div>
+                    <div class="bg-brand-dark text-white p-4 rounded-xl shadow-lg shadow-brand-dark/20">
+                        <div class="text-sm text-white/80 mb-1">Impressions</div>
+                        <div class="text-2xl font-bold">15,000</div>
+                        <div class="text-xs text-white/80 mt-2">+13.5% Increased</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                        <div class="text-sm text-gray-500 mb-1">Click Rate</div>
+                        <div class="text-2xl font-bold text-gray-800">22%</div>
+                        <div class="text-xs text-green-500 mt-2">▲ 0.5% Increased</div>
+                    </div>
+                    <div class="col-span-3 bg-white p-4 rounded-xl shadow-sm border border-gray-100 h-48 flex items-end justify-between gap-2">
+                        <div class="w-full bg-brand-light/20 rounded-t h-[40%]"></div>
+                        <div class="w-full bg-brand-light/30 rounded-t h-[60%]"></div>
+                        <div class="w-full bg-brand-light/50 rounded-t h-[30%]"></div>
+                        <div class="w-full bg-brand-dark rounded-t h-[80%] relative group">
+                            <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition">Peak</div>
+                        </div>
+                        <div class="w-full bg-brand-light/40 rounded-t h-[50%]"></div>
+                        <div class="w-full bg-brand-light/20 rounded-t h-[45%]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 pt-10 border-t border-gray-100">
+            <p class="text-sm text-gray-400 font-medium mb-6 uppercase tracking-wider">Zaufali nam liderzy branży</p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+                <h3 class="text-2xl font-serif font-bold">Forbes</h3>
+                <h3 class="text-2xl font-serif font-bold">TechCrunch</h3>
+                <h3 class="text-2xl font-serif font-bold">Bloomberg</h3>
+                <h3 class="text-2xl font-serif font-bold">GIZMODO</h3>
+                <h3 class="text-2xl font-serif font-bold">The Washington Post</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                    Maksymalizuj efekty swojego marketingu
+                </h2>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Zanurz się w historię Mailist i odkryj, jak wzmacniamy firmy w email marketingu. Koncentrując się na innowacjach, kreatywności i satysfakcji klienta, jesteśmy tu, by wspierać Cię na każdym kroku.
+                </p>
+                <a href="#" class="inline-block bg-brand-dark text-white px-8 py-3 rounded-full font-medium hover:bg-brand-DEFAULT transition">Dowiedz się więcej</a>
+
+                <div class="grid grid-cols-3 gap-8 mt-12 border-t border-gray-200 pt-8">
+                    <div>
+                        <div class="text-3xl font-bold text-gray-900">12+</div>
+                        <div class="text-sm text-gray-500">Lat doświadczenia</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-gray-900">200+</div>
+                        <div class="text-sm text-gray-500">Emaili dziennie</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-gray-900">60M</div>
+                        <div class="text-sm text-gray-500">Aktywnych userów</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-2 rounded-2xl shadow-xl rotate-1 hover:rotate-0 transition duration-500">
+                <img src="https://placehold.co/600x400/f3f4f6/4f46e5?text=Panel+Analityczny" alt="Dashboard Preview" class="rounded-xl w-full">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Personalizowane rozwiązania dla doskonałości</h2>
+            <p class="text-gray-500">Odblokuj pełny potencjał swojej strategii email marketingowej dzięki Mailist.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition duration-300 border border-transparent hover:border-gray-100 group">
+                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm mb-6 text-brand-dark text-xl group-hover:scale-110 transition">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Wsparcie 24/7</h3>
+                <p class="text-gray-500 mb-6">Dedykowany zespół wsparcia klienta, szkolenia i zasoby edukacyjne pomagają klientom maksymalizować wartość.</p>
+                <a href="#" class="text-brand-dark font-semibold hover:text-brand-light flex items-center gap-2">Zobacz więcej <i class="fa-solid fa-arrow-right text-sm"></i></a>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition duration-300 border border-transparent hover:border-gray-100 group">
+                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm mb-6 text-brand-dark text-xl group-hover:scale-110 transition">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Analityka Real-Time</h3>
+                <p class="text-gray-500 mb-6">Potężne raporty dostarczające wglądu w wydajność e-maili, wskaźniki zaangażowania i konwersje.</p>
+                <a href="#" class="text-brand-dark font-semibold hover:text-brand-light flex items-center gap-2">Zobacz więcej <i class="fa-solid fa-arrow-right text-sm"></i></a>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition duration-300 border border-transparent hover:border-gray-100 group">
+                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm mb-6 text-brand-dark text-xl group-hover:scale-110 transition">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Zaawansowana Automatyzacja</h3>
+                <p class="text-gray-500 mb-6">Solidne narzędzia umożliwiające zautomatyzowane przepływy pracy, kampanie drip i personalizację.</p>
+                <a href="#" class="text-brand-dark font-semibold hover:text-brand-light flex items-center gap-2">Zobacz więcej <i class="fa-solid fa-arrow-right text-sm"></i></a>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-xl transition duration-300 border border-transparent hover:border-gray-100 group">
+                <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm mb-6 text-brand-dark text-xl group-hover:scale-110 transition">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Szablony Marki</h3>
+                <p class="text-gray-500 mb-6">500+ responsywnych szablonów z edytorem drag-and-drop. Dopasuj styl bez grafika.</p>
+                <a href="#" class="text-brand-dark font-semibold hover:text-brand-light flex items-center gap-2">Zobacz więcej <i class="fa-solid fa-arrow-right text-sm"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pricing" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Uwolnij swój potencjał marketingowy</h2>
+            <div class="flex justify-center items-center gap-4 mt-8">
+                <span class="text-gray-600 font-medium">Miesięcznie</span>
+                <div class="w-14 h-8 bg-brand-dark rounded-full relative cursor-pointer">
+                    <div class="absolute left-1 top-1 w-6 h-6 bg-white rounded-full transition"></div>
+                </div>
+                <span class="text-gray-400">Rocznie</span>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 items-start">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900">Essential</h3>
+                <p class="text-gray-500 text-sm mb-6">Idealny dla startupów</p>
+                <div class="text-4xl font-bold mb-6 text-gray-900">$30 <span class="text-sm font-normal text-gray-500">/Msc</span></div>
+                <button class="w-full py-3 rounded-xl border border-brand-dark text-brand-dark font-semibold hover:bg-brand-dark hover:text-white transition mb-8">Wybierz Plan</button>
+                <ul class="space-y-4 text-sm text-gray-600">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-dark"></i> Główne Funkcje</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-dark"></i> Do 1,000 Kontaktów</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-dark"></i> Wsparcie 24/7</li>
+                </ul>
+            </div>
+
+            <div class="bg-brand-dark text-white p-8 rounded-2xl shadow-2xl scale-105 relative z-10">
+                <div class="absolute top-4 right-4 text-xs bg-yellow-400 text-black font-bold px-2 py-1 rounded">Best Plan</div>
+                <h3 class="text-lg font-bold">Momentum</h3>
+                <p class="text-indigo-200 text-sm mb-6">Dla szybko rosnących firm</p>
+                <div class="text-4xl font-bold mb-6">$80 <span class="text-sm font-normal text-indigo-200">/Msc</span></div>
+                <button class="w-full py-3 rounded-xl bg-white text-brand-dark font-bold hover:bg-gray-100 transition mb-8">Wybierz Plan</button>
+                <ul class="space-y-4 text-sm text-indigo-100">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-white"></i> Wszystkie zaawansowane funkcje</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-white"></i> Do 5,000 Kontaktów</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-white"></i> Priorytetowe Wsparcie</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-white"></i> Skalowalne opcje</li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900">Elite</h3>
+                <p class="text-gray-500 text-sm mb-6">Potęga Enterprise</p>
+                <div class="text-4xl font-bold mb-6 text-gray-900">$130 <span class="text-sm font-normal text-gray-500">/Msc</span></div>
+                <button class="w-full py-3 rounded-xl border border-brand-dark text-brand-dark font-semibold hover:bg-brand-dark hover:text-white transition mb-8">Wybierz Plan</button>
+                <ul class="space-y-4 text-sm text-gray-600">
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-dark"></i> Pełny pakiet funkcji</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-dark"></i> Do 10,000 Kontaktów</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-dark"></i> Wsparcie VIP</li>
+                    <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brand-dark"></i> Dedykowane rozwiązania</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-16">Prawdziwe historie sukcesu</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-50 p-8 rounded-2xl relative">
+                <i class="fa-solid fa-quote-left text-4xl text-brand-light/20 absolute top-6 left-6"></i>
+                <p class="text-gray-600 mb-6 mt-6 relative z-10">"Mailist zmienił reguły gry dla naszego zespołu. Narzędzia automatyzacji zaoszczędziły nam 15+ godzin tygodniowo."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gray-300"></div> <div>
+                    <div class="font-bold text-sm">Alex Jhon</div>
+                    <div class="text-xs text-gray-500">CEO, GreenGrove</div>
+                </div>
+                    <div class="ml-auto text-yellow-400 text-xs">★★★★★</div>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-8 rounded-2xl relative">
+                <i class="fa-solid fa-quote-left text-4xl text-brand-light/20 absolute top-6 left-6"></i>
+                <p class="text-gray-600 mb-6 mt-6 relative z-10">"Dzięki precyzyjnemu targetowaniu Mailist, zwiększyliśmy sprzedaż e-commerce o 30% w zaledwie 3 miesiące."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gray-300"></div> <div>
+                    <div class="font-bold text-sm">Marcel V.</div>
+                    <div class="text-xs text-gray-500">Marketing Dir.</div>
+                </div>
+                    <div class="ml-auto text-yellow-400 text-xs">★★★★★</div>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-8 rounded-2xl relative">
+                <i class="fa-solid fa-quote-left text-4xl text-brand-light/20 absolute top-6 left-6"></i>
+                <p class="text-gray-600 mb-6 mt-6 relative z-10">"Mailist zrewolucjonizował naszą strategię cyfrową, zwiększając ruch organiczny o 200% dzięki narzędziom AI."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-gray-300"></div> <div>
+                    <div class="font-bold text-sm">Anne K.</div>
+                    <div class="text-xs text-gray-500">Head of Growth</div>
+                </div>
+                    <div class="ml-auto text-yellow-400 text-xs">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-brand-dark to-brand-DEFAULT rounded-3xl p-10 md:p-16 text-white relative overflow-hidden flex flex-col md:flex-row items-center justify-between">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+            <div class="absolute bottom-0 left-0 w-40 h-40 bg-brand-light/30 rounded-full -ml-10 -mb-10 blur-xl"></div>
+
+            <div class="relative z-10 md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Poznaj nasze usługi głębiej</h2>
+                <p class="text-indigo-100 mb-8 max-w-lg">
+                    Masz pytania lub potrzebujesz pomocy? Skontaktuj się z naszym przyjaznym zespołem, a my przeprowadzimy Cię przez proces.
+                </p>
+                <button class="bg-white text-brand-dark px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">
+                    Zamów Demo
+                </button>
+            </div>
+
+            <div class="relative z-10 mt-10 md:mt-0 md:w-1/3 flex justify-end">
+                <div class="w-64 h-64 bg-white/20 rounded-full backdrop-blur-sm border border-white/30 flex items-center justify-center">
+                    <i class="fa-solid fa-user-tie text-6xl text-white/80"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-white pt-16 pb-8 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <img class="h-8 w-auto" src="favicon.png" alt="Mailist Logo">
+                    <span class="font-bold text-xl text-gray-900">Mailist</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-6">Zwiększ zaangażowanie i konwersje dzięki naszym eksperckim strategiom marketingu mailowego.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-900 mb-4">Firma</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="hover:text-brand-dark">O nas</a></li>
+                    <li><a href="#" class="hover:text-brand-dark">Usługi</a></li>
+                    <li><a href="#" class="hover:text-brand-dark">Kariera</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-900 mb-4">Połącz się</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="#" class="hover:text-brand-dark">Facebook</a></li>
+                    <li><a href="#" class="hover:text-brand-dark">Instagram</a></li>
+                    <li><a href="#" class="hover:text-brand-dark">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-gray-900 mb-4">Kontakt</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> Bangkok, Thailand</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope"></i> marketing@mailist.com</li>
+                </ul>
+                <div class="mt-6">
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Twój email" class="w-full px-3 py-2 bg-gray-50 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-brand-dark">
+                        <button class="bg-brand-dark text-white px-3 py-2 rounded-lg hover:bg-brand-DEFAULT transition"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+            <div class="flex gap-6 mb-4 md:mb-0">
+                <a href="#">Regulamin</a>
+                <a href="#">Polityka Prywatności</a>
+            </div>
+            <div>&copy; 2025 Mailist. All rights reserved.</div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

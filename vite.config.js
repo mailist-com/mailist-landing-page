@@ -7,14 +7,25 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig(({ command, mode, ssrBuild }) => {
     const list = [];
     if (mode === 'production') {
-        sync('src/*.html').forEach((file) => {
+        // Tylko właściwe pliki HTML, ignoruj backupy i temp files
+        const htmlFiles = sync('src/*.html').filter(file => {
+            const fileName = file.split('/').pop();
+            return !fileName.match(/index[0-9]+\.html|\.bak\.html/);
+        });
+
+        htmlFiles.forEach((file) => {
             list.push(file);
-            //     list[file.replaceAll("src/", "").replaceAll(".html", "")] = file;
         })
     }
+
+    // GitHub Pages base path - zmień na nazwę repo jeśli nie używasz custom domain
+    const base = process.env.GITHUB_PAGES === 'true'
+        ? '/mailist-landing-page/'
+        : '/';
+
     return {
         root: "src",
-        base: "/",
+        base: base,
         server: {
             open: true
         },
@@ -33,12 +44,98 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
         build: {
             outDir: "../dist",
             emptyOutDir: true,
-            chunkSizeWarningLimit: 1000, 
+            // Zwiększ limit ostrzeżeń dla większych chunków
+            chunkSizeWarningLimit: 1000,
+
+            // Optymalizacje wydajności
+            target: 'es2015', // Szeroka kompatybilność przeglądarek
+            minify: 'terser', // Agresywna minifikacja
+            terserOptions: {
+                compress: {
+                    drop_console: true, // Usuń console.log w produkcji
+                    drop_debugger: true,
+                    pure_funcs: ['console.log', 'console.info'], // Usuń konkretne funkcje
+                    passes: 2, // Wielokrotna kompresja dla lepszych wyników
+                },
+                format: {
+                    comments: false, // Usuń komentarze
+                },
+            },
+
+            // CSS Code Splitting i optymalizacja
+            cssCodeSplit: true,
+            cssMinify: 'lightningcss',
+
+            // Source maps - wyłączone w produkcji dla mniejszego rozmiaru
+            sourcemap: false,
+
+            // Optymalizacje rollup
             rollupOptions: {
                 input: [
                     ...list,
                 ],
-            }
-        }
+                output: {
+                    // Manualne code splitting dla lepszej kontroli cache
+                    manualChunks: (id) => {
+                        // Vendor chunks - biblioteki rzadko się zmieniają
+                        if (id.includes('node_modules')) {
+                            // Rozdziel duże biblioteki na osobne chunki
+                            if (id.includes('lucide')) {
+                                return 'vendor-lucide';
+                            }
+                            if (id.includes('preline')) {
+                                return 'vendor-preline';
+                            }
+                            if (id.includes('apexcharts')) {
+                                return 'vendor-charts';
+                            }
+                            if (id.includes('flatpickr') || id.includes('simplebar')) {
+                                return 'vendor-ui';
+                            }
+                            // Pozostałe vendor dependencies
+                            return 'vendor-core';
+                        }
+                    },
+
+                    // Cache busting - hash w nazwach plików
+                    entryFileNames: 'assets/js/[name]-[hash].js',
+                    chunkFileNames: 'assets/js/[name]-[hash].js',
+                    assetFileNames: (assetInfo) => {
+                        // Organizuj assety według typu
+                        const info = assetInfo.name.split('.');
+                        const ext = info[info.length - 1];
+
+                        if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp|avif/i.test(ext)) {
+                            return `assets/images/[name]-[hash][extname]`;
+                        }
+                        if (/woff2?|eot|ttf|otf/i.test(ext)) {
+                            return `assets/fonts/[name]-[hash][extname]`;
+                        }
+                        return `assets/[ext]/[name]-[hash][extname]`;
+                    },
+
+                    // Optymalizuj generowany kod
+                    compact: true,
+                },
+            },
+
+            // Optymalizacja assetów
+            assetsInlineLimit: 4096, // Inline małe assety (< 4kb) jako base64
+
+            // Report compressed size
+            reportCompressedSize: true,
+        },
+
+        // Optymalizacje podczas development
+        optimizeDeps: {
+            include: ['lucide', 'preline', 'simplebar', 'flatpickr'],
+            exclude: [],
+        },
+
+        // Performance hints
+        preview: {
+            port: 4173,
+            strictPort: false,
+        },
     }
 })
