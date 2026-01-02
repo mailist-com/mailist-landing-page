@@ -8,7 +8,7 @@
     <meta name="description" content="Regulamin świadczenia usług platformy Mailist - warunki korzystania, prawa i obowiązki użytkowników.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mailist.pl/regulamin.html">
-    <link rel="shortcut icon" href="/assets/images/favicon-CK1QI2Xs.ico">
+    <link rel="shortcut icon" href="/assets/images/favicon-nO9TzToh.ico">
 
     <script>
         (function () {
@@ -47,157 +47,343 @@
         })();
     </script>
 
+    <script src="assets/js/components-loader.js"></script>
   <script type="module" crossorigin src="/assets/js/vendor-core-BbTcv2-F.js"></script>
   <script type="module" crossorigin src="/assets/js/vendor-preline-LLmV8e4s.js"></script>
   <script type="module" crossorigin src="/assets/js/vendor-ui-BdR8abFd.js"></script>
   <script type="module" crossorigin src="/assets/js/vendor-lucide-BRI3kKg5.js"></script>
-  <script type="module" crossorigin src="/assets/js/app-BtDRLtmY.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/css/app-_7aQvZOR.css">
+  <script type="module" crossorigin src="/assets/js/app-BPh8Hovz.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/css/app-CJ3lgWj5.css">
 </head>
 
 <body>
 
-<header>
-    <nav class="fixed inset-x-0 top-0 z-50 bg-card py-6 shadow flex justify-between items-center" role="navigation" aria-label="Nawigacja główna">
-        <div class="container">
-            <div class="flex justify-between items-center">
-                <a href="index.html" aria-label="Mailist - Strona główna">
-                    <img src="/assets/images/logo-dark-BRT9tiBX.png" alt="Mailist - Logo" class="h-6 block dark:hidden" width="120" height="24">
-                    <img src="/assets/images/logo-light-CCjoJosn.png" alt="Mailist - Logo jasne" class="h-6 hidden dark:block" width="120" height="24">
-                </a>
+<!-- Header Component -->
+<div id="header-placeholder"></div>
 
-                <a href="index.html" class="btn border-primary text-primary hover:bg-primary hover:text-white bg-transparent">
-                    <i data-lucide="arrow-left" class="size-4"></i>
-                    Powrót do strony głównej
-                </a>
-            </div>
-        </div>
-    </nav>
-</header>
-
-<main class="pt-32 pb-20 bg-default-100 dark:bg-default-950">
-    <div class="container max-w-4xl">
-        <article class="card">
+<main class="pb-20 bg-default-100 dark:bg-default-950">
+    <div class="container max-w-4xl pt-32">
+        <article class="card mt-8">
             <div class="card-body p-8">
                 <h1 class="text-4xl font-semibold text-default-900 mb-4">Regulamin Świadczenia Usług</h1>
-                <p class="text-sm text-default-500 mb-8">Data ostatniej aktualizacji: 11 grudnia 2025</p>
+                <p class="text-sm text-default-500 mb-8">Data ostatniej aktualizacji: 31 grudnia 2025</p>
 
                 <section class="mb-8">
                     <h2 class="text-2xl font-semibold text-default-800 mb-4">1. Postanowienia Ogólne</h2>
                     <p class="text-default-700 mb-4">
-                        Niniejszy Regulamin określa zasady świadczenia usług drogą elektroniczną przez platformę Mailist,
-                        dostępną pod adresem mailist.pl oraz app.mailist.pl, zwaną dalej "Platformą".
+                        Niniejszy Regulamin określa rodzaj, zakres i warunki świadczenia Usług drogą elektroniczną za pośrednictwem platformy Mailist,
+                        dostępnej pod adresem mailist.pl oraz app.mailist.pl, zwanej dalej "Serwisem" lub "Platformą", w tym zasady korzystania z Systemu.
                     </p>
                     <p class="text-default-700 mb-4">
-                        Administratorem Platformy i dostawcą usług jest Mailist Sp. z o.o., z siedzibą w Polsce.
+                        Właścicielem Serwisu i Usługodawcą jest TeEs Soft Tomasz Szymala, prowadzący działalność gospodarczą pod adresem:
+                        Kłocko 47g, 98-200 Sieradz, NIP: 8272316856, adres e-mail: kontakt@mailist.pl
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Korzystanie z Serwisu i świadczonych za jego pośrednictwem Usług wymaga uprzedniego zapoznania się z treścią Regulaminu i jego akceptacji.
+                        Brak akceptacji Regulaminu uniemożliwia złożenie zamówienia i korzystanie z Usług.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Z uwagi na charakter Usług Regulamin nie ma zastosowania do Konsumentów.
                     </p>
                 </section>
 
                 <section class="mb-8">
                     <h2 class="text-2xl font-semibold text-default-800 mb-4">2. Definicje</h2>
+                    <p class="text-default-700 mb-4">Pojęciom użytym w niniejszym Regulaminie nadaje się następujące znaczenia:</p>
                     <ul class="list-disc list-inside text-default-700 space-y-2">
-                        <li><strong>Usługodawca</strong> - Mailist Sp. z o.o., operator Platformy</li>
-                        <li><strong>Użytkownik</strong> - osoba fizyczna, prawna lub jednostka organizacyjna korzystająca z Platformy</li>
-                        <li><strong>Konto</strong> - indywidualny profil Użytkownika w Platformie</li>
-                        <li><strong>Abonament</strong> - płatny plan subskrypcyjny (Free, Standard, Pro)</li>
-                        <li><strong>Kampania</strong> - wysyłka wiadomości email do listy kontaktów</li>
+                        <li><strong>Aplikacja mobilna</strong> - oprogramowanie wraz elementami niebędącymi programem komputerowym w wersji na urządzenia mobilne, w ramach którego Usługobiorca może skorzystać z funkcjonalności Systemu</li>
+                        <li><strong>Cennik</strong> - zestawienie informacji o cenach Usług świadczonych przez Usługodawcę dostępne w Serwisie w zakładce „Cennik", stanowiące integralną część Regulaminu</li>
+                        <li><strong>Konsument</strong> - osoba fizyczna dokonująca z przedsiębiorcą czynności prawnej niezwiązanej bezpośrednio z jej działalnością gospodarczą lub zawodową</li>
+                        <li><strong>Konto Usługobiorcy/Konto</strong> - część Serwisu stanowiąca zbiór zasobów i uprawnień przypisanych konkretnemu Usługobiorcy, dostępna po zalogowaniu się przy użyciu loginu i hasła</li>
+                        <li><strong>Okres rozliczeniowy</strong> - okres, za który dokonywane są rozliczenia zobowiązań Usługobiorcy z tytułu Usług świadczonych w trybie abonamentowym (miesiąc kalendarzowy)</li>
+                        <li><strong>Opłata abonamentowa</strong> - opłata uiszczana przez Usługobiorcę w wysokości określonej w Cenniku tytułem korzystania z Usług w danym Okresie rozliczeniowym</li>
+                        <li><strong>Przedsiębiorca</strong> - osoba fizyczna niebędąca Konsumentem, osoba prawna lub jednostka organizacyjna niebędąca osobą prawną, której odrębna ustawa przyznaje zdolność prawną, wykonująca działalność gospodarczą</li>
+                        <li><strong>Regulamin</strong> - niniejszy regulamin świadczenia usług drogą elektroniczną stanowiący wzorzec umowy</li>
+                        <li><strong>RODO</strong> - rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych</li>
+                        <li><strong>Serwis</strong> - zorganizowana platforma informatyczno-informacyjna Mailist umożliwiająca Usługobiorcy korzystanie z Usług dostępna pod adresem mailist.pl oraz adresami subdomen</li>
+                        <li><strong>System</strong> - rozwiązanie informatyczne będące oprogramowaniem dostępne w modelu SaaS (Software as a Service) dostarczane przez Usługodawcę</li>
+                        <li><strong>Usługi</strong> - bezpłatne i odpłatne usługi świadczone drogą elektroniczną za pośrednictwem Serwisu, polegające na zapewnieniu dostępu do platformy email marketingu Mailist</li>
+                        <li><strong>Usługobiorca</strong> - Przedsiębiorca, który korzysta z Usług na podstawie Umowy w celach związanych bezpośrednio z jego działalnością gospodarczą lub zawodową</li>
+                        <li><strong>Usługodawca</strong> - TeEs Soft Tomasz Szymala, Kłocko 47g, 98-200 Sieradz, NIP: 8272316856</li>
                     </ul>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-default-800 mb-4">3. Zasady Korzystania z Platformy</h2>
-                    <h3 class="text-xl font-semibold text-default-800 mb-3">3.1. Rejestracja</h3>
-                    <p class="text-default-700 mb-4">
-                        Użytkownik zobowiązany jest do podania prawdziwych danych podczas rejestracji. Rejestracja jest dobrowolna,
-                        ale niezbędna do korzystania z pełnych funkcji Platformy.
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">3. Wymagania Techniczne</h2>
+                    <p class="text-default-700 mb-4">Korzystanie z Serwisu wymaga spełnienia minimalnych wymagań technicznych:</p>
+                    <ul class="list-disc list-inside text-default-700 space-y-2">
+                        <li>Sprawne urządzenie z połączeniem internetowym (komputer, tablet, smartphone)</li>
+                        <li>Stałe łącze internetowe o przepustowości minimum 2 Mb/s</li>
+                        <li>Aktualna przeglądarka internetowa (Chrome, Firefox, Safari, Edge)</li>
+                        <li>Włączona obsługa plików cookies i JavaScript</li>
+                        <li>Posiadanie aktywnego adresu poczty elektronicznej</li>
+                    </ul>
+                    <p class="text-default-700 mb-4 mt-4">
+                        W celu skorzystania z Aplikacji mobilnej konieczne jest jej pobranie z Google Play lub App Store
+                        oraz zainstalowanie na urządzeniu z systemem iOS lub Android.
                     </p>
+                </section>
 
-                    <h3 class="text-xl font-semibold text-default-800 mb-3">3.2. Bezpieczeństwo Konta</h3>
-                    <p class="text-default-700 mb-4">
-                        Użytkownik odpowiada za zachowanie poufności danych dostępowych do Konta. W przypadku
-                        podejrzenia nieuprawnionego dostępu należy niezwłocznie poinformować Usługodawcę.
-                    </p>
-
-                    <h3 class="text-xl font-semibold text-default-800 mb-3">3.3. Zabronione Działania</h3>
-                    <p class="text-default-700 mb-2">Użytkownik zobowiązuje się nie wysyłać:</p>
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">4. Korzystanie z Serwisu</h2>
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">4.1. Dostępne funkcjonalności</h3>
+                    <p class="text-default-700 mb-4">W ramach Serwisu Usługodawca umożliwia Usługobiorcy:</p>
                     <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
-                        <li>Spamu lub niezamówionych wiadomości handlowych</li>
-                        <li>Treści niezgodnych z prawem, obraźliwych lub naruszających prawa osób trzecich</li>
-                        <li>Wiadomości zawierających wirusy, malware lub inne szkodliwe oprogramowanie</li>
-                        <li>Wiadomości naruszających regulacje RODO i prawa ochrony danych osobowych</li>
+                        <li>Zapoznanie się z informacjami dotyczącymi zakresu i warunków świadczenia Usług</li>
+                        <li>Założenie, prowadzenie i likwidację Konta Usługobiorcy</li>
+                        <li>Składanie zamówień na pakiety Usług i korzystanie z Usług</li>
+                        <li>Przesłanie wiadomości za pośrednictwem formularza kontaktowego</li>
                     </ul>
+
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">4.2. Zobowiązania Usługobiorcy</h3>
+                    <p class="text-default-700 mb-4">Akceptując niniejszy Regulamin, Usługobiorca zobowiązuje się w szczególności do:</p>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Respektowania zakazu dostarczania treści o charakterze bezprawnym, obraźliwych, nieprawdziwych, niemoralnych, naruszających dobre obyczaje</li>
+                        <li>Niepodejmowania działań zmierzających do zakłócenia funkcjonowania Serwisu</li>
+                        <li>Korzystania z treści zamieszczanych w Serwisie wyłącznie na własny użytek i w celu realizacji zawartej Umowy</li>
+                        <li>Przestrzegania regulacji RODO i praw ochrony danych osobowych</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">4.3. Dostępność Serwisu</h3>
+                    <p class="text-default-700 mb-4">
+                        Usługodawca świadczy Usługi w sposób nieprzerwany 7 dni w tygodniu. Usługodawca zastrzega sobie prawo
+                        do czasowego zawieszenia świadczenia Usług w związku z koniecznością przeprowadzenia prac serwisowych
+                        lub naprawczych. Informacja o planowanym czasowym zawieszeniu pracy Systemu będzie przekazywana
+                        Usługobiorcom drogą elektroniczną.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Usługodawca nie ponosi odpowiedzialności za przerwy w świadczeniu Usług wywołane siłą wyższą,
+                        awariami sprzętu, przerwami w dostawie prądu czy łączności internetowej.
+                    </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-default-800 mb-4">4. Plany Abonamentowe</h2>
-                    <h3 class="text-xl font-semibold text-default-800 mb-3">4.1. Plan Free</h3>
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">5. Konto Usługobiorcy</h2>
+                    <p class="text-default-700 mb-4">
+                        Rejestracja i prowadzenie Konta Usługobiorcy są bezpłatne. Zarejestrowanie Konta jest możliwe
+                        poprzez wypełnienie dostępnego w Serwisie formularza rejestracji oraz podanie danych zgodnych ze stanem faktycznym.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Do zawarcia umowy prowadzenia Konta pomiędzy Usługodawcą a Usługobiorcą dochodzi z chwilą jego
+                        aktywacji przez Usługobiorcę, która następuje poprzez kliknięcie w link aktywacyjny przesłany
+                        na adres e-mail podany przy rejestracji.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Zalogowanie do Serwisu wymaga podania loginu (adres e-mail) oraz hasła. Usługobiorca zobowiązuje się
+                        do utrzymania w poufności informacji umożliwiających dostęp do Konta. Usługodawca zaleca zmianę hasła co 30 dni.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Konto zakładane jest na czas nieokreślony. Usługobiorca jest uprawniony do likwidacji Konta w każdym czasie
+                        bez podania przyczyny poprzez przesłanie prośby o usunięcie konta na adres e-mail: kontakt@mailist.pl
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">6. Korzystanie z Usług i Plany Abonamentowe</h2>
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">6.1. Zasady ogólne</h3>
+                    <p class="text-default-700 mb-4">
+                        Korzystanie z Usług jest możliwe po uprzednim zarejestrowaniu Konta Usługobiorcy, zaakceptowaniu
+                        Regulaminu i Polityki Prywatności oraz zapoznaniu się z Cennikiem.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Usługobiorcy mogą korzystać z Usług bezpłatnie – w ramach darmowego dostępu (Plan Free) oraz odpłatnie
+                        – w ramach wybranego wariantu Usług odpłatnych zgodnie z Cennikiem (Plan Standard, Plan Pro).
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">6.2. Plan Free</h3>
                     <p class="text-default-700 mb-4">
                         Plan darmowy obejmuje do 1,000 kontaktów i 9,000 emaili miesięcznie. Usługodawca zastrzega
                         sobie prawo do zmiany limitów planu darmowego z 30-dniowym wyprzedzeniem.
                     </p>
 
-                    <h3 class="text-xl font-semibold text-default-800 mb-3">4.2. Plany Płatne (Standard, Pro)</h3>
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">6.3. Plany Płatne (Standard, Pro)</h3>
                     <p class="text-default-700 mb-4">
                         Płatne abonamenty są rozliczane cyklicznie (miesięcznie). Opłaty pobierane są automatycznie
-                        zgodnie z wybranym planem i liczbą kontaktów.
+                        zgodnie z wybranym planem i liczbą kontaktów. Okres abonamentowy wynosi 30 dni, a czas świadczenia
+                        Usługi w ramach wykupionego abonamentu zaczyna biec od dnia aktywowania Usługi.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Umowa o świadczenie Usług odpłatnych zostaje zawarta z chwilą zatwierdzenia przez Usługobiorcę
+                        złożonego zamówienia na Usługę poprzez wybranie przycisku „zamawiam i płacę".
                     </p>
 
-                    <h3 class="text-xl font-semibold text-default-800 mb-3">4.3. Anulowanie Abonamentu</h3>
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">6.4. Anulowanie i zmiana Abonamentu</h3>
                     <p class="text-default-700 mb-4">
-                        Użytkownik może anulować płatny abonament w dowolnym momencie. Dostęp do funkcji płatnych
+                        Usługobiorca może anulować płatny abonament w dowolnym momencie. Dostęp do funkcji płatnych
                         pozostaje aktywny do końca opłaconego okresu. Zwrot środków za niewykorzystany okres nie jest możliwy.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Usługobiorca ma prawo zmiany wybranego wariantu Usług w dowolnym momencie przed upływem bieżącego
+                        Okresu rozliczeniowego. Nowy okres rozliczeniowy w ramach nowego wariantu Usług zaczyna biec po
+                        zakończeniu bieżącego Okresu rozliczeniowego.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-default-800 mb-4">5. Ochrona Danych Osobowych</h2>
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">7. Płatności</h2>
                     <p class="text-default-700 mb-4">
-                        Szczegółowe informacje dotyczące przetwarzania danych osobowych znajdują się w
+                        Usługobiorca zobowiązany jest zapłacić za Usługę odpłatną z góry zgodnie z Cennikiem w terminie 7 dni
+                        od potwierdzenia zamówienia Usługi, w przeciwnym wypadku Usługodawca ma prawo do odstąpienia od Umowy
+                        i anulowania zamówienia.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Płatności są realizowane wyłącznie za pośrednictwem platformy Stripe z wykorzystaniem kart płatniczych
+                        (Visa, Mastercard, American Express). Momentem zapłaty jest data zaksięgowania wpłaty na rachunku bankowym Usługodawcy.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Usługodawca wystawi Usługobiorcy fakturę w oparciu o dane wskazane podczas rejestracji Konta. Faktury
+                        są wystawiane za pośrednictwem systemu Fakturownia i dostarczane drogą elektroniczną na podany adres
+                        e-mail w terminie 7 dni od ich wystawienia.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Usługobiorca wyraża zgodę na otrzymywanie faktur od Usługodawcy drogą elektroniczną, zgodnie z art. 106 n
+                        ust. 1 Ustawy z dnia 11 marca 2004 r. o podatku od towarów i usług.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">8. Rozwiązywanie Umów</h2>
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">8.1. Przesłanki rozwiązania Umowy</h3>
+                    <p class="text-default-700 mb-4">Rozwiązanie Umowy o świadczenie Usług nastąpi:</p>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>W odniesieniu do Usługi prowadzenia Konta – w chwili złożenia przez Usługobiorcę dyspozycji usunięcia Konta</li>
+                        <li>W odniesieniu do Usługi świadczonej bezpłatnie – po upływie terminu jej trwania i braku wykupienia Usługi odpłatnej</li>
+                        <li>W odniesieniu do Usługi odpłatnej - z upływem okresu, na jaki Usługa została wykupiona i braku kontynuacji na dalszy Okres rozliczeniowy</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">8.2. Rozwiązanie przez Usługobiorcę</h3>
+                    <p class="text-default-700 mb-4">
+                        Usługobiorca może rozwiązać Umowę bez podania przyczyn poprzez usunięcie Konta w Systemie. Wówczas
+                        Umowa wygasa z końcem bieżącego Okresu rozliczeniowego, a wcześniej dokonane opłaty nie podlegają zwrotowi.
+                    </p>
+
+                    <h3 class="text-xl font-semibold text-default-800 mb-3">8.3. Rozwiązanie przez Usługodawcę</h3>
+                    <p class="text-default-700 mb-4">
+                        Usługodawcy przysługuje prawo do rozwiązania Umowy bez zachowania okresu wypowiedzenia w przypadku:
+                    </p>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Podania przez Usługobiorcę nieprawdziwych i niekompletnych danych niezbędnych do realizacji Umowy</li>
+                        <li>Uzasadnionego podejrzenia lub stwierdzenia faktu korzystania przez Usługobiorcę z Usług w sposób niezgodny z Regulaminem lub przepisami prawa</li>
+                        <li>Naruszania przez Usługobiorcę praw osób trzecich</li>
+                    </ul>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">9. Tryb Postępowania Reklamacyjnego</h2>
+                    <p class="text-default-700 mb-4">
+                        W przypadku wystąpienia zastrzeżeń co do funkcjonowania Systemu lub nieprawidłowości w świadczeniu
+                        Usług, Usługobiorca może złożyć reklamację przesyłając ją na adres e-mail: kontakt@mailist.pl
+                    </p>
+                    <p class="text-default-700 mb-4">W zgłoszeniu reklamacyjnym należy wskazać:</p>
+                    <ul class="list-disc list-inside text-default-700 space-y-2 mb-4">
+                        <li>Login/adres e-mail przypisany Usługobiorcy oraz dane kontaktowe</li>
+                        <li>Przedmiot reklamacji – wskazanie nieprawidłowości wraz z terminem ich wystąpienia i czasem trwania</li>
+                        <li>Proponowany sposób rozstrzygnięcia reklamacji</li>
+                    </ul>
+                    <p class="text-default-700 mb-4">
+                        Rozpatrzenie reklamacji nastąpi niezwłocznie, nie później niż w terminie 14 dni od dnia otrzymania
+                        zgłoszenia reklamacyjnego. Sposób rozstrzygnięcia zostanie przekazany Usługobiorcy drogą elektroniczną.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">10. Wsparcie Techniczne</h2>
+                    <p class="text-default-700 mb-4">
+                        W trakcie obowiązywania Umowy Usługobiorca ma możliwość skorzystania ze wsparcia technicznego
+                        Usługodawcy w zakresie związanym z korzystaniem z Usług w ramach Opłaty abonamentowej.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        W celu skorzystania ze wsparcia technicznego należy wysłać zgłoszenie problemu na adres e-mail:
+                        kontakt@mailist.pl ze wskazaniem rodzaju nieprawidłowości i błędów w Systemie.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Wsparcie techniczne świadczone jest od poniedziałku do piątku (z wyjątkiem dni ustawowo wolnych od pracy)
+                        w godzinach od 9:00 do 17:00.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">11. Ochrona Danych Osobowych i Poufność</h2>
+                    <p class="text-default-700 mb-4">
+                        Administratorem danych osobowych Usługobiorców jest Usługodawca: TeEs Soft Tomasz Szymala,
+                        Kłocko 47g, 98-200 Sieradz, NIP: 8272316856.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Administrator danych przetwarza dane osobowe Usługobiorców (imię i nazwisko, adres prowadzenia działalności,
+                        adres e-mail, nr telefonu, NIP, nr konta bankowego) w celu umożliwienia korzystania z Systemu i świadczenia Usług.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Podanie przez Usługobiorców danych osobowych jest dobrowolne, jednakże bez ich podania korzystanie z
+                        poszczególnych Usług może okazać się niemożliwe.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Usługodawca dokłada starań, aby zapewnić bezpieczeństwo i poufność danych osobowych, w szczególności
+                        poprzez dokonywanie czynności przetwarzania zgodnie z obowiązującymi przepisami prawa (RODO i regulacje sektorowe).
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Więcej informacji na temat ochrony danych osobowych znajduje się w
                         <a href="polityka-prywatnosci.html" class="text-primary hover:underline">Polityce Prywatności</a>.
                     </p>
                     <p class="text-default-700 mb-4">
-                        Użytkownik jako administrator danych odpowiada za zgodność swoich działań z RODO i innymi przepisami
-                        o ochronie danych osobowych.
+                        W ramach świadczenia Usług, Usługodawca korzysta z następujących systemów zewnętrznych:
+                        Microsoft Azure (hosting), Amazon AWS (hosting), Stripe (płatności), Fakturownia (faktury).
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-default-800 mb-4">6. Odpowiedzialność</h2>
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">12. Prawa na Dobrach Niematerialnych</h2>
                     <p class="text-default-700 mb-4">
-                        Usługodawca nie ponosi odpowiedzialności za treści kampanii wysyłanych przez Użytkowników ani
-                        za szkody wynikające z niewłaściwego korzystania z Platformy.
+                        Usługodawca zastrzega, że zarówno Serwis jak i System zawierają treści chronione prawem własności
+                        intelektualnej (elementy graficzne, logotypy, programy komputerowe).
                     </p>
                     <p class="text-default-700 mb-4">
-                        Platforma świadczona jest w modelu "as is". Usługodawca dołoży starań, aby zapewnić ciągłość
-                        działania, ale nie gwarantuje nieprzerwanego dostępu 24/7.
-                    </p>
-                </section>
-
-                <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-default-800 mb-4">7. Zmiana Regulaminu</h2>
-                    <p class="text-default-700 mb-4">
-                        Usługodawca zastrzega sobie prawo do zmiany Regulaminu. Użytkownicy zostaną poinformowani
-                        o zmianach z co najmniej 14-dniowym wyprzedzeniem za pośrednictwem email oraz powiadomienia w Platformie.
+                        Korzystanie z Serwisu nie oznacza nabycia jakichkolwiek praw na dobrach niematerialnych do utworów
+                        znajdujących się w Serwisie. Bez pozyskania uprzedniej zgody Usługodawcy, zabronione jest kopiowanie,
+                        rozpowszechnianie, wykorzystywanie oraz modyfikowanie jakichkolwiek elementów składowych Serwisu czy Systemu.
                     </p>
                     <p class="text-default-700 mb-4">
-                        Kontynuowanie korzystania z Platformy po wejściu w życie zmian oznacza akceptację nowego Regulaminu.
+                        Usługodawca udziela Usługobiorcy jedynie licencji niewyłącznej uprawniającej do korzystania z Serwisu
+                        i Systemu w sposób zgodny z jego przeznaczeniem. Licencja udzielana jest bez ograniczeń terytorialnych
+                        na czas określony odpowiadający okresowi świadczenia Usługi i wygasa wraz z usunięciem Konta Usługobiorcy.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-default-800 mb-4">8. Rozwiązywanie Sporów</h2>
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">13. Postanowienia Końcowe</h2>
                     <p class="text-default-700 mb-4">
-                        W sprawach nieuregulowanych niniejszym Regulaminem zastosowanie mają przepisy prawa polskiego.
+                        Regulamin jest dostępny bezpłatnie w Serwisie dla każdego Usługobiorcy.
                     </p>
                     <p class="text-default-700 mb-4">
-                        Ewentualne spory będą rozstrzygane przez sąd właściwy dla siedziby Usługodawcy.
+                        Usługodawca zastrzega sobie prawo wprowadzania zmian w treści Regulaminu z zastrzeżeniem ochrony praw nabytych.
+                        Usługodawca poinformuje Usługobiorców o zmianach Regulaminu nie później niż 14 dni przed ich planowanym
+                        wejściem w życie poprzez wyświetlenie komunikatu i publikację nowego Regulaminu w Serwisie oraz przesłanie
+                        informacji drogą elektroniczną.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Brak sprzeciwu Usługobiorcy wobec proponowanych zmian w terminie 14 dni od powiadomienia jest równoznaczny
+                        z akceptacją nowego Regulaminu. W przypadku sprzeciwu Umowa ulega rozwiązaniu z dniem poprzedzającym
+                        wejście w życie nowego Regulaminu.
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        Niniejszy Regulamin podlega prawu polskiemu. Wszelkie spory będą rozwiązywane w drodze polubownych
+                        negocjacji, a w przypadku gdy nie dojdzie do porozumienia - przed sądem powszechnym właściwym ze względu
+                        na siedzibę Usługodawcy (Sieradz).
+                    </p>
+                    <p class="text-default-700 mb-4">
+                        W sprawach nieuregulowanych w Regulaminie zastosowanie znajdą przepisy powszechnie obowiązującego prawa polskiego.
                     </p>
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-default-800 mb-4">9. Kontakt</h2>
+                    <h2 class="text-2xl font-semibold text-default-800 mb-4">14. Kontakt</h2>
                     <p class="text-default-700 mb-4">
-                        W sprawach dotyczących Regulaminu prosimy o kontakt: <br>
+                        W sprawach dotyczących Regulaminu prosimy o kontakt:
+                    </p>
+                    <p class="text-default-700 mb-2">
+                        <strong>TeEs Soft Tomasz Szymala</strong><br>
+                        Kłocko 47g<br>
+                        98-200 Sieradz<br>
+                        NIP: 8272316856<br>
                         Email: <a href="mailto:kontakt@mailist.pl" class="text-primary hover:underline">kontakt@mailist.pl</a>
                     </p>
                 </section>
@@ -206,16 +392,8 @@
     </div>
 </main>
 
-<footer class="relative py-12 bg-default-800 dark:bg-default-900" role="contentinfo">
-    <div class="container">
-        <div class="text-center text-default-400">
-            <p>2025 © Mailist. Wszelkie prawa zastrzeżone. |
-                <a href="regulamin.html" class="underline text-white hover:text-primary">Regulamin</a> |
-                <a href="polityka-prywatnosci.html" class="underline text-white hover:text-primary">Polityka Prywatności</a>
-            </p>
-        </div>
-    </div>
-</footer>
+<!-- Footer Component -->
+<div id="footer-placeholder"></div>
 
 </body>
 
