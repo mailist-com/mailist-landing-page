@@ -1,10 +1,12 @@
 import { sync } from 'glob';
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import path, { resolve } from "path";
 import handlebars from "vite-plugin-handlebars";
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig(({ command, mode, ssrBuild }) => {
+    // Load env variables based on mode
+    const env = loadEnv(mode, process.cwd(), '');
     const list = [];
     if (mode === 'production') {
         // Tylko właściwe pliki HTML, ignoruj backupy i temp files
@@ -36,9 +38,9 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
             handlebars({
                 partialDirectory: resolve('./src/partials'),
                 context: {
-                    VITE_MAILIST_API_URL: process.env.VITE_MAILIST_API_URL || 'https://api.mailist.pl/v1/contacts',
-                    VITE_MAILIST_API_KEY: process.env.VITE_MAILIST_API_KEY || '',
-                    VITE_MAILIST_LIST_NAME: process.env.VITE_MAILIST_LIST_NAME || 'mailist-landing',
+                    VITE_MAILIST_API_URL: env.VITE_MAILIST_API_URL || 'https://api.mailist.pl/v1/contacts',
+                    VITE_MAILIST_API_KEY: env.VITE_MAILIST_API_KEY || '',
+                    VITE_MAILIST_LIST_NAME: env.VITE_MAILIST_LIST_NAME || 'mailist-landing',
                 },
             }),
         ],
