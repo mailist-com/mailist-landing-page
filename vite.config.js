@@ -38,7 +38,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
             handlebars({
                 partialDirectory: resolve('./src/partials'),
                 context: {
-                    VITE_MAILIST_API_URL: env.VITE_MAILIST_API_URL || 'https://api.mailist.pl/v1/contacts',
+                    VITE_MAILIST_API_URL: env.VITE_MAILIST_API_URL || 'https://api.mailist.pl/api/v1/contacts ',
                     VITE_MAILIST_API_KEY: env.VITE_MAILIST_API_KEY || '',
                     VITE_MAILIST_LIST_NAME: env.VITE_MAILIST_LIST_NAME || 'mailist-landing',
                 },

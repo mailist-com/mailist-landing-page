@@ -7,9 +7,9 @@ class NewsletterSubscription {
     constructor() {
         // Use runtime configuration from window object
         const config = window.MAILIST_CONFIG || {};
-        this.apiUrl = config.apiUrl || 'https://api.mailist.pl/v1/contacts';
-        this.apiKey = config.apiKey || '';
-        this.listName = config.listName || 'mailist-landing';
+        this.apiUrl = 'https://api.mailist.pl/api/v1/contacts';
+        this.apiKey = 'ml_live_eRxe48waUhiB-AZqPvYKEPP9f8BijkSAk6NOK04Kal8';
+        this.listName = 'Mailist - Newsletter';
         this.form = null;
         this.emailInput = null;
         this.submitButton = null;
