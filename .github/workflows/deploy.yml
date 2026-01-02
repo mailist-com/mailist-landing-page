@@ -44,9 +44,9 @@ jobs:
       - name: Add .nojekyll file
         run: touch dist/.nojekyll
 
-      - name: Create CNAME file (optional - usuń jeśli nie używasz custom domain)
-        run: echo "mailist.pl" > dist/CNAME
-        continue-on-error: true
+      # COMMENTED OUT - Uncomment only if using custom domain
+      # - name: Create CNAME file for custom domain
+      #   run: echo "mailist.pl" > dist/CNAME
 
       # PERFORMANCE OPTIMIZATION: Analiza bundle size
       - name: Analyze bundle size

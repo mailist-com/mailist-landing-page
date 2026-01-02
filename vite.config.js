@@ -23,6 +23,9 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
         ? '/mailist-landing-page/'
         : '/';
 
+    // CRITICAL: Ensure base path is applied to all asset references
+    console.log('Building with base path:', base);
+
     return {
         root: "src",
         base: base,
