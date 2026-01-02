@@ -18,10 +18,9 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
         })
     }
 
-    // GitHub Pages base path - zmień na nazwę repo jeśli nie używasz custom domain
-    const base = process.env.GITHUB_PAGES === 'true'
-        ? '/mailist-landing-page/'
-        : '/';
+    // Custom domain (mailist.pl) - używamy root path
+    // Jeśli używasz project page GitHub Pages (bez custom domain), zmień na '/mailist-landing-page/'
+    const base = '/';
 
     // CRITICAL: Ensure base path is applied to all asset references
     console.log('Building with base path:', base);

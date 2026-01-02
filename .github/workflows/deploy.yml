@@ -36,9 +36,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build for GitHub Pages
+      - name: Build for GitHub Pages (Custom Domain)
         env:
-          GITHUB_PAGES: 'true'
           VITE_MAILIST_API_URL: ${{ secrets.VITE_MAILIST_API_URL }}
           VITE_MAILIST_API_KEY: ${{ secrets.VITE_MAILIST_API_KEY }}
           VITE_MAILIST_LIST_NAME: ${{ secrets.VITE_MAILIST_LIST_NAME }}
@@ -47,9 +46,8 @@ jobs:
       - name: Add .nojekyll file
         run: touch dist/.nojekyll
 
-      # COMMENTED OUT - Uncomment only if using custom domain
-      # - name: Create CNAME file for custom domain
-      #   run: echo "mailist.pl" > dist/CNAME
+      - name: Create CNAME file for custom domain
+        run: echo "mailist.pl" > dist/CNAME
 
       # PERFORMANCE OPTIMIZATION: Analiza bundle size
       - name: Analyze bundle size
