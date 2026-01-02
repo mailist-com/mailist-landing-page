@@ -173,6 +173,15 @@
     }
     </script>
 
+    <!-- Mailist API Configuration -->
+    <script>
+        window.MAILIST_CONFIG = {
+            apiUrl: '{{VITE_MAILIST_API_URL}}',
+            apiKey: '{{VITE_MAILIST_API_KEY}}',
+            listName: '{{VITE_MAILIST_LIST_NAME}}'
+        };
+    </script>
+
     <script src="assets/js/vendor.js" type="module"></script>
     <script src="assets/js/app.js" type="module"></script>
     <script src="assets/js/newsletter.js" type="module"></script>

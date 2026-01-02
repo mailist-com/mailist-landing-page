@@ -35,6 +35,11 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
             tailwindcss(),
             handlebars({
                 partialDirectory: resolve('./src/partials'),
+                context: {
+                    VITE_MAILIST_API_URL: process.env.VITE_MAILIST_API_URL || 'https://api.mailist.pl/v1/contacts',
+                    VITE_MAILIST_API_KEY: process.env.VITE_MAILIST_API_KEY || '',
+                    VITE_MAILIST_LIST_NAME: process.env.VITE_MAILIST_LIST_NAME || 'mailist-landing',
+                },
             }),
         ],
         resolve: {

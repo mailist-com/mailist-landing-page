@@ -5,10 +5,11 @@ Integrates with Mailist API for subscriber management
 
 class NewsletterSubscription {
     constructor() {
-        // Use Vite environment variables (replaced at build time)
-        this.apiUrl = import.meta.env.VITE_MAILIST_API_URL || 'https://api.mailist.pl/v1/subscribers';
-        this.apiKey = import.meta.env.VITE_MAILIST_API_KEY || '';
-        this.listName = import.meta.env.VITE_MAILIST_LIST_NAME || 'mailist-landing';
+        // Use runtime configuration from window object
+        const config = window.MAILIST_CONFIG || {};
+        this.apiUrl = config.apiUrl || 'https://api.mailist.pl/v1/contacts';
+        this.apiKey = config.apiKey || '';
+        this.listName = config.listName || 'mailist-landing';
         this.form = null;
         this.emailInput = null;
         this.submitButton = null;
