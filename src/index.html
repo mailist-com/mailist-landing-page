@@ -175,6 +175,7 @@
 
     <script src="assets/js/vendor.js" type="module"></script>
     <script src="assets/js/app.js" type="module"></script>
+    <script src="assets/js/newsletter.js" type="module"></script>
 </head>
 
 <body>
@@ -1312,13 +1313,15 @@
             </div>
 
             <div class="lg:col-span-3">
-                <div class="flex p-1 lg:w-96 md:w-90 w-86 rounded-md border border-white/14 bg-card/4 relative mb-6">
-                    <input type="email" placeholder="Twój email" aria-label="Adres email do newslettera"
-                           class="px-3 text-sm text-white border-none bg-transparent focus:outline-none focus:ring-0"/>
-                    <button type="button" class="absolute right-2 btn text-white bg-primary hover:bg-primary/90">
-                        Subskrybuj
-                    </button>
-                </div>
+                <form class="newsletter-form mb-6">
+                    <div class="flex p-1 lg:w-96 md:w-90 w-86 rounded-md border border-white/14 bg-card/4 relative">
+                        <input type="email" placeholder="Twój email" aria-label="Adres email do newslettera" required
+                               class="px-3 text-sm text-white border-none bg-transparent focus:outline-none focus:ring-0 flex-1"/>
+                        <button type="submit" class="absolute right-2 btn text-white bg-primary hover:bg-primary/90">
+                            Subskrybuj
+                        </button>
+                    </div>
+                </form>
 
                 <div>
                     <p class="mb-1 text-sm text-default-400">Email Wsparcia</p>
