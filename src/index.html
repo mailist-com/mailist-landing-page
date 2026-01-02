@@ -175,6 +175,8 @@
 
     <script src="assets/js/vendor.js" type="module"></script>
     <script src="assets/js/app.js" type="module"></script>
+    <script src="assets/js/newsletter.js" type="module"></script>
+    <link rel="stylesheet" href="assets/css/cookie-consent.css">
 </head>
 
 <body>
@@ -1308,17 +1310,25 @@
                            class="relative inline-block transition-all duration-200 ease-linear text-default-400 before:absolute before:border-b before:border-default-400 before:inset-x-0 before:bottom-0 before:w-0 hover:before:w-full before:transition-all before:duration-300 before:ease-linear">Polityka Prywatności
                         </a>
                     </li>
+
+                    <li>
+                        <a href="#" id="manage-cookies-link"
+                           class="relative inline-block transition-all duration-200 ease-linear text-default-400 before:absolute before:border-b before:border-default-400 before:inset-x-0 before:bottom-0 before:w-0 hover:before:w-full before:transition-all before:duration-300 before:ease-linear">Zarządzaj Cookies
+                        </a>
+                    </li>
                 </ul>
             </div>
 
             <div class="lg:col-span-3">
-                <div class="flex p-1 lg:w-96 md:w-90 w-86 rounded-md border border-white/14 bg-card/4 relative mb-6">
-                    <input type="email" placeholder="Twój email" aria-label="Adres email do newslettera"
-                           class="px-3 text-sm text-white border-none bg-transparent focus:outline-none focus:ring-0"/>
-                    <button type="button" class="absolute right-2 btn text-white bg-primary hover:bg-primary/90">
-                        Subskrybuj
-                    </button>
-                </div>
+                <form class="newsletter-form mb-6">
+                    <div class="flex p-1 lg:w-96 md:w-90 w-86 rounded-md border border-white/14 bg-card/4 relative">
+                        <input type="email" placeholder="Twój email" aria-label="Adres email do newslettera" required
+                               class="px-3 text-sm text-white border-none bg-transparent focus:outline-none focus:ring-0 flex-1"/>
+                        <button type="submit" class="absolute right-2 btn text-white bg-primary hover:bg-primary/90">
+                            Subskrybuj
+                        </button>
+                    </div>
+                </form>
 
                 <div>
                     <p class="mb-1 text-sm text-default-400">Email Wsparcia</p>
@@ -1410,6 +1420,232 @@
         </ul>
     </div>
 </div>
+
+<!-- Cookie Banner -->
+<div id="cookie-banner-overlay"></div>
+<div id="cookie-banner">
+    <div id="cookie-banner-content">
+        <h3>
+            <svg style="display: inline-block; width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C12.76 4 13.5 4.11 14.2 4.31C14.06 4.62 14 4.97 14 5.33C14 6.26 14.75 7 15.67 7C16.6 7 17.33 6.26 17.33 5.33C17.33 5.1 17.28 4.89 17.2 4.69C18.7 5.64 19.81 7.19 20.19 9.02C19.89 8.94 19.58 8.89 19.25 8.89C18.01 8.89 17 9.9 17 11.14C17 12.38 18.01 13.39 19.25 13.39C19.41 13.39 19.57 13.37 19.72 13.34C19.58 15.44 18.41 17.25 16.69 18.35C16.61 18.19 16.5 18.04 16.36 17.91C15.79 17.43 15 17.43 14.43 17.91C13.86 18.39 13.86 19.18 14.43 19.66C14.64 19.83 14.9 19.94 15.18 19.98C14.17 20.28 13.1 20.44 12 20.44C12 20.44 12 20 12 20ZM9 11C9.83 11 10.5 10.33 10.5 9.5C10.5 8.67 9.83 8 9 8C8.17 8 7.5 8.67 7.5 9.5C7.5 10.33 8.17 11 9 11ZM9 16C9.83 16 10.5 15.33 10.5 14.5C10.5 13.67 9.83 13 9 13C8.17 13 7.5 13.67 7.5 14.5C7.5 15.33 8.17 16 9 16ZM12.5 11C12.5 11.83 13.17 12.5 14 12.5C14.83 12.5 15.5 11.83 15.5 11C15.5 10.17 14.83 9.5 14 9.5C13.17 9.5 12.5 10.17 12.5 11Z" fill="currentColor"/>
+            </svg>
+            Używamy plików cookies
+        </h3>
+        <p>Nasza strona wykorzystuje pliki cookies w celu zapewnienia prawidłowego działania, analizy ruchu oraz personalizacji treści. Klikając „Akceptuj wszystkie", wyrażasz zgodę na używanie wszystkich cookies.
+            <a href="polityka-prywatnosci.html" class="text-primary hover:underline">Polityka prywatności</a>
+        </p>
+        <div id="cookie-banner-actions">
+            <button type="button" class="btn bg-primary text-white hover:bg-primary/90" id="accept-all-cookies">
+                Akceptuj wszystkie
+            </button>
+            <button type="button" class="btn border-primary text-primary hover:bg-primary hover:text-white bg-transparent" id="reject-all-cookies">
+                Odrzuć wszystkie
+            </button>
+            <button type="button" class="btn border-dashed border-primary bg-transparent text-primary hover:bg-primary/20" id="customize-cookies">
+                Dostosuj preferencje
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Preferences Modal -->
+<div id="cookie-modal">
+    <div id="cookie-modal-overlay"></div>
+    <div id="cookie-modal-content">
+        <div id="cookie-modal-header">
+            <h3>Centrum preferencji cookies</h3>
+            <button type="button" id="cookie-modal-close" aria-label="Zamknij">&times;</button>
+        </div>
+
+        <div id="cookie-modal-body">
+            <p>Zarządzaj swoimi preferencjami dotyczącymi plików cookies. Możesz włączyć lub wyłączyć poszczególne kategorie. Pamiętaj, że wyłączenie niektórych cookies może wpłynąć na działanie strony.</p>
+
+            <!-- Necessary Cookies -->
+            <div class="cookie-category">
+                <div class="cookie-category-header" data-category="necessary">
+                    <div class="cookie-category-title">
+                        <h4>Niezbędne</h4>
+                    </div>
+                    <div class="cookie-category-controls">
+                        <span class="always-active">Zawsze aktywne</span>
+                        <svg class="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cookie-category-content">
+                    <p>Te cookies są konieczne do prawidłowego funkcjonowania strony i nie mogą być wyłączone. Są ustawiane w odpowiedzi na działania użytkownika, takie jak ustawienie preferencji prywatności, logowanie czy wypełnianie formularzy.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nazwa</th>
+                                <th>Dostawca</th>
+                                <th>Cel</th>
+                                <th>Wygasa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>cookie_consent</td>
+                                <td>Ta strona</td>
+                                <td>Przechowuje preferencje zgody użytkownika</td>
+                                <td>1 rok</td>
+                            </tr>
+                            <tr>
+                                <td>session_id</td>
+                                <td>Ta strona</td>
+                                <td>Identyfikator sesji użytkownika</td>
+                                <td>Sesja</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Analytics Cookies -->
+            <div class="cookie-category">
+                <div class="cookie-category-header" data-category="analytics">
+                    <div class="cookie-category-title">
+                        <h4>Analityczne</h4>
+                    </div>
+                    <div class="cookie-category-controls">
+                        <div class="toggle-switch" data-category="analytics" role="switch" aria-checked="false" tabindex="0">
+                            <span class="toggle-switch-thumb"></span>
+                        </div>
+                        <svg class="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cookie-category-content">
+                    <p>Te cookies pozwalają nam liczyć wizyty i źródła ruchu, dzięki czemu możemy mierzyć i poprawiać wydajność naszej strony. Pomagają nam określić, które strony są najbardziej i najmniej popularne.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nazwa</th>
+                                <th>Dostawca</th>
+                                <th>Cel</th>
+                                <th>Wygasa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>_ga</td>
+                                <td>Google</td>
+                                <td>Rozróżnianie użytkowników w Google Analytics</td>
+                                <td>2 lata</td>
+                            </tr>
+                            <tr>
+                                <td>_gid</td>
+                                <td>Google</td>
+                                <td>Rozróżnianie użytkowników w Google Analytics</td>
+                                <td>24 godziny</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Marketing Cookies -->
+            <div class="cookie-category">
+                <div class="cookie-category-header" data-category="marketing">
+                    <div class="cookie-category-title">
+                        <h4>Marketingowe</h4>
+                    </div>
+                    <div class="cookie-category-controls">
+                        <div class="toggle-switch" data-category="marketing" role="switch" aria-checked="false" tabindex="0">
+                            <span class="toggle-switch-thumb"></span>
+                        </div>
+                        <svg class="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cookie-category-content">
+                    <p>Te cookies mogą być ustawiane przez naszych partnerów reklamowych za pośrednictwem naszej strony. Mogą być używane do budowania profilu zainteresowań i wyświetlania odpowiednich reklam na innych stronach.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nazwa</th>
+                                <th>Dostawca</th>
+                                <th>Cel</th>
+                                <th>Wygasa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>_fbp</td>
+                                <td>Facebook</td>
+                                <td>Śledzenie konwersji Facebook Pixel</td>
+                                <td>3 miesiące</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Functional Cookies -->
+            <div class="cookie-category">
+                <div class="cookie-category-header" data-category="functional">
+                    <div class="cookie-category-title">
+                        <h4>Funkcjonalne</h4>
+                    </div>
+                    <div class="cookie-category-controls">
+                        <div class="toggle-switch" data-category="functional" role="switch" aria-checked="false" tabindex="0">
+                            <span class="toggle-switch-thumb"></span>
+                        </div>
+                        <svg class="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cookie-category-content">
+                    <p>Te cookies umożliwiają rozszerzoną funkcjonalność i personalizację, taką jak czaty na żywo, filmy i mapy. Mogą być ustawiane przez nas lub zewnętrznych dostawców, których usługi dodaliśmy do naszych stron.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nazwa</th>
+                                <th>Dostawca</th>
+                                <th>Cel</th>
+                                <th>Wygasa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>intercom-id</td>
+                                <td>Intercom</td>
+                                <td>Identyfikacja użytkownika w czacie</td>
+                                <td>9 miesięcy</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="cookie-modal-footer">
+            <button type="button" class="btn bg-primary text-white hover:bg-primary/90" id="save-preferences">
+                Zapisz preferencje
+            </button>
+            <button type="button" class="btn border-primary text-primary hover:bg-primary hover:text-white bg-transparent" id="modal-accept-all">
+                Akceptuj wszystkie
+            </button>
+            <button type="button" class="btn border-dashed border-primary bg-transparent text-primary hover:bg-primary/20" id="modal-reject-all">
+                Odrzuć wszystkie
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Cookie Icon -->
+<div id="cookie-floating-icon">
+    <span class="cookie-tooltip">Zarządzaj cookies</span>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C12.76 4 13.5 4.11 14.2 4.31C14.06 4.62 14 4.97 14 5.33C14 6.26 14.75 7 15.67 7C16.6 7 17.33 6.26 17.33 5.33C17.33 5.1 17.28 4.89 17.2 4.69C18.7 5.64 19.81 7.19 20.19 9.02C19.89 8.94 19.58 8.89 19.25 8.89C18.01 8.89 17 9.9 17 11.14C17 12.38 18.01 13.39 19.25 13.39C19.41 13.39 19.57 13.37 19.72 13.34C19.58 15.44 18.41 17.25 16.69 18.35C16.61 18.19 16.5 18.04 16.36 17.91C15.79 17.43 15 17.43 14.43 17.91C13.86 18.39 13.86 19.18 14.43 19.66C14.64 19.83 14.9 19.94 15.18 19.98C14.17 20.28 13.1 20.44 12 20.44C12 20.44 12 20 12 20ZM9 11C9.83 11 10.5 10.33 10.5 9.5C10.5 8.67 9.83 8 9 8C8.17 8 7.5 8.67 7.5 9.5C7.5 10.33 8.17 11 9 11ZM9 16C9.83 16 10.5 15.33 10.5 14.5C10.5 13.67 9.83 13 9 13C8.17 13 7.5 13.67 7.5 14.5C7.5 15.33 8.17 16 9 16ZM12.5 11C12.5 11.83 13.17 12.5 14 12.5C14.83 12.5 15.5 11.83 15.5 11C15.5 10.17 14.83 9.5 14 9.5C13.17 9.5 12.5 10.17 12.5 11Z" fill="currentColor"/>
+    </svg>
+</div>
+
+<script src="assets/js/cookie-consent.js" type="module"></script>
 
 </body>
 
