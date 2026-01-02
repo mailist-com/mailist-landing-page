@@ -3,13 +3,12 @@ Newsletter Subscription Handler
 Integrates with Mailist API for subscriber management
 */
 
-import { MAILIST_CONFIG } from './config.js';
-
 class NewsletterSubscription {
     constructor() {
-        this.apiUrl = MAILIST_CONFIG.apiUrl;
-        this.apiKey = MAILIST_CONFIG.apiKey;
-        this.listName = MAILIST_CONFIG.listName;
+        // Use Vite environment variables (replaced at build time)
+        this.apiUrl = import.meta.env.VITE_MAILIST_API_URL || 'https://api.mailist.pl/v1/subscribers';
+        this.apiKey = import.meta.env.VITE_MAILIST_API_KEY || '';
+        this.listName = import.meta.env.VITE_MAILIST_LIST_NAME || 'mailist-landing';
         this.form = null;
         this.emailInput = null;
         this.submitButton = null;

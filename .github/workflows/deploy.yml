@@ -39,6 +39,9 @@ jobs:
       - name: Build for GitHub Pages
         env:
           GITHUB_PAGES: 'true'
+          VITE_MAILIST_API_URL: ${{ secrets.VITE_MAILIST_API_URL }}
+          VITE_MAILIST_API_KEY: ${{ secrets.VITE_MAILIST_API_KEY }}
+          VITE_MAILIST_LIST_NAME: ${{ secrets.VITE_MAILIST_LIST_NAME }}
         run: npm run build
 
       - name: Add .nojekyll file
