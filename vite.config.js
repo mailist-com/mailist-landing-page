@@ -3,6 +3,7 @@ import { defineConfig, loadEnv } from 'vite'
 import path, { resolve } from "path";
 import handlebars from "vite-plugin-handlebars";
 import tailwindcss from '@tailwindcss/vite'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig(({ command, mode, ssrBuild }) => {
     // Load env variables based on mode
@@ -43,6 +44,14 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
                     VITE_MAILIST_LIST_NAME: env.VITE_MAILIST_LIST_NAME || 'mailist-landing',
                 },
             }),
+            viteStaticCopy({
+                targets: [
+                    {
+                        src: 'components',
+                        dest: ''
+                    }
+                ]
+            })
         ],
         resolve: {
             alias: {
