@@ -49,6 +49,10 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
                     {
                         src: 'components',
                         dest: ''
+                    },
+                    {
+                        src: 'assets/images/mailist-gemini-transparent.png',
+                        dest: 'assets/images'
                     }
                 ]
             })
