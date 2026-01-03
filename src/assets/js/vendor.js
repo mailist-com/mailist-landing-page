@@ -16,3 +16,6 @@ import 'simplebar';
 
 import { createIcons, icons } from 'lucide';
 createIcons({ icons });
+
+// Export createIcons globally for component loader
+window.lucideCreateIcons = () => createIcons({ icons });

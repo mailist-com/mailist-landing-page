@@ -175,89 +175,15 @@
 
     <script src="assets/js/vendor.js" type="module"></script>
     <script src="assets/js/app.js" type="module"></script>
+    <script src="assets/js/components-loader.js" type="module"></script>
     <script src="assets/js/newsletter.js" type="module"></script>
     <link rel="stylesheet" href="assets/css/cookie-consent.css">
 </head>
 
 <body>
 
-<header>
-    <nav class="fixed inset-x-0 top-0 z-50 bg-card py-6 shadow flex justify-between items-center" role="navigation" aria-label="Nawigacja główna">
-        <div class="container">
-            <div class="grid lg:grid-cols-12 md:grid-cols-10 grid-cols-2 items-center">
-                <div class="lg:col-span-2 md:col-span-2">
-                    <a href="index.html" aria-label="Mailist - Strona główna" class="flex items-center gap-3 group">
-                        <img src="assets/images/mailist-gemini-transparent.png" class="logo-lg h-10 transition-transform duration-300 group-hover:scale-110" alt="Mailist logo">
-                        <span class="brand-text">Mailist</span>
-                    </a>
-                </div>
-
-                <div class="lg:col-span-6 md:col-span-4 md:block hidden">
-                    <ul class="flex items-center justify-center lg:gap-8 md:gap-6 font-medium text-sm">
-                        <li>
-                            <a href="#funkcje"
-                               class="text-default-800 hover:text-primary transition duration-300">Funkcje</a>
-                        </li>
-
-                        <li>
-                            <a href="#korzyści" class="text-default-800 hover:text-primary transition duration-300">Korzyści</a>
-                        </li>
-
-                        <li>
-                            <a href="#cennik" class="text-default-800 hover:text-primary transition duration-300">Cennik</a>
-                        </li>
-
-                        <li>
-                            <a href="#faq" class="text-default-800 hover:text-primary transition duration-300">FAQ</a>
-                        </li>
-
-                        <li>
-                            <a href="#kontakt" class="text-default-800 hover:text-primary transition duration-300">Kontakt</a>
-                        </li>
-
-                        <li class="hs-dropdown [--strategy:static] md:[--strategy:absolute] [--adaptive:none]">
-                            <button type="button" class="hs-dropdown-toggle text-default-800 hover:text-primary transition duration-300 flex items-center gap-1">
-                                Zasoby
-                                <i data-lucide="chevron-down" class="size-4"></i>
-                            </button>
-                            <div class="hs-dropdown-menu transition-[opacity,margin] duration-300 hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-gray-800 dark:border dark:border-gray-700" aria-labelledby="hs-dropdown-default">
-                                <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700" href="https://docs.mailist.pl" target="_blank" rel="noopener noreferrer">
-                                    <i data-lucide="book-open" class="size-4"></i>
-                                    Dokumentacja
-                                </a>
-                                <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700" href="https://status.mailist.pl" target="_blank" rel="noopener noreferrer">
-                                    <i data-lucide="activity" class="size-4"></i>
-                                    Status
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="lg:col-span-4 md:col-span-4 flex items-center justify-end gap-2">
-                    <button class="md:hidden inline-flex items-center justify-center size-10 rounded-lg border border-primary/20 bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 active:scale-95"
-                            aria-haspopup="dialog" aria-expanded="false" aria-controls="navbarMenu" data-hs-overlay="#navbarMenu" aria-label="Otwórz menu">
-                        <i data-lucide="menu" class="size-5"></i>
-                    </button>
-
-                    <a href="https://app.mailist.pl/auth/login" class="lg:flex hidden">
-                        <button type="button" class="btn border-primary text-primary hover:bg-primary hover:text-white bg-transparent">
-                            Zaloguj
-                            <i data-lucide="log-in" class="size-4"></i>
-                        </button>
-                    </a>
-
-                    <a href="https://app.mailist.pl/auth/register" class="lg:flex hidden">
-                        <button type="button" class="btn bg-primary text-white hover:bg-primary/90">
-                            Utwórz konto
-                            <i data-lucide="user-plus" class="size-4"></i>
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-</header>
+<!-- Header Component -->
+<div id="header-placeholder"></div>
 
 <!-- hero section -->
 <section id="home" class="relative lg:pt-44 lg:pb-36 md:pt-34 md:pb-20 pt-30 pb-16" aria-labelledby="hero-heading">
@@ -300,7 +226,7 @@
             </div>
 
             <div class="relative z-10" style="perspective: 1000px;">
-                <div class="relative z-20" transform-origin: center right;">
+                <div class="relative z-20" style="transform: scale(1.1); transform-origin: center right;">
                     <img src="assets/images/landing/mailist-dashboard.png" alt="Dashboard Mailist z przeglądem kampanii email" class="rounded-xl shadow-2xl" loading="eager" fetchpriority="high" width="1894" height="878">
                 </div>
             </div>
@@ -1409,75 +1335,6 @@
         </div>
     </div>
 </footer>
-
-<div class="hs-overlay hs-overlay-open:translate-y-0 -translate-y-full fixed top-0 inset-x-0 transition-all duration-300 transform max-h-screen overflow-y-auto p-5 w-full z-80 card border-b border-default-200 hidden"
-     role="dialog" tabindex="-1" aria-labelledby="navbarMenu-label" id="navbarMenu">
-    <div class="flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-3">
-            <img src="assets/images/mailist-gemini-transparent.png" alt="Mailist logo" class="h-6">
-            <span class="brand-text text-xl">Mailist</span>
-        </a>
-
-        <button aria-label="Close" data-hs-overlay="#navbarMenu"
-                class="inline-flex justify-end items-center gap-x-2 rounded-full">
-            <i data-lucide="x" class="size-4"></i>
-        </button>
-    </div>
-
-    <div class="pt-8">
-        <ul class="flex flex-col gap-y-4 lg:gap-8 md:gap-6 font-semibold text-sm">
-            <li>
-                <a href="#funkcje" class="text-default-600 hover:text-primary transition duration-300">Funkcje</a>
-            </li>
-
-            <li>
-                <a href="#korzyści" class="text-default-600 hover:text-primary transition duration-300">Korzyści</a>
-            </li>
-
-            <li>
-                <a href="#cennik"
-                   class="text-default-600 hover:text-primary transition duration-300">Cennik</a>
-            </li>
-
-            <li>
-                <a href="#faq"
-                   class="text-default-600 hover:text-primary transition duration-300">FAQ</a>
-            </li>
-
-            <li>
-                <a href="#kontakt"
-                   class="text-default-600 hover:text-primary transition duration-300">Kontakt</a>
-            </li>
-
-            <li class="hs-dropdown [--strategy:static]">
-                <button type="button" class="hs-dropdown-toggle text-default-600 hover:text-primary transition duration-300 flex items-center gap-1 w-full">
-                    Zasoby
-                    <i data-lucide="chevron-down" class="size-4"></i>
-                </button>
-                <div class="hs-dropdown-menu transition-[opacity,margin] duration-300 hs-dropdown-open:opacity-100 opacity-0 hidden w-full bg-gray-50 rounded-lg p-2 mt-2 dark:bg-gray-700">
-                    <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" href="https://docs.mailist.pl" target="_blank" rel="noopener noreferrer">
-                        <i data-lucide="book-open" class="size-4"></i>
-                        Dokumentacja
-                    </a>
-                    <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600" href="https://status.mailist.pl" target="_blank" rel="noopener noreferrer">
-                        <i data-lucide="activity" class="size-4"></i>
-                        Status
-                    </a>
-                </div>
-            </li>
-
-            <li>
-                <a href="https://app.mailist.pl/auth/login"
-                   class="text-default-600 hover:text-primary transition duration-300">Zaloguj</a>
-            </li>
-
-            <li>
-                <a href="https://app.mailist.pl/auth/register"
-                   class="text-primary font-bold hover:text-primary/90 transition duration-300">Utwórz konto</a>
-            </li>
-        </ul>
-    </div>
-</div>
 
 <!-- Cookie Banner -->
 <div id="cookie-banner-overlay"></div>

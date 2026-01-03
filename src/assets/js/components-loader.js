@@ -19,6 +19,30 @@ async function loadComponent(elementId, componentPath) {
     }
 }
 
+// Function to reinitialize all interactive components
+function reinitializeComponents() {
+    // Wait a bit for DOM to settle
+    setTimeout(() => {
+        // Reinitialize Lucide icons for ALL elements on the page (including dynamically loaded components)
+        if (typeof window.lucideCreateIcons === 'function') {
+            window.lucideCreateIcons();
+        }
+
+        // Reinitialize Preline UI components
+        if (window.HSStaticMethods) {
+            window.HSStaticMethods.autoInit();
+        }
+
+        // Also try to reinitialize specific components
+        if (window.HSOverlay) {
+            window.HSOverlay.autoInit();
+        }
+        if (window.HSDropdown) {
+            window.HSDropdown.autoInit();
+        }
+    }, 150);
+}
+
 // Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', async () => {
     // Load header
@@ -27,8 +51,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Load footer
     await loadComponent('footer-placeholder', 'components/footer.html');
 
-    // Reinitialize Lucide icons after components are loaded
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+    // Reinitialize all interactive components (icons + Preline)
+    reinitializeComponents();
 });
