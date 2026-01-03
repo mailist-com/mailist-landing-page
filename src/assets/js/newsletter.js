@@ -177,3 +177,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const newsletter = new NewsletterSubscription();
     newsletter.init();
 });
+
+// Also reinitialize when components are dynamically loaded
+// This handles cases where footer is loaded asynchronously (regulamin, polityka-prywatnosci pages)
+document.addEventListener('componentsLoaded', function() {
+    const newsletter = new NewsletterSubscription();
+    newsletter.init();
+});

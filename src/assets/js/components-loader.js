@@ -53,4 +53,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Reinitialize all interactive components (icons + Preline)
     reinitializeComponents();
+
+    // Reinitialize newsletter subscription after footer is loaded
+    // Dispatch custom event to notify newsletter.js that components are ready
+    setTimeout(() => {
+        const event = new CustomEvent('componentsLoaded');
+        document.dispatchEvent(event);
+    }, 200);
 });
