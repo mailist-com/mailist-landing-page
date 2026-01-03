@@ -430,3 +430,48 @@ html[data-sidenav-color="dark"] {
         }
     }
 }
+/* Brand Text Styling for Landing Page Header */
+.brand-text {
+    /* Use DM Sans to match the clean, modern aesthetic of the logo */
+    font-family: var(--font-body);
+    @apply text-2xl font-bold tracking-tight transition-all duration-300;
+    line-height: 1;
+
+    /* Match the logo's blue-to-cyan gradient (#2E9ED8 -> #4ECDC4) */
+    background: linear-gradient(135deg,
+        #2E9ED8 0%,
+        #4ECDC4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Dark mode: Lighter, more vibrant versions of the gradient */
+html[data-theme="dark"] .brand-text {
+    background: linear-gradient(135deg,
+        #3DB4F0 0%,
+        #5EDDD5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Hover state: Slightly darker/more saturated */
+a:hover .brand-text {
+    background: linear-gradient(135deg,
+        #2589C1 0%,
+        #3DB9B0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Dark mode hover: Even brighter */
+html[data-theme="dark"] a:hover .brand-text {
+    background: linear-gradient(135deg,
+        #52C5FF 0%,
+        #6FF0E8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
